@@ -31,7 +31,7 @@ jobs:
     - name: Setup Miniconda
       uses: conda-incubator/setup-miniconda@v2
       with:
-        activate-environment: spice-jb
+        activate-environment: spicejb
         environment-file: jupyter-book-env.yml
         python-version: 3.7
         channels: conda-forge
@@ -42,7 +42,7 @@ jobs:
       run: |
         conda info
         conda list
-        conda activate spice-jb
+        conda activate spicejb
         jupyter nbextension enable --py widgetsnbextension
         jupyter-book build modules
 
