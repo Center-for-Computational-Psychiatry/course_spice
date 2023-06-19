@@ -1,4 +1,4 @@
-name: spice_jupyterbook
+name: jupyterbook
 
 # Only run this when the master branch changes
 on:
