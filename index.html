@@ -1,0 +1,622 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Summer Program in Computational Psychiatry Education</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/tabs.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script src="_static/tabs.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script >const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="canonical" href="https://center-for-computational-psychiatry.github.io/course_spice/index.html" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Jupyter (Colaboratory) Notebooks" href="module-01_jupyter-notebooks.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="#">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="_static/spice_logo.png" class="logo" alt="logo">
+      
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <p class="caption">
+ <span class="caption-text">
+  Programming in Python
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="module-01_jupyter-notebooks.html">
+   Jupyter (Colaboratory) Notebooks
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="module-02_python-basics.html">
+   Python Basics
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="module-03_data-structures.html">
+   Data Structures
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="module-04_data-processing.html">
+   Data Processing
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="module-05_data-visualization.html">
+   Data Visualization
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="module-06_numerical-operations.html">
+   Numerical Operations
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="module-07_pairwise-correlations.html">
+   Pairwise Correlations
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="module-08_hypothesis-testing.html">
+   Hypothesis Testing
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="module-09_putting-it-all-together.html">
+   Putting It All Together
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Fundamentals of Neuroscience and Psychiatry
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="module-09_putting-it-all-together.html">
+   Putting It All Together
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/center-for-computational-psychiatry.github.io/course_spice"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/center-for-computational-psychiatry.github.io/course_spice/issues/new?title=Issue%20on%20page%20%2Findex.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="_sources/index.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.md</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#education-track">
+   Education Track
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#fundamentals-of-computational-psychiatry-and-neuroscience">
+     (1) Fundamentals of Computational Psychiatry and Neuroscience
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#fundamentals-of-python-programming-for-psychological-and-neural-sciences">
+     (2) Fundamentals of Python Programming for Psychological and Neural Sciences
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#research-track">
+   Research Track
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#contributing">
+   Contributing
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#contributors">
+   Contributors
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#license">
+   License
+  </a>
+  <ul class="nav section-nav flex-column">
+  </ul>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Summer Program in Computational Psychiatry Education</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#education-track">
+   Education Track
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#fundamentals-of-computational-psychiatry-and-neuroscience">
+     (1) Fundamentals of Computational Psychiatry and Neuroscience
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#fundamentals-of-python-programming-for-psychological-and-neural-sciences">
+     (2) Fundamentals of Python Programming for Psychological and Neural Sciences
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#research-track">
+   Research Track
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#contributing">
+   Contributing
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#contributors">
+   Contributors
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#license">
+   License
+  </a>
+  <ul class="nav section-nav flex-column">
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <div align="center">
+<p><a target="_blank" rel="noopener noreferrer" href="https://center-for-computational-psychiatry.github.io/course_spice"><img alt="Jupyter Book Badge" src="https://jupyterbook.org/badge.svg" /></a> <a target="_blank" rel="noopener noreferrer" href="https://github.com/center-for-computational-psychiatry/course_spice/actions/workflows/deploy-book.yml"><img alt="book" src="https://github.com/center-for-computational-psychiatry/course_spice/actions/workflows/deploy-book.yml/badge.svg" /></a> <a target="_blank" rel="noopener noreferrer" href="https://github.com/center-for-computational-psychiatry/course_spice"><img alt="GitHub last update" src="https://img.shields.io/github/last-commit/center-for-computational-psychiatry/course_spice?color=blue&amp;label=last%20update" /></a></p>
+</div>
+<div class="section" id="summer-program-in-computational-psychiatry-education">
+<h1>Summer Program in Computational Psychiatry Education<a class="headerlink" href="#summer-program-in-computational-psychiatry-education" title="Permalink to this headline">¶</a></h1>
+<p>Welcome to the <a class="reference external" href="https://www.neurocpu.org/spice">Summer Program in Computational Psychiatry Education (SPICE)</a>! This GitHub repository contains a collection of course materials and resources designed for high school and undergraduate students interested in exploring the field of computational psychiatry and neuroscience.</p>
+<p>SPICE is an educational initiative aimed at introducing high school and college students to the intersection of computer science and psychiatry. Students participate in an eight-week program that combines educational tutorials and hands-on research projects within laboratories at the Center for Computational Psychiatry in the Icahn School of Medicine at Mount Sinai.</p>
+<hr width="60%">
+<div class="section" id="education-track">
+<h2>Education Track<a class="headerlink" href="#education-track" title="Permalink to this headline">¶</a></h2>
+<p>The Education Track consists of two parallel components in a self-guided, two-week crash course format. Students will complete both to gain a preliminary understanding of computational psychiatry and neuroscience for application to their research projects. Please visit our Jupyter Book to navigate through the course materials: <a class="reference external" href="https://center-for-computational-psychiatry.github.io/course_spice/">https://center-for-computational-psychiatry.github.io/course_spice/</a></p>
+<div class="section" id="fundamentals-of-computational-psychiatry-and-neuroscience">
+<h3>(1) Fundamentals of Computational Psychiatry and Neuroscience<a class="headerlink" href="#fundamentals-of-computational-psychiatry-and-neuroscience" title="Permalink to this headline">¶</a></h3>
+<p>This component provides students with an introduction to computational psychiatry and neuroscience. Students will participate in lectures, discussions, and hands-on activities. The primary aim of this course is to provide students with a basic understanding of computational psychiatry and neuroscience concepts for application to their research project.</p>
+</div>
+<div class="section" id="fundamentals-of-python-programming-for-psychological-and-neural-sciences">
+<h3>(2) Fundamentals of Python Programming for Psychological and Neural Sciences<a class="headerlink" href="#fundamentals-of-python-programming-for-psychological-and-neural-sciences" title="Permalink to this headline">¶</a></h3>
+<p>This component provides students with a hands-on introduction to Python programming for data analysis. Over the course of two weeks, students will use <a class="reference external" href="https://colab.research.google.com/">Google Colaboratory</a> to learn the fundamentals of Python programming, basic data visualization techniques, and essential statistical analysis methods such as t-tests. The primary aim of this course is to develop practical coding skills and analytical tools to understand data, especially those within the fields of computational psychiatry and neuroscience.</p>
+<p>The course begins with an introduction to Python and Jupyter Notebooks. Then, students will then dive into tutorials on Python basics (e.g., variables, data types, conditional statements, loops). As the course progresses, students will learn about data structures, reading and writing dataframes, and utilizing popular libraries such as Pandas, NumPy, SciPy, Matplotlib, and Seaborn for data manipulation and visualization. They will also gain proficiency in descriptive statistics, hypothesis testing, and analyzing relationships between variables. The course culminates with a project in which students will apply these skills to analyze data from their research project.</p>
+<p>Please see below for the list of modules within this course.</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Introduction to Python</p></th>
+<th class="text-align:center head"><p>Run</p></th>
+<th class="text-align:center head"><p>View</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Module 00 - Introduction</p></td>
+<td class="text-align:center"><p><a class="reference external" href="https://colab.research.google.com/github/center-for-computational-psychiatry/course_spice/blob/master/modules/module-00_introduction.ipynb"><img alt="Open In Colab" src="https://colab.research.google.com/assets/colab-badge.svg" /></a></p></td>
+<td class="text-align:center"><p><a class="reference external" href="https://center-for-computational-psychiatry.github.io/course_spice/modules/module-00_introduction.html"><img alt="view" src="https://jupyterbook.org/badge.svg" /></a></p></td>
+</tr>
+<tr class="row-odd"><td><p>Module 01 - Jupyter Notebooks</p></td>
+<td class="text-align:center"><p><a class="reference external" href="https://colab.research.google.com/github/center-for-computational-psychiatry/course_spice/blob/master/modules/module-01_jupyter-notebooks.ipynb"><img alt="Open In Colab" src="https://colab.research.google.com/assets/colab-badge.svg" /></a></p></td>
+<td class="text-align:center"><p><a class="reference external" href="https://center-for-computational-psychiatry.github.io/course_spice/modules/module-01_jupyter-notebooks.html"><img alt="view" src="https://jupyterbook.org/badge.svg" /></a></p></td>
+</tr>
+<tr class="row-even"><td><p>Module 02 - Python Basics</p></td>
+<td class="text-align:center"><p><a class="reference external" href="https://colab.research.google.com/github/center-for-computational-psychiatry/course_spice/blob/master/modules/module-02_python-basics.ipynb"><img alt="Open In Colab" src="https://colab.research.google.com/assets/colab-badge.svg" /></a></p></td>
+<td class="text-align:center"><p><a class="reference external" href="https://center-for-computational-psychiatry.github.io/course_spice/modules/module-02_python-basics.html"><img alt="view" src="https://jupyterbook.org/badge.svg" /></a></p></td>
+</tr>
+<tr class="row-odd"><td><p>Module 03 - Data Structures</p></td>
+<td class="text-align:center"><p><a class="reference external" href="https://colab.research.google.com/github/center-for-computational-psychiatry/course_spice/blob/master/modules/module-03_data-structures.ipynb"><img alt="Open In Colab" src="https://colab.research.google.com/assets/colab-badge.svg" /></a></p></td>
+<td class="text-align:center"><p><a class="reference external" href="https://center-for-computational-psychiatry.github.io/course_spice/modules/module-03_data-structures.html"><img alt="view" src="https://jupyterbook.org/badge.svg" /></a></p></td>
+</tr>
+<tr class="row-even"><td><p>Module 04 - Data Processing</p></td>
+<td class="text-align:center"><p><a class="reference external" href="https://colab.research.google.com/github/center-for-computational-psychiatry/course_spice/blob/master/modules/module-04_data-processing.ipynb"><img alt="Open In Colab" src="https://colab.research.google.com/assets/colab-badge.svg" /></a></p></td>
+<td class="text-align:center"><p><a class="reference external" href="https://center-for-computational-psychiatry.github.io/course_spice/modules/module-04_data-processing.html"><img alt="view" src="https://jupyterbook.org/badge.svg" /></a></p></td>
+</tr>
+<tr class="row-odd"><td><p>Module 05 - Data Visualization</p></td>
+<td class="text-align:center"><p><a class="reference external" href="https://colab.research.google.com/github/center-for-computational-psychiatry/course_spice/blob/master/modules/module-05_data-visualization.ipynb"><img alt="Open In Colab" src="https://colab.research.google.com/assets/colab-badge.svg" /></a></p></td>
+<td class="text-align:center"><p><a class="reference external" href="https://center-for-computational-psychiatry.github.io/course_spice/modules/module-05_data-visualization.html"><img alt="view" src="https://jupyterbook.org/badge.svg" /></a></p></td>
+</tr>
+<tr class="row-even"><td><p>Module 06 - Numerical Operations</p></td>
+<td class="text-align:center"><p><a class="reference external" href="https://colab.research.google.com/github/center-for-computational-psychiatry/course_spice/blob/master/modules/module-06_numerical-operations.ipynb"><img alt="Open In Colab" src="https://colab.research.google.com/assets/colab-badge.svg" /></a></p></td>
+<td class="text-align:center"><p><a class="reference external" href="https://center-for-computational-psychiatry.github.io/course_spice/modules/module-06_numerical-operations.html"><img alt="view" src="https://jupyterbook.org/badge.svg" /></a></p></td>
+</tr>
+<tr class="row-odd"><td><p>Module 07 - Pairwise Correlations</p></td>
+<td class="text-align:center"><p><a class="reference external" href="https://colab.research.google.com/github/center-for-computational-psychiatry/course_spice/blob/master/modules/module-07_pairwise-correlations.ipynb"><img alt="Open In Colab" src="https://colab.research.google.com/assets/colab-badge.svg" /></a></p></td>
+<td class="text-align:center"><p><a class="reference external" href="https://center-for-computational-psychiatry.github.io/course_spice/modules/module-07_pairwise-correlations.html"><img alt="view" src="https://jupyterbook.org/badge.svg" /></a></p></td>
+</tr>
+<tr class="row-even"><td><p>Module 08 - Hypothesis Testing</p></td>
+<td class="text-align:center"><p><a class="reference external" href="https://colab.research.google.com/github/center-for-computational-psychiatry/course_spice/blob/master/modules/module-08_hypothesis-testing.ipynb"><img alt="Open In Colab" src="https://colab.research.google.com/assets/colab-badge.svg" /></a></p></td>
+<td class="text-align:center"><p><a class="reference external" href="https://center-for-computational-psychiatry.github.io/course_spice/modules/module-08_hypothesis-testing.html"><img alt="view" src="https://jupyterbook.org/badge.svg" /></a></p></td>
+</tr>
+<tr class="row-odd"><td><p>Module 09 - Putting It All Together</p></td>
+<td class="text-align:center"><p><a class="reference external" href="https://colab.research.google.com/github/center-for-computational-psychiatry/course_spice/blob/master/modules/module-09_putting-it-all-together.ipynb"><img alt="Open In Colab" src="https://colab.research.google.com/assets/colab-badge.svg" /></a></p></td>
+<td class="text-align:center"><p><a class="reference external" href="https://center-for-computational-psychiatry.github.io/course_spice/modules/module-09_putting-it-all-together.html"><img alt="view" src="https://jupyterbook.org/badge.svg" /></a></p></td>
+</tr>
+</tbody>
+</table>
+<hr width="60%">
+</div>
+</div>
+<div class="section" id="research-track">
+<h2>Research Track<a class="headerlink" href="#research-track" title="Permalink to this headline">¶</a></h2>
+<p>This track matches students with a mentor for the summer based on research interests and availability. Students will work on a research project under the guidance of their mentor and present their findings at the end of the program. The primary aim of this course is to provide students with hands-on research experience in computational psychiatry and neuroscience. Please coordinate with your mentors to determine the scope and timeline of your project.</p>
+<hr width="60%">
+</div>
+<div class="section" id="contributing">
+<h2>Contributing<a class="headerlink" href="#contributing" title="Permalink to this headline">¶</a></h2>
+<p>We welcome contributions from the community. If you have additional suggestions or corrections, please submit a pull request. Together, we can create an educational resource for future participants. Please follow these steps to contribute:</p>
+<ol class="simple">
+<li><p>Fork the repository to your GitHub account.</p></li>
+<li><p>Make the desired changes or additions in your forked repository.</p></li>
+<li><p>Submit a pull request, detailing the changes you made and the reasons behind them.</p></li>
+</ol>
+<p>Our team will review your contribution and merge if it aligns with the goals and scope of the repository.</p>
+<p>If you have any questions, suggestions, or feedback regarding the Summer Program in Computational Psychiatry Education (SPICE) or this repository, please feel free to open an issue in the repository or contact us directly. We are here to help you and make your learning experience as enriching as possible.</p>
+</div>
+<div class="section" id="contributors">
+<h2>Contributors<a class="headerlink" href="#contributors" title="Permalink to this headline">¶</a></h2>
+<table role="table" style="margin: 0px auto;">
+    <thead role="rowgroup">
+        <tr role="row">
+            <td align="center" role="columnheader"><a target="_blank" rel="noopener noreferrer" href="https://shawnrhoads.github.io/"><img src="https://avatars3.githubusercontent.com/u/24925845" width="100px;" alt=""/></a><br /><sub><a target="_blank" rel="noopener noreferrer" href="https://github.com/center-for-computational-psychiatry/course_spice/commits?author=shawnrhoads"><b>Shawn A Rhoads</b></a><br/></sub></td>
+            <td align="center" role="columnheader"><a target="_blank" rel="noopener noreferrer" href="https://icahn.mssm.edu/profiles/sarah-banker"><img src="https://avatars3.githubusercontent.com/u/" width="100px;" alt=""/></a><br /><sub><a target="_blank" rel="noopener noreferrer" href="https://github.com/center-for-computational-psychiatry/course_spice/commits?author=sarahbanker"><b>Sarah M Banker</b></a><br/></sub></td>
+        </tr>
+        </thead>
+</table>
+<hr width="60%">
+</div>
+<div class="section" id="license">
+<h2>License<a class="headerlink" href="#license" title="Permalink to this headline">¶</a></h2>
+<p><a rel="license" target="_blank" rel="noopener noreferrer" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><br />
+Content in this book (i.e., any .md or .ipynb files in the content/ folder) is licensed under a <a rel="license" target="_blank" rel="noopener noreferrer" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.</p>
+<div class="toctree-wrapper compound">
+</div>
+<div class="toctree-wrapper compound">
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='right-next' id="next-link" href="module-01_jupyter-notebooks.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Jupyter (Colaboratory) Notebooks</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Shawn A. Rhoads, Sarah M. Banker<br/>
+  
+      &copy; Copyright 2023.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>

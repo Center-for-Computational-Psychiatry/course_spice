@@ -1,0 +1,1621 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Python Basics</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/tabs.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script src="_static/tabs.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script >const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="canonical" href="https://center-for-computational-psychiatry.github.io/course_spice/module-02_python-basics.html" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Data Structures" href="module-03_data-structures.html" />
+    <link rel="prev" title="Jupyter (Colaboratory) Notebooks" href="module-01_jupyter-notebooks.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="_static/spice_logo.png" class="logo" alt="logo">
+      
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <p class="caption">
+ <span class="caption-text">
+  Programming in Python
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="module-01_jupyter-notebooks.html">
+   Jupyter (Colaboratory) Notebooks
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Python Basics
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="module-03_data-structures.html">
+   Data Structures
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="module-04_data-processing.html">
+   Data Processing
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="module-05_data-visualization.html">
+   Data Visualization
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="module-06_numerical-operations.html">
+   Numerical Operations
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="module-07_pairwise-correlations.html">
+   Pairwise Correlations
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="module-08_hypothesis-testing.html">
+   Hypothesis Testing
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="module-09_putting-it-all-together.html">
+   Putting It All Together
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Fundamentals of Neuroscience and Psychiatry
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="module-09_putting-it-all-together.html">
+   Putting It All Together
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/center-for-computational-psychiatry.github.io/course_spice"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/center-for-computational-psychiatry.github.io/course_spice/issues/new?title=Issue%20on%20page%20%2Fmodule-02_python-basics.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="_sources/module-02_python-basics.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Python Basics
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#learning-objectives">
+     Learning objectives
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#overview">
+   Overview
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#a-note-on-how-to-approach-learning-to-code">
+     A note on how to approach learning to code
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#what-does-it-mean-to-code">
+   What does it mean to ‘code’?
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#how-to-think-about-coding">
+     How to think about coding
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#using-python-like-a-calculator">
+   Using Python like a calculator
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#scripting">
+     Scripting
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#variables">
+   Variables
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#what-are-variables-used-for">
+     What are variables used for?
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#operators">
+   Operators
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#logical-operators">
+     Logical operators
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#equality-operator">
+     Equality operator
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#other-comparison-operators">
+     Other comparison operators
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#what-are-operators-used-for">
+     What are operators used for?
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#comments-and-print-statements">
+   Comments and
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     print
+    </span>
+   </code>
+   statements
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#if-statements">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     if
+    </span>
+   </code>
+   statements
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#elif-and-else-statements">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     elif
+    </span>
+   </code>
+   and
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     else
+    </span>
+   </code>
+   statements
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#what-are-if-elif-and-else-statements-used-for">
+     What are
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       if
+      </span>
+     </code>
+     ,
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       elif
+      </span>
+     </code>
+     , and
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       else
+      </span>
+     </code>
+     statements used for?
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#datatypes">
+   Datatypes
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#typecasting">
+     Typecasting
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#what-are-datatypes-used-for">
+     What are datatypes used for?
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#functions">
+   Functions
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#what-are-functions-used-for">
+     What are functions used for?
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#loops">
+   Loops
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#for-loops">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       for
+      </span>
+     </code>
+     loops
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#while-loops">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       while
+      </span>
+     </code>
+     loops
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#infinite-loops">
+       Infinite loops
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#nested-loops">
+       Nested loops
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#what-are-loops-used-for">
+     What are loops used for?
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#importing-new-functions">
+   Importing new functions
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-from-keyword">
+   The
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     from
+    </span>
+   </code>
+   keyword
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-as-keyword">
+   The
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     as
+    </span>
+   </code>
+   keyword
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#weird-stuff">
+     Weird stuff
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#getting-help">
+   Getting help
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#happy-coding">
+   Happy coding!
+  </a>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Python Basics</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Python Basics
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#learning-objectives">
+     Learning objectives
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#overview">
+   Overview
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#a-note-on-how-to-approach-learning-to-code">
+     A note on how to approach learning to code
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#what-does-it-mean-to-code">
+   What does it mean to ‘code’?
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#how-to-think-about-coding">
+     How to think about coding
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#using-python-like-a-calculator">
+   Using Python like a calculator
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#scripting">
+     Scripting
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#variables">
+   Variables
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#what-are-variables-used-for">
+     What are variables used for?
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#operators">
+   Operators
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#logical-operators">
+     Logical operators
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#equality-operator">
+     Equality operator
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#other-comparison-operators">
+     Other comparison operators
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#what-are-operators-used-for">
+     What are operators used for?
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#comments-and-print-statements">
+   Comments and
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     print
+    </span>
+   </code>
+   statements
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#if-statements">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     if
+    </span>
+   </code>
+   statements
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#elif-and-else-statements">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     elif
+    </span>
+   </code>
+   and
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     else
+    </span>
+   </code>
+   statements
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#what-are-if-elif-and-else-statements-used-for">
+     What are
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       if
+      </span>
+     </code>
+     ,
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       elif
+      </span>
+     </code>
+     , and
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       else
+      </span>
+     </code>
+     statements used for?
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#datatypes">
+   Datatypes
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#typecasting">
+     Typecasting
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#what-are-datatypes-used-for">
+     What are datatypes used for?
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#functions">
+   Functions
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#what-are-functions-used-for">
+     What are functions used for?
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#loops">
+   Loops
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#for-loops">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       for
+      </span>
+     </code>
+     loops
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#while-loops">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       while
+      </span>
+     </code>
+     loops
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#infinite-loops">
+       Infinite loops
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#nested-loops">
+       Nested loops
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#what-are-loops-used-for">
+     What are loops used for?
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#importing-new-functions">
+   Importing new functions
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-from-keyword">
+   The
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     from
+    </span>
+   </code>
+   keyword
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-as-keyword">
+   The
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     as
+    </span>
+   </code>
+   keyword
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#weird-stuff">
+     Weird stuff
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#getting-help">
+   Getting help
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#happy-coding">
+   Happy coding!
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <p><a target="_blank" rel="noopener noreferrer" href="https://colab.research.google.com/github/center-for-computational-psychiatry/course_spice/blob/master/modules/module-02_python-basics.ipynb"><img alt="Open In Colab" src="https://colab.research.google.com/assets/colab-badge.svg" /></a></p>
+<div class="section" id="python-basics">
+<h1>Python Basics<a class="headerlink" href="#python-basics" title="Permalink to this headline">¶</a></h1>
+<p>This tutorial was inspired by and adapted from Shawn A. Rhoads’ <a class="reference external" href="https://shawnrhoads.github.io/gu-psyc-347/">PSYC 347 Course</a> [<a class="reference external" href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0 License</a>], Jeremy Manning’s <a class="reference external" href="https://github.com/ContextLab/cs-for-psych">PSYC 32 Course</a> [<a class="reference external" href="https://opensource.org/license/mit/">MIT License</a>], <a class="reference external" href="https://github.com/jakevdp/WhirlwindTourOfPython">Whirlwind Tour of Python</a> [<a class="reference external" href="https://creativecommons.org/publicdomain/zero/1.0/">CC0 1.0 License</a>], <a class="reference external" href="https://dartbrains.org">DartBrains</a> [<a class="reference external" href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0 License</a>] and the <a class="reference external" href="https://github.com/numpy/numpy-tutorials">NumPy Tutorials</a> [<a class="reference external" href="https://opensource.org/licenses/BSD-3-Clause">BSD-3-Clause License</a>].</p>
+<div class="section" id="learning-objectives">
+<h2>Learning objectives<a class="headerlink" href="#learning-objectives" title="Permalink to this headline">¶</a></h2>
+<p>This notebook is intended to teach you basic python syntax for:</p>
+<ol class="simple">
+<li><p>Variables</p></li>
+<li><p>Operators</p></li>
+<li><p>If-statements</p></li>
+<li><p>Data types</p></li>
+<li><p>Functions</p></li>
+<li><p>For loops</p></li>
+<li><p>While loops</p></li>
+<li><p>Packages</p></li>
+</ol>
+</div>
+</div>
+<div class="section" id="overview">
+<h1>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h1>
+<p>This notebook provides a very high level overview of what it means to “write a computer program,” and some specific examples of how to write a program in Python (using Jupyter notebooks).</p>
+<p>Note: this tutorial is intended to introduce you to the basics– not to provide a complete, or even fully self-contained, overview of Python programming.</p>
+<div class="section" id="a-note-on-how-to-approach-learning-to-code">
+<h2>A note on how to approach learning to code<a class="headerlink" href="#a-note-on-how-to-approach-learning-to-code" title="Permalink to this headline">¶</a></h2>
+<p>Like any new skill, learning to code can be daunting.  If you’ve never coded or taken courses on logic before, you might be about to embark on a journey towards an entirely new way of thinking and approaching problem solving.  I’ve found four general principles to be useful:</p>
+<ol class="simple">
+<li><p>The first time you go through something, don’t expect to understand everything (or even anything) perfectly.  Sometimes going through a new lesson or example might seem like encountering a foreign language (hint: maybe because it <em>is</em>!).  Give yourself permission to relax and to <em>not</em> understand.  Not “getting it” the first time doesn’t reflect on your intelligence or potential.</p></li>
+<li><p>If you’re feeling lost, it’s important to notice your points of confusion (even if you don’t immediately correct or resolve them).  One of the most powerful ways of approaching coding is to break highly complex tasks down into successively simpler sub-tasks.  You don’t always need to understand the full scope of the problem you’re working on– you just need to understand enough to break off a tiny piece of the next step in the puzzle.  By the same token, approach <em>learning</em> as a problem solving journey.  Try to take stock of what you’re not understanding, and carefully separate the material into “things you know (sufficiently well)” and “things you don’t know”.  Use what you know to help further sub-divide the unknowns.  Your goal should be to work towards an ability to precisely formulate questions.  That will help you resolve your understanding (either by searching for the answer online or by asking others for help).  Particularly when you’re starting out, it’s also OK not to know how to break your questions down into smaller chunks.  You’ll pick it up as you go.</p></li>
+<li><p>The best predictor of successfully learning to code is <em>persistence</em>.  Simply allowing yourself to be exposed to code (by reading and writing it, and by going through tutorials, etc.) will improve your ability to understand, even if those improvements aren’t immediately obvious or noticeable to you.  One way to view the learning process is as a way of building up your <em>fluency</em> (through repeated exposure) in addition to adding the basic building blocks and vocabulary to your skill set.  Even if you’re not adding new building blocks, simply gaining more exposure will improve your fluency.  Over time this will make it easier for you to add new building blocks.  Each new step you take in the learning process will allow you to gain a deeper understanding of previously learned material, and will help you to learn new material that much faster.</p></li>
+<li><p>The best way to learn to code is to <em>write code</em>.  When you’re reading through a new tutorial or about a new idea, keep a scratch notebook open and code as you learn (<code class="docutils literal notranslate"><span class="pre">control</span> <span class="pre">+</span> <span class="pre">alt</span> <span class="pre">+</span> <span class="pre">n</span></code> or <code class="docutils literal notranslate"><span class="pre">control</span> <span class="pre">+</span> <span class="pre">option</span> <span class="pre">+</span> <span class="pre">n</span></code>).  And once you’ve learned about something new, try to apply it to a question or problem you’re excited about.  The potential applications of any given idea are nearly limitless.  Allow yourself the freedom to get creative, make mistakes, break things, and try out new stuff!</p></li>
+</ol>
+</div>
+</div>
+<div class="section" id="what-does-it-mean-to-code">
+<h1>What does it mean to ‘code’?<a class="headerlink" href="#what-does-it-mean-to-code" title="Permalink to this headline">¶</a></h1>
+<p>Coding, or <a class="reference external" href="https://en.wikipedia.org/wiki/Computer_programming">computer programming</a>, is the process of developing a set of instructions for a computer to run, typically with the goal of accomplishing some task (e.g. carrying out one or more calculations).</p>
+<p>In this course we’ll be writing code in <a class="reference external" href="https://en.wikipedia.org/wiki/Python_(programming_language)">Python</a>.  Python is considered a <a class="reference external" href="https://en.wikipedia.org/wiki/High-level_programming_language">high-level</a> computer language.  This means that, as the programmer, you can often ignore the particulars of how specifically your inputted instructions are carried out by the computer.  Rather, those particulars are abstracted away.  Instead, you’ll be describing at a “higher” (less detailed, more goal-oriented) level.  By contrast, <a class="reference external" href="https://en.wikipedia.org/wiki/Low-level_programming_language">lower-level languages</a> such as <a class="reference external" href="https://en.wikipedia.org/wiki/C_(programming_language)">C</a> require programmers to consider how different quantities are stored in the computer’s <a class="reference external" href="https://en.wikipedia.org/wiki/Random-access_memory">memory</a>, and even lower-level languages such as <a class="reference external" href="https://en.wikipedia.org/wiki/Assembly_language">assembly code</a> require programmers to make use of the specific set of instructions available on the <a class="reference external" href="https://en.wikipedia.org/wiki/Central_processing_unit">CPU</a>.</p>
+<div class="section" id="how-to-think-about-coding">
+<h2>How to think about coding<a class="headerlink" href="#how-to-think-about-coding" title="Permalink to this headline">¶</a></h2>
+<p>In Python, as with most computer languages, there are only a few types of commands and instructions that you need to learn about.  In fact, you’ll learn about most of them in this notebook.  Compared with human languages, which typically have many words and complex grammars, computer languages are relatively simple (with respect to their vocabularies and grammars).  What makes Python (and other computer languages) so powerful is <a class="reference external" href="https://en.wikipedia.org/wiki/Principle_of_compositionality">compositionality</a>: the idea that you can build increasingly complicated functionality out of simpler building blocks.  Everything computers do– your operating system, the Internet, self-driving cars, computing the millionth digit of pi, etc.– are all reducible to the same basic sets of instructions.  Just like how human language words may be recombined and built-upon to communicate an infinite variety of ideas, the elements of computer languages may be recombined in similarly flexible and extensible ways.  Whereas the goal of human language is to communicate ideas to other humans, the goal of computer language is to describe a set of calculations for the CPU to carry out in order to accomplish one or more tasks.</p>
+<p>Once you learn the basic set of instructions, the entire “trick” of coding is to figure out how to string them together into meaningful code that carries out the desired tasks.  Analogous to how there are many ways of “saying the same thing” in human languages, there are often many ways of writing code that carries out the same set of computations.  And just like there are more (or less) efficient ways of conveying information to other people using human language, there are often more (or less) efficient ways of composing computer instructions.</p>
+<p>In the remainder of this notebook you’ll learn about the major “words” and “building blocks” of Python programs.</p>
+</div>
+</div>
+<div class="section" id="using-python-like-a-calculator">
+<h1>Using Python like a calculator<a class="headerlink" href="#using-python-like-a-calculator" title="Permalink to this headline">¶</a></h1>
+<p>In the <a class="reference external" href="https://github.com/ContextLab/cs-for-psych/blob/master/slides/module_1/introduction_and_overview.ipynb">Introduction and Overview notebook</a>, we conceptualized thinking about Python like a calculator.  For example, you can type in an equation, and when you “run” that line of code (<code class="docutils literal notranslate"><span class="pre">shift</span> <span class="pre">+</span> <span class="pre">return</span></code>) the answer is printed to the console window.  Explore which operators (addition, subtraction, etc.) are supported and see if you can find some that aren’t!  Also try to get a sense of the <a class="reference external" href="https://en.wikipedia.org/wiki/Order_of_operations">order of operations</a> that determines which quantities are grouped and what order they are evaluated in.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">3</span> <span class="o">*</span> <span class="mi">5</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>15
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="mi">6</span> <span class="o">/</span> <span class="mi">3</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="mi">4</span> <span class="o">*</span> <span class="mi">2</span> <span class="o">-</span> <span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>15.0
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="scripting">
+<h2>Scripting<a class="headerlink" href="#scripting" title="Permalink to this headline">¶</a></h2>
+<p>Python is a <a class="reference external" href="https://en.wikipedia.org/wiki/Scripting_language">scripting language</a>.  This means that you could get the same functionality from a Python program by typing and running each line of the program in sequence, just like you might carry out a series of calculations by hand on a traditional calculator.  (By contrast, <a class="reference external" href="https://en.wikipedia.org/wiki/Compiled_language">compiled languages</a> do not have this property.)</p>
+<p>It can be useful to think of Python code as a script (a set of commands that are executed in sequence, from top to bottom) when you’re designing a program.  Your job is to come up with the set of calculations that, when carried out in sequence, accomplish your desired goal.</p>
+</div>
+</div>
+<div class="section" id="variables">
+<h1>Variables<a class="headerlink" href="#variables" title="Permalink to this headline">¶</a></h1>
+<p>A <em>variable</em> is a named object– i.e. a thing that Python knows has a particular value.  It’s often useful to write code that incorporates named variables wherever possible (rather than hard-coding in specific numerical values).  This way of abstracting away the specific values from the set of operations you want to perform on those values allows you to use the same line of code to perform different functions.</p>
+<p>To define a variable, you use the <em>assignment</em> operator, <code class="docutils literal notranslate"><span class="pre">=</span></code>.  The name of your variable goes on the left side of the assignment operator, and the value you want to assign to that variable goes on the right side.  Play around with the example below to see how it works.  For example, change the values of <code class="docutils literal notranslate"><span class="pre">x</span></code> and <code class="docutils literal notranslate"><span class="pre">y</span></code> and see how the answers change.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="n">y</span> <span class="o">=</span> <span class="mi">4</span>
+<span class="n">x</span> <span class="o">+</span> <span class="n">y</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>7
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="what-are-variables-used-for">
+<h2>What are variables used for?<a class="headerlink" href="#what-are-variables-used-for" title="Permalink to this headline">¶</a></h2>
+<p>One way to think about variables is like the <a class="reference external" href="https://en.wikipedia.org/wiki/Calculator#Memory">memory function</a> on a traditional calculator.  It gives you a way of storing some value that might be useful later on.  By naming that stored quantity you (as the programmer) can keep track of what that quantity means and how it’s going to be used later on in your program.</p>
+</div>
+</div>
+<div class="section" id="operators">
+<h1>Operators<a class="headerlink" href="#operators" title="Permalink to this headline">¶</a></h1>
+<p>In addition to the assignment operator (<code class="docutils literal notranslate"><span class="pre">=</span></code>), you have already been using several other operators in the code above:</p>
+<ul class="simple">
+<li><p>the addition operator (<code class="docutils literal notranslate"><span class="pre">+</span></code>, as in <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">+</span> <span class="pre">b</span></code>)</p></li>
+<li><p>the multiplication operator (<code class="docutils literal notranslate"><span class="pre">*</span></code>, as in <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">*</span> <span class="pre">b</span></code>)</p></li>
+</ul>
+<p>There are a number of other useful operators:</p>
+<ul class="simple">
+<li><p>the exponent operator (<code class="docutils literal notranslate"><span class="pre">**</span></code>, as in <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">**</span> <span class="pre">b</span></code>) raises the value of the first thing (<code class="docutils literal notranslate"><span class="pre">a</span></code>) to the power of the second thing (<code class="docutils literal notranslate"><span class="pre">b</span></code>)</p></li>
+<li><p>the subtraction operator (<code class="docutils literal notranslate"><span class="pre">-</span></code>, as in <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">-</span> <span class="pre">b</span></code>)</p></li>
+<li><p>the division operator (<code class="docutils literal notranslate"><span class="pre">/</span></code>, as in <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">/</span> <span class="pre">b</span></code>)</p></li>
+<li><p>the modulus operator (<code class="docutils literal notranslate"><span class="pre">%</span></code>, as in <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">%</span> <span class="pre">b</span></code>) computes the remainder when the first number is divided by the second number</p></li>
+<li><p>the floor division operator (<code class="docutils literal notranslate"><span class="pre">//</span></code>, as in <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">//</span> <span class="pre">b</span></code>) divides the first number by the second number and then removes any fractional parts of the result</p></li>
+<li><p>the negation operator (<code class="docutils literal notranslate"><span class="pre">-</span></code>, as in <code class="docutils literal notranslate"><span class="pre">-a</span></code>) placed before a single number or variable multipies its value by -1</p></li>
+<li><p>the unary plus operator (<code class="docutils literal notranslate"><span class="pre">+</span></code>, as in <code class="docutils literal notranslate"><span class="pre">+a</span></code>) placed before a single number or variable multiplies its value by 1.  This is rarely used.</p>
+<ul>
+<li><p>Some Python functions treat <code class="docutils literal notranslate"><span class="pre">+a</span></code> and <code class="docutils literal notranslate"><span class="pre">a</span></code> differently.  One use of the unary operator is to provide a variable with the same value but that is distinguishable in certain use cases.</p></li>
+</ul>
+</li>
+<li><p>the add and operator (<code class="docutils literal notranslate"><span class="pre">+=</span></code>, as in <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">+=</span> <span class="pre">b</span></code>) is shorthand for <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">=</span> <span class="pre">a</span> <span class="pre">+</span> <span class="pre">b</span></code></p></li>
+<li><p>the subtract and operator (<code class="docutils literal notranslate"><span class="pre">-=</span></code>, as in <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">-=</span> <span class="pre">b</span></code>) is shorthand for <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">=</span> <span class="pre">a</span> <span class="pre">-</span> <span class="pre">b</span></code></p></li>
+<li><p>the multiply and operator (<code class="docutils literal notranslate"><span class="pre">*=</span></code>, as in <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">*=</span> <span class="pre">b</span></code>) is shorthand for <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">=</span> <span class="pre">a</span> <span class="pre">*</span> <span class="pre">b</span></code></p></li>
+<li><p>the exponent and operator (<code class="docutils literal notranslate"><span class="pre">**=</span></code>, as in <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">**=</span> <span class="pre">b</span></code>) is shorthand for <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">=</span> <span class="pre">a</span> <span class="pre">**</span> <span class="pre">b</span></code></p></li>
+<li><p>the modulus and operator (<code class="docutils literal notranslate"><span class="pre">%=</span></code>, as in <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">%=</span> <span class="pre">b</span></code>) is shorthand for <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">=</span> <span class="pre">a</span> <span class="pre">%</span> <span class="pre">b</span></code></p></li>
+<li><p>the floor division and operator (<code class="docutils literal notranslate"><span class="pre">//=</span></code>, as in <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">//=</span> <span class="pre">b</span></code>) is shorthand for <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">=</span> <span class="pre">a</span> <span class="pre">//</span> <span class="pre">b</span></code></p></li>
+</ul>
+<div class="section" id="logical-operators">
+<h2>Logical operators<a class="headerlink" href="#logical-operators" title="Permalink to this headline">¶</a></h2>
+<p>We will find that it is often useful to know if a particular set of circumstances is true at a particular point in the course of running our computer program.  For example, maybe we would want to run a particular set of calculations in one scenario but a different set of calculations in another scenario.  <em>Logical</em> operators are operators that work only on <em>Boolean</em> variables– i.e. variables that take on special values, <code class="docutils literal notranslate"><span class="pre">True</span></code> (or 1) and <code class="docutils literal notranslate"><span class="pre">False</span></code> (or 0).  Logical operators always yield either <code class="docutils literal notranslate"><span class="pre">True</span></code> or <code class="docutils literal notranslate"><span class="pre">False</span></code>:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">or</span></code>: <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">or</span> <span class="pre">b</span></code> is <code class="docutils literal notranslate"><span class="pre">True</span></code> if <em>either</em> <code class="docutils literal notranslate"><span class="pre">a</span></code> is <code class="docutils literal notranslate"><span class="pre">True</span></code> <em>or</em> if <code class="docutils literal notranslate"><span class="pre">b</span></code> is <code class="docutils literal notranslate"><span class="pre">True</span></code>, and <code class="docutils literal notranslate"><span class="pre">False</span></code> otherwise.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">and</span></code>: <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">and</span> <span class="pre">b</span></code> is <code class="docutils literal notranslate"><span class="pre">True</span></code> if both <code class="docutils literal notranslate"><span class="pre">a</span></code> is <code class="docutils literal notranslate"><span class="pre">True</span></code> <em>and</em> <code class="docutils literal notranslate"><span class="pre">b</span></code> is <code class="docutils literal notranslate"><span class="pre">True</span></code>, and is <code class="docutils literal notranslate"><span class="pre">False</span></code> otherwise.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">not</span></code>: <code class="docutils literal notranslate"><span class="pre">not</span> <span class="pre">a</span></code> is <code class="docutils literal notranslate"><span class="pre">True</span></code> if <code class="docutils literal notranslate"><span class="pre">a</span></code> is <code class="docutils literal notranslate"><span class="pre">False</span></code>, and is <code class="docutils literal notranslate"><span class="pre">False</span></code> if <code class="docutils literal notranslate"><span class="pre">a</span></code> is <code class="docutils literal notranslate"><span class="pre">True</span></code>.</p></li>
+</ul>
+<p>Logical operators play a very important role in computer programs.  One common use of logical operators is in determining whether (or when) a particular computer instruction will run.  Logical operators may also be combined to define complex tests.  For example, you might want to know if either <code class="docutils literal notranslate"><span class="pre">a</span></code> or <code class="docutils literal notranslate"><span class="pre">b</span></code> (but not <code class="docutils literal notranslate"><span class="pre">c</span></code>) are True:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">d</span> <span class="o">=</span> <span class="p">(</span><span class="n">a</span> <span class="ow">or</span> <span class="n">b</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="ow">not</span> <span class="n">c</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="equality-operator">
+<h2>Equality operator<a class="headerlink" href="#equality-operator" title="Permalink to this headline">¶</a></h2>
+<p>Sometimes we want to know whether a particular variable has a specific value.  To do this, we use the <em>equality operator</em>, <code class="docutils literal notranslate"><span class="pre">==</span></code>:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">==</span> <span class="pre">b</span></code> is <code class="docutils literal notranslate"><span class="pre">True</span></code> if <code class="docutils literal notranslate"><span class="pre">a</span></code> has the same value as <code class="docutils literal notranslate"><span class="pre">b</span></code>, and is <code class="docutils literal notranslate"><span class="pre">False</span></code> otherwise.  One common use of the equality operator is in determining whether a particular condition has been satisfied.  For example, you might want to execute an instruction 10 times, with a counter (<code class="docutils literal notranslate"><span class="pre">i</span></code>) that keeps track of how many times the instruction has been executed.  You could include a check of whether <code class="docutils literal notranslate"><span class="pre">i</span> <span class="pre">==</span> <span class="pre">10</span></code> to determine whether the program should execute the instruction again or not.</p></li>
+</ul>
+<p>As a shorthand for <code class="docutils literal notranslate"><span class="pre">not</span> <span class="pre">(a</span> <span class="pre">==</span> <span class="pre">b)</span></code>, Python also provides an inequality operator, <code class="docutils literal notranslate"><span class="pre">!=</span></code>.  The statement <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">!=</span> <span class="pre">b</span></code> is <code class="docutils literal notranslate"><span class="pre">True</span></code> if <code class="docutils literal notranslate"><span class="pre">a</span></code> does <em>not</em> have the same value as <code class="docutils literal notranslate"><span class="pre">b</span></code>.  The <code class="docutils literal notranslate"><span class="pre">&lt;&gt;</span></code> operator (as in <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">&lt;&gt;</span> <span class="pre">b</span></code>) is similar to <code class="docutils literal notranslate"><span class="pre">!=</span></code>, but is rarely used in practice.</p>
+</div>
+<div class="section" id="other-comparison-operators">
+<h2>Other comparison operators<a class="headerlink" href="#other-comparison-operators" title="Permalink to this headline">¶</a></h2>
+<p>Python also includes operators that allow comparisons of different values:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">&gt;</span> <span class="pre">b</span></code> is <code class="docutils literal notranslate"><span class="pre">True</span></code> if <code class="docutils literal notranslate"><span class="pre">a</span></code> is strictly greater than <code class="docutils literal notranslate"><span class="pre">b</span></code> and <code class="docutils literal notranslate"><span class="pre">False</span></code> otherwise</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">&gt;=</span> <span class="pre">b</span></code> is <code class="docutils literal notranslate"><span class="pre">True</span></code> if <code class="docutils literal notranslate"><span class="pre">a</span></code> is greater than or equal to <code class="docutils literal notranslate"><span class="pre">b</span></code> and <code class="docutils literal notranslate"><span class="pre">False</span></code> otherwise</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">&lt;</span> <span class="pre">b</span></code> is <code class="docutils literal notranslate"><span class="pre">True</span></code> if <code class="docutils literal notranslate"><span class="pre">a</span></code> is strictly less than <code class="docutils literal notranslate"><span class="pre">b</span></code> and <code class="docutils literal notranslate"><span class="pre">False</span></code> otherwise</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">&lt;=</span> <span class="pre">b</span></code> is <code class="docutils literal notranslate"><span class="pre">True</span></code> if <code class="docutils literal notranslate"><span class="pre">a</span></code> is less than or equal to <code class="docutils literal notranslate"><span class="pre">b</span></code> and <code class="docutils literal notranslate"><span class="pre">False</span></code> otherwise</p></li>
+</ul>
+</div>
+<div class="section" id="what-are-operators-used-for">
+<h2>What are operators used for?<a class="headerlink" href="#what-are-operators-used-for" title="Permalink to this headline">¶</a></h2>
+<p>Operators are how you get different quantities to “interact” so that you can compute with them.  For example, the addition operator takes two quantities (variables), adds them together, and gives you the resulting sum as a new (single) quantity.  You can assign this sum to a new variable so that you can use or refer to it later:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">c</span> <span class="o">=</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
+</pre></div>
+</div>
+<p>In this way, operators are the “verbs” of computer languages.</p>
+</div>
+</div>
+<div class="section" id="comments-and-print-statements">
+<h1>Comments and <code class="docutils literal notranslate"><span class="pre">print</span></code> statements<a class="headerlink" href="#comments-and-print-statements" title="Permalink to this headline">¶</a></h1>
+<p>Sometimes it’s useful to write little notes to yourself (and other people who might want to read your code) to keep track of what the different parts of your code do.  There are two ways to add notes to your code:</p>
+<ul class="simple">
+<li><p>You can create an “inline comment” by adding a ‘#’ followed by the text of your comment.</p></li>
+<li><p>You can create a “block comment” by adding a set of triple quotes, followed by one or more lines of text, and then followed by a second set of of triple quotes.  You can use single quotes (‘) or double quotes (“) to denote a block comment, as long as you start and end your block comment with the same type of quote.</p></li>
+</ul>
+<p>The Python interpreter (i.e. the computing engine that turns your computer code into executed instructions) ignores all comments when it is running your code.</p>
+<p>You can also tell the interpreter to print out the value of something by using the <code class="docutils literal notranslate"><span class="pre">print</span></code> function, as illustrated below.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">This block of text is a block comment, enclosed in triple quotes.  The comment</span>
+<span class="sd">can span multiple lines. Anything written inside of a comment will be ignored by</span>
+<span class="sd">the computer when the program runs.</span>
+<span class="sd">&#39;&#39;&#39;</span>
+
+<span class="n">pi</span> <span class="o">=</span> <span class="mf">3.14159265359</span> <span class="c1">#ratio of a circle&#39;s circumference to its diameter</span>
+
+<span class="n">r1</span> <span class="o">=</span> <span class="mi">6</span> <span class="c1">#radius of circle 1</span>
+<span class="n">r2</span> <span class="o">=</span> <span class="mi">8</span> <span class="c1">#radius of circle 2</span>
+
+<span class="c1">#the ** operator means &quot;raise the value on the left to the power of the value of</span>
+<span class="c1">#the thing on the right&quot;.  Notice how order of operations comes into effect.</span>
+<span class="n">area1</span> <span class="o">=</span> <span class="n">pi</span> <span class="o">*</span> <span class="n">r1</span> <span class="o">**</span> <span class="mi">2</span>
+<span class="n">area2</span> <span class="o">=</span> <span class="n">pi</span> <span class="o">*</span> <span class="n">r2</span> <span class="o">**</span> <span class="mi">2</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">area1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">area2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>113.09733552924
+201.06192982976
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="if-statements">
+<h1><code class="docutils literal notranslate"><span class="pre">if</span></code> statements<a class="headerlink" href="#if-statements" title="Permalink to this headline">¶</a></h1>
+<p>Python contains a number of <em>keywords</em> that allow you to control the flow of instructions that the computer executes.  One of the main keywords is the <code class="docutils literal notranslate"><span class="pre">if</span></code> statement.  It runs one or more lines of code only <em>if</em> the quantity being evaluated is <code class="docutils literal notranslate"><span class="pre">True</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="k">if</span> <span class="n">x</span> <span class="o">==</span> <span class="mi">3</span><span class="p">:</span> <span class="c1">#notice the colon</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Run this line&#39;</span><span class="p">)</span> <span class="c1">#all lines in the body of the if statement are indented</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Run this line
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="elif-and-else-statements">
+<h1><code class="docutils literal notranslate"><span class="pre">elif</span></code> and <code class="docutils literal notranslate"><span class="pre">else</span></code> statements<a class="headerlink" href="#elif-and-else-statements" title="Permalink to this headline">¶</a></h1>
+<p>Whereas the body (indented part) of an <code class="docutils literal notranslate"><span class="pre">if</span></code> statement will simply be skipped if the evaluated function passed to an <code class="docutils literal notranslate"><span class="pre">if</span></code> statement is <code class="docutils literal notranslate"><span class="pre">False</span></code>, you can also specify what to do under other possible circumstances:</p>
+<ul class="simple">
+<li><p>The <code class="docutils literal notranslate"><span class="pre">elif</span></code> statement comes right after an <code class="docutils literal notranslate"><span class="pre">if</span></code> statement.  It allows you to specify an alternative set of conditions.  You can use multiple <code class="docutils literal notranslate"><span class="pre">elif</span></code> statements in sequence; once any of them evaluate to <code class="docutils literal notranslate"><span class="pre">True</span></code> the body of that statement is run and the sequence is aborted (no other <code class="docutils literal notranslate"><span class="pre">elif</span></code> statements are tested).</p></li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">else</span></code> keyword comes after an <code class="docutils literal notranslate"><span class="pre">if</span></code> statement and (optionally) one or more <code class="docutils literal notranslate"><span class="pre">elif</span></code> statments.  The body of an <code class="docutils literal notranslate"><span class="pre">else</span></code> statement runs only if none of the preceeding <code class="docutils literal notranslate"><span class="pre">if</span></code> or <code class="docutils literal notranslate"><span class="pre">elif</span></code> statements ran.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">my_name</span> <span class="o">=</span> <span class="s1">&#39;Shawn Rhoads&#39;</span>
+<span class="k">if</span> <span class="n">my_name</span> <span class="o">==</span> <span class="s1">&#39;Shawn Rhoads&#39;</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;You are the course instructor.&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;You are also a Postdoc.&#39;</span><span class="p">)</span>
+<span class="k">elif</span> <span class="n">my_name</span> <span class="o">==</span> <span class="s1">&#39;Xiaosi Gu&#39;</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;You are the current Director of the Center for Computational Psychiatry.&#39;</span><span class="p">)</span>
+<span class="k">elif</span> <span class="n">my_name</span> <span class="o">==</span> <span class="s1">&#39;Marie Curie&#39;</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;You won two Nobel Prizes.&#39;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;I don</span><span class="se">\&#39;</span><span class="s1">t know you-- nice to meet you!&#39;</span><span class="p">)</span> <span class="c1">#note the &quot;escape character&quot; before the single quote</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>You are the course instructor.
+You are also a Postdoc.
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="what-are-if-elif-and-else-statements-used-for">
+<h2>What are <code class="docutils literal notranslate"><span class="pre">if</span></code>, <code class="docutils literal notranslate"><span class="pre">elif</span></code>, and <code class="docutils literal notranslate"><span class="pre">else</span></code> statements used for?<a class="headerlink" href="#what-are-if-elif-and-else-statements-used-for" title="Permalink to this headline">¶</a></h2>
+<p>These statements help to control the <em>flow</em> of a program.  Specifically, they allow you to specify the circumstances under which a particular instruction will be run (or skipped).  In the preceeding example, the value of the <code class="docutils literal notranslate"><span class="pre">my_name</span></code> variable will determine which statement gets printed out.  The other statements are skipped over.  Try experimenting!  For example, in the previous cell you might try:</p>
+<ul class="simple">
+<li><p>changing the value of <code class="docutils literal notranslate"><span class="pre">my_name</span></code></p></li>
+<li><p>adding or removing instructions within the body of the <code class="docutils literal notranslate"><span class="pre">if</span></code>, <code class="docutils literal notranslate"><span class="pre">elif</span></code>, or <code class="docutils literal notranslate"><span class="pre">else</span></code> statements</p></li>
+<li><p>adding additional <code class="docutils literal notranslate"><span class="pre">elif</span></code> conditions</p></li>
+</ul>
+<p>What do you think would happen if you replaced some of the <code class="docutils literal notranslate"><span class="pre">elif</span></code> statements with <code class="docutils literal notranslate"><span class="pre">if</span></code> statements?  Can you figure out what’s different about how the program runs?</p>
+</div>
+</div>
+<div class="section" id="datatypes">
+<h1>Datatypes<a class="headerlink" href="#datatypes" title="Permalink to this headline">¶</a></h1>
+<p>The computational elements that Python “computes with” can take on different types of values, called <em>datatypes</em>.  You’ve gotten to see a few different datatypes in above examples; here are some of the datatypes you’ll likely encounter frequently:</p>
+<ul class="simple">
+<li><p><strong>Integers</strong> (<code class="docutils literal notranslate"><span class="pre">int</span></code>): non-decimal scalar values (e.g., <code class="docutils literal notranslate"><span class="pre">-50</span></code>, <code class="docutils literal notranslate"><span class="pre">326</span></code>, <code class="docutils literal notranslate"><span class="pre">0</span></code>, <code class="docutils literal notranslate"><span class="pre">2500</span></code>, etc.)</p></li>
+<li><p><strong>Floating points numbers</strong> (<code class="docutils literal notranslate"><span class="pre">float</span></code>): Real-valued scalars (e.g., <code class="docutils literal notranslate"><span class="pre">1.2345</span></code>, <code class="docutils literal notranslate"><span class="pre">-10.923</span></code>, <code class="docutils literal notranslate"><span class="pre">0.01</span></code>, <code class="docutils literal notranslate"><span class="pre">2.0</span></code>, etc.).</p></li>
+<li><p><strong>Boolean</strong> (<code class="docutils literal notranslate"><span class="pre">bool</span></code>): <code class="docutils literal notranslate"><span class="pre">True</span></code> or <code class="docutils literal notranslate"><span class="pre">False</span></code>.</p></li>
+<li><p><strong>Strings</strong> (<code class="docutils literal notranslate"><span class="pre">str</span></code>): sequences of characters or symbols, enclosed in single or double quotes (e.g., <code class="docutils literal notranslate"><span class="pre">'hello'</span></code>, <code class="docutils literal notranslate"><span class="pre">'This</span> <span class="pre">is</span> <span class="pre">a</span> <span class="pre">single</span> <span class="pre">quoted</span> <span class="pre">string!'</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;This</span> <span class="pre">is</span> <span class="pre">a</span> <span class="pre">double</span> <span class="pre">quoted</span> <span class="pre">string...&quot;</span></code>, etc.).</p></li>
+<li><p><strong>Lists</strong> (<code class="docutils literal notranslate"><span class="pre">list</span></code>): an ordered set of objects (each element of the set can be of any datatype, including a list!).  Example; <code class="docutils literal notranslate"><span class="pre">['apple',</span> <span class="pre">7,</span> <span class="pre">'3',</span> <span class="pre">[6,</span> <span class="pre">'twenty</span> <span class="pre">five',</span> <span class="pre">-65.4321],</span> <span class="pre">7]</span></code></p></li>
+<li><p><strong>Dictionary</strong> (<code class="docutils literal notranslate"><span class="pre">dict</span></code>): an unordered set of named properties that each has an assigned value (each value can be of any datatype, including a Dictionary!).  Example: <code class="docutils literal notranslate"><span class="pre">{'name':</span> <span class="pre">'Introduction</span> <span class="pre">to</span> <span class="pre">Programming</span> <span class="pre">for</span> <span class="pre">Psychological</span> <span class="pre">Scientists',</span> <span class="pre">'number':</span> <span class="pre">32,</span> <span class="pre">'department':</span> <span class="pre">'PSYC',</span> <span class="pre">'url':</span> <span class="pre">'https://github.com/ContextLab/cs-for-psych'}</span></code>.</p></li>
+<li><p><strong>Null value</strong> (<code class="docutils literal notranslate"><span class="pre">None</span></code>): a special datatype that doesn’t have any specified value.  Useful as a “default” value, e.g. before you have enough information to compute the answer.</p></li>
+</ul>
+<div class="section" id="typecasting">
+<h2>Typecasting<a class="headerlink" href="#typecasting" title="Permalink to this headline">¶</a></h2>
+<p>Many datatypes may be converted to other datatypes using typecasting.  For example, <code class="docutils literal notranslate"><span class="pre">float(3)</span></code> converts the integer <code class="docutils literal notranslate"><span class="pre">3</span></code> into a floating point decimal.  In the next cell, explore what happens when you try to convert between different datatypes.  You can use the <code class="docutils literal notranslate"><span class="pre">type</span></code> function to ask Python what the datatype of a given entity is.  For example, calling <code class="docutils literal notranslate"><span class="pre">print</span></code> on the output of <code class="docutils literal notranslate"><span class="pre">type</span></code> will display the datatype of whatever you pass to <code class="docutils literal notranslate"><span class="pre">type</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="mi">3</span><span class="p">))</span>
+<span class="nb">list</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="mf">3.4</span><span class="p">))))</span> <span class="c1">#can you figure out what&#39;s happening here?</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;int&#39;&gt;
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;3&#39;, &#39;.&#39;, &#39;0&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Once you figure out what’s happening in the line above, try to make a prediction: what would the following line return?</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">list</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="mf">3.9</span><span class="p">))))</span>
+</pre></div>
+</div>
+<p>Now test your prediction.  What do you think is happening?</p>
+</div>
+<div class="section" id="what-are-datatypes-used-for">
+<h2>What are datatypes used for?<a class="headerlink" href="#what-are-datatypes-used-for" title="Permalink to this headline">¶</a></h2>
+<p>The computer executing your code needs to know how to handle the values you input and the answers you “get out” of the different computations in your program.  Although Python will try to execute instructions without considering the datatypes of the variables, your code will crash (fail to run and output an error message) if Python can’t figure out how to apply the given operators to the given data types.  As a programmer, it is often useful to consider what datatypes you are expecting different variables to take on at different points in your program.  For example:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="s1">&#39;This is a test&#39;</span>
+
+<span class="k">if</span> <span class="nb">type</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">==</span> <span class="nb">str</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;x is a string&#39;</span><span class="p">)</span>
+<span class="k">elif</span> <span class="nb">type</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">==</span> <span class="nb">int</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;x is an integer&#39;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;I&#39;m not sure how to handle x!&quot;</span><span class="p">)</span> <span class="c1">#note use of double quotes allows us to have a single quote in the printed string (without an escape character)!</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>x is a string
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="functions">
+<h1>Functions<a class="headerlink" href="#functions" title="Permalink to this headline">¶</a></h1>
+<p>We’ve already come across several functions, such as <code class="docutils literal notranslate"><span class="pre">print</span></code>, <code class="docutils literal notranslate"><span class="pre">type</span></code>, and various operators (e.g. <code class="docutils literal notranslate"><span class="pre">+</span></code>, <code class="docutils literal notranslate"><span class="pre">-</span></code>, <code class="docutils literal notranslate"><span class="pre">*</span></code>, <code class="docutils literal notranslate"><span class="pre">/</span></code>, <code class="docutils literal notranslate"><span class="pre">**</span></code>, <code class="docutils literal notranslate"><span class="pre">%</span></code>, etc.– operators are a special type of function.).  A <em>function</em> is a special datatype that takes in zero or more <em>arguments</em> (i.e. inputs) and produces zero or more actions or outputs.</p>
+<p>Sometimes a function is written so that its main purpose is to carry out some action, such as saving a file or generating a figure.  In other cases, the purpose of a function is to carry out some computation on the input arguments.  The syntax for defining a function is:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="o">&lt;</span><span class="n">function_name</span><span class="o">&gt;</span><span class="p">(</span><span class="n">arg1</span><span class="p">,</span> <span class="n">arg2</span><span class="p">,</span> <span class="o">...</span><span class="p">,</span> <span class="n">argN</span><span class="p">):</span>
+  <span class="o">&lt;</span><span class="n">instruction</span> <span class="mi">1</span><span class="o">&gt;</span>
+  <span class="o">&lt;</span><span class="n">instruction</span> <span class="mi">2</span><span class="o">&gt;</span>
+  <span class="o">...</span>
+  <span class="o">&lt;</span><span class="n">instruction</span> <span class="n">M</span><span class="o">&gt;</span>
+  <span class="k">return</span> <span class="o">&lt;</span><span class="n">value</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<p>Here the <code class="docutils literal notranslate"><span class="pre">def</span></code> command tells Python that we’ll be defining a new function called <code class="docutils literal notranslate"><span class="pre">&lt;function_name&gt;</span></code>.  The function will take in a list of arguments (<code class="docutils literal notranslate"><span class="pre">arg1</span></code>, <code class="docutils literal notranslate"><span class="pre">arg2</span></code>, <code class="docutils literal notranslate"><span class="pre">arg3</span></code>, etc.), and carry out some operations.  Finally, the <code class="docutils literal notranslate"><span class="pre">return</span></code> command tells Python what the value of the function itself is, given the inputs that were passed to it.  If the <code class="docutils literal notranslate"><span class="pre">return</span></code> line is ommitted, then the function will evaluate to <code class="docutils literal notranslate"><span class="pre">None</span></code> by default.  (Note: the body of your function definition needs to contain at least one line of code, or the interpreter will throw an error.)  The next cell contains an example function definition.</p>
+<p>Note that function definitions may be nested– in other words, the instructions specified in the body of a function definition may themselves be function definitions!</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">square</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">square</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">square</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">square</span><span class="p">(</span><span class="mi">3</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1
+4
+9
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="what-are-functions-used-for">
+<h2>What are functions used for?<a class="headerlink" href="#what-are-functions-used-for" title="Permalink to this headline">¶</a></h2>
+<p>Functions are the computational construct that allows you to compose  sequences of instructions together in increasingly complex ways.  For example, suppose you wanted to implement the power operator (<code class="docutils literal notranslate"><span class="pre">**</span></code>) yourself, only knowing about the multiplication (<code class="docutils literal notranslate"><span class="pre">*</span></code>) operator.  You could do something like this:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">power</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">    raise x to the nth power</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="o">==</span> <span class="nb">int</span><span class="p">):</span>
+        <span class="k">raise</span><span class="p">(</span><span class="ne">Exception</span><span class="p">(</span><span class="s2">&quot;I don&#39;t know how to handle non-integer powers&quot;</span><span class="p">))</span> <span class="c1">#prints out an error message!</span>
+
+  <span class="c1">#why are each of these control flow statements needed?</span>
+    <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mi">1</span>
+    <span class="k">elif</span> <span class="n">n</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mi">1</span> <span class="o">/</span> <span class="n">power</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="o">-</span><span class="n">n</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">x</span> <span class="o">*</span> <span class="n">power</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="c1">#this line is the main &quot;workhorse&quot; of the function-- why?</span>
+
+<span class="c1">#test out a few examples</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">power</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">power</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">power</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="o">-</span><span class="mi">6</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">power</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mf">1.5</span><span class="p">))</span> <span class="c1">#should give an error.  What happens if you run this line before the other print statements?</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>9
+125
+1e-06
+</pre></div>
+</div>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">Exception</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">10</span><span class="o">-</span><span class="mi">3</span><span class="n">cff5d98c7cf</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">     </span><span class="mi">18</span> <span class="nb">print</span><span class="p">(</span><span class="n">power</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
+<span class="g g-Whitespace">     </span><span class="mi">19</span> <span class="nb">print</span><span class="p">(</span><span class="n">power</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="o">-</span><span class="mi">6</span><span class="p">))</span>
+<span class="ne">---&gt; </span><span class="mi">20</span> <span class="nb">print</span><span class="p">(</span><span class="n">power</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mf">1.5</span><span class="p">))</span> <span class="c1">#should give an error.  What happens if you run this line before the other print statements?</span>
+
+<span class="nn">&lt;ipython-input-10-3cff5d98c7cf&gt;</span> in <span class="ni">power</span><span class="nt">(x, n)</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span>     <span class="s1">&#39;&#39;&#39;</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span><span class="s1">     if not (type(n) == int):</span>
+<span class="ne">----&gt; </span><span class="mi">6</span><span class="s1">         raise(Exception(&quot;I don&#39;t know how to handle non-integer powers&quot;)) #prints out an error message!</span>
+<span class="g g-Whitespace">      </span><span class="mi">7</span><span class="s1"> </span>
+<span class="g g-Whitespace">      </span><span class="mi">8</span><span class="s1">   #why are each of these control flow statements needed?</span>
+
+<span class="ne">Exception</span>: I don&#39;t know how to handle non-integer powers
+</pre></div>
+</div>
+</div>
+</div>
+<p>Notice how the <code class="docutils literal notranslate"><span class="pre">power</span></code> function calls <em>itself</em>!  Function definitions that include self-references are an example of a techinique called <a class="reference external" href="https://en.wikipedia.org/wiki/Recursion_(computer_science)">recursion</a>.  Creating a recursive function allowed us to write “simpler” code.</p>
+<p>Despite that recursive functions may have few lines, they can nonetheless be tricky to understand.  As an exercise, try going carefully through the <code class="docutils literal notranslate"><span class="pre">power</span></code> function above and attempting to understand the code in detail.  For example:</p>
+<ul class="simple">
+<li><p>Can you follow how many times the <code class="docutils literal notranslate"><span class="pre">power</span></code> function is called in each of the above scenarios?</p></li>
+<li><p>Can you follow how and why the <code class="docutils literal notranslate"><span class="pre">power</span></code> function “works” (i.e., why it returns the first argument raised to the power of the second argument)?</p></li>
+</ul>
+<p>In exploring the above code, you may find it useful to use strategically placed <code class="docutils literal notranslate"><span class="pre">print</span></code> statements to display messages to indicate when different parts of the code are being reached and/or what the values of different variables are at different stages of the function’s execution.</p>
+<p>Another example of compositionality in functions is given in the next cell:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">add_and_print</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+    <span class="n">c</span> <span class="o">=</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;The answer is: &#39;</span><span class="p">,</span> <span class="n">c</span><span class="p">)</span>
+
+<span class="n">add_and_print</span><span class="p">(</span><span class="mf">3.2</span><span class="p">,</span> <span class="mf">1.4</span><span class="p">)</span>
+<span class="n">add_and_print</span><span class="p">(</span><span class="o">-</span><span class="mi">7</span><span class="p">,</span> <span class="mi">12</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The answer is:  4.6
+The answer is:  5
+</pre></div>
+</div>
+</div>
+</div>
+<p>Here the <code class="docutils literal notranslate"><span class="pre">add_and_print</span></code> function includes calls to both the addition (+) operator and the <code class="docutils literal notranslate"><span class="pre">print</span></code> function.  Combinining these into a single function allows us to execute the same sequence of commands with only a small amount of additional code (e.g., rather than re-writing the full set of instructions multiple times).  In turn, the <code class="docutils literal notranslate"><span class="pre">add_and_print</span></code> function could be incorporated into one or more other functions that carried out additional tasks.</p>
+</div>
+</div>
+<div class="section" id="loops">
+<h1>Loops<a class="headerlink" href="#loops" title="Permalink to this headline">¶</a></h1>
+<p>It’s often useful to carry out a similar operation many times.  For example, you might want to read in each file in a folder and apply the same basic set of commands to each file’s contents.  <em>Loops</em> provide a way of writing efficient and flexible code that involves doing an operation several times.</p>
+<p>There are two types of loops in Python: <code class="docutils literal notranslate"><span class="pre">for</span></code> loops and <code class="docutils literal notranslate"><span class="pre">while</span></code> loops.</p>
+<div class="section" id="for-loops">
+<h2><code class="docutils literal notranslate"><span class="pre">for</span></code> loops<a class="headerlink" href="#for-loops" title="Permalink to this headline">¶</a></h2>
+<p>This type of loop carries out one or more operations on each element in a given list.  The syntax is:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="nb">list</span> <span class="n">of</span> <span class="n">items</span><span class="o">&gt;</span><span class="p">:</span>
+  <span class="o">&lt;</span><span class="n">instruction</span> <span class="mi">1</span><span class="o">&gt;</span>
+  <span class="o">&lt;</span><span class="n">instruction</span> <span class="mi">2</span><span class="o">&gt;</span>
+  <span class="o">...</span>
+  <span class="o">&lt;</span><span class="n">instruction</span> <span class="n">N</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<p>where <code class="docutils literal notranslate"><span class="pre">i</span></code> is, in turn, set to the value of each element of the given list, and the instructions defined in the body of the loop are carried out.  (Here <code class="docutils literal notranslate"><span class="pre">i</span></code> is just an example variable name; in practice any variable name may be used as a stand-in for <code class="docutils literal notranslate"><span class="pre">i</span></code>.)  In other words, the instructions in a <code class="docutils literal notranslate"><span class="pre">for</span></code> loop are carried out <em>for</em> each value in the given list.</p>
+</div>
+<div class="section" id="while-loops">
+<h2><code class="docutils literal notranslate"><span class="pre">while</span></code> loops<a class="headerlink" href="#while-loops" title="Permalink to this headline">¶</a></h2>
+<p>This type of loop carries out one or more operations <em>while</em> the given logic statement holds true.  The syntax is:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">while</span> <span class="o">&lt;</span><span class="n">statement</span><span class="o">&gt;</span><span class="p">:</span>
+  <span class="o">&lt;</span><span class="n">instruction</span> <span class="mi">1</span><span class="o">&gt;</span>
+  <span class="o">&lt;</span><span class="n">instruction</span> <span class="mi">2</span><span class="o">&gt;</span>
+  <span class="o">...</span>
+  <span class="o">&lt;</span><span class="n">instruction</span> <span class="n">N</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<p>where <code class="docutils literal notranslate"><span class="pre">&lt;statement&gt;</span></code> (i.e. the <em>loop condition</em>) is any Python expression that can be typecast to a <code class="docutils literal notranslate"><span class="pre">bool</span></code>.  These types of loops are useful when the number of repetitions needed to carry out a particular task is not known in advance.</p>
+<div class="section" id="infinite-loops">
+<h3>Infinite loops<a class="headerlink" href="#infinite-loops" title="Permalink to this headline">¶</a></h3>
+<p>It is important that the statement used to determine whether the <code class="docutils literal notranslate"><span class="pre">while</span></code> loop continues with another execution or terminates is modified within the body of the loop.  In other words, the parameters of the condition that is being tested for should be adjusted each time the loop executes another cycle.  If the loop condition never changes its value from <code class="docutils literal notranslate"><span class="pre">True</span></code>, the <code class="docutils literal notranslate"><span class="pre">while</span></code> loop will continue looping forever; this is called an <code class="docutils literal notranslate"><span class="pre">infinite</span> <span class="pre">loop</span></code>.  Infinite loops will freeze your computer program until they are manually halted by pressing <code class="docutils literal notranslate"><span class="pre">ctrl</span> <span class="pre">+</span> <span class="pre">c</span></code> (or by selecting “Interrupt execution” from the Runtime menu above).</p>
+</div>
+<div class="section" id="nested-loops">
+<h3>Nested loops<a class="headerlink" href="#nested-loops" title="Permalink to this headline">¶</a></h3>
+<p>Both <code class="docutils literal notranslate"><span class="pre">for</span></code> and <code class="docutils literal notranslate"><span class="pre">while</span></code> loops may themselves contain other loops (of either type).  For example, nested loops can be useful when you want to carry out some sequence of operations on each <em>combination</em> of a set of things.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">,</span> <span class="s1">&#39;d&#39;</span><span class="p">]:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>a
+b
+c
+d
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">i</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="k">while</span> <span class="n">i</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="n">i</span> <span class="o">=</span> <span class="n">i</span> <span class="o">-</span> <span class="mi">1</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>9
+8
+7
+6
+5
+4
+3
+2
+1
+0
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="what-are-loops-used-for">
+<h2>What are loops used for?<a class="headerlink" href="#what-are-loops-used-for" title="Permalink to this headline">¶</a></h2>
+<p>Loops (like <code class="docutils literal notranslate"><span class="pre">if</span></code>, <code class="docutils literal notranslate"><span class="pre">elif</span></code>, and <code class="docutils literal notranslate"><span class="pre">else</span></code> statements) are the other major way of controling the flow of programs.  To think about: under what circumstances might you want to use recursion (like the <code class="docutils literal notranslate"><span class="pre">power</span></code> example above) versus loops?  For example, could you re-write the <code class="docutils literal notranslate"><span class="pre">power</span></code> function using a <code class="docutils literal notranslate"><span class="pre">for</span></code> or <code class="docutils literal notranslate"><span class="pre">while</span></code> loop?</p>
+</div>
+</div>
+<div class="section" id="importing-new-functions">
+<h1>Importing new functions<a class="headerlink" href="#importing-new-functions" title="Permalink to this headline">¶</a></h1>
+<p>Python comes with a set of built-in functions.  The <code class="docutils literal notranslate"><span class="pre">dir()</span></code> command lists the set of functions  currently available to call.  Starting out in this course you’ll be directly told which libraries you need to import and how to import them, and which functions within those libraries might be useful.  As the course progresses and you become familiar with the different libraries that are commonly used, you’ll start to gain an intuition for which libraries to import and/or how to search for libraries that might provide functionality that’s missing from the set of built-in functions.</p>
+<p>As an aside: if you dig deep enough, every Python library is built upon the same set of built-in functions that you have access to <em>without</em> importing any libraries.  Therefore you could (in theory) accomplish exactly the same tasks without ever importing a library.  In this way, Python’s notion of importing is really a convenience that improves efficiency by enabling you to more easily re-use other people’s (or your) code.  Python’s library infrastructure also makes Python an attractive language for scientists in that code may be easily shared.  (Later in the course we’ll discuss how to make code that you write available to the community as a shareable library.)</p>
+<p>You can import new functions that other people have written and made available to the community using an <code class="docutils literal notranslate"><span class="pre">import</span></code> statement.  Knowing which <em>libraries</em> (sets of functions) to import requires some Googling or checking in with other users.  The syntax for importing a library is: <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">&lt;library</span> <span class="pre">name&gt;</span></code>.  For example <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">math</span></code> will import Python’s Mathematics library, giving you access to new Math-related functions.</p>
+</div>
+<div class="section" id="the-from-keyword">
+<h1>The <code class="docutils literal notranslate"><span class="pre">from</span></code> keyword<a class="headerlink" href="#the-from-keyword" title="Permalink to this headline">¶</a></h1>
+<p>Sometimes it is useful to import only a subset of the total available functions from a library.  For example, a particular function in a library may have the same name as a function that you want to write yourself.  The <code class="docutils literal notranslate"><span class="pre">from</span></code> keyword allows you to select a specific set of functions from a given library using:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="o">&lt;</span><span class="n">library</span> <span class="n">name</span><span class="o">&gt;</span> <span class="kn">import</span> <span class="o">&lt;</span><span class="n">function1</span><span class="o">&gt;</span><span class="p">,</span> <span class="o">&lt;</span><span class="n">function2</span><span class="o">&gt;</span><span class="p">,</span> <span class="o">...</span><span class="p">,</span> <span class="o">&lt;</span><span class="n">functionN</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<p>You can also use the <code class="docutils literal notranslate"><span class="pre">dir</span></code> command on an imported library to determine which functions are available to import from that library.</p>
+</div>
+<div class="section" id="the-as-keyword">
+<h1>The <code class="docutils literal notranslate"><span class="pre">as</span></code> keyword<a class="headerlink" href="#the-as-keyword" title="Permalink to this headline">¶</a></h1>
+<p>Sometimes it is convenient to rename an imported library or function.  For example, the library might have a long name that is cumbersome to type.  The <code class="docutils literal notranslate"><span class="pre">as</span></code> keyword can be used to rename libraries, functions, or both.  For example:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">math</span> <span class="k">as</span> <span class="nn">m</span>
+<span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">degrees</span> <span class="k">as</span> <span class="n">deg</span>
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">math</span> <span class="k">as</span> <span class="nn">m</span>
+<span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">degrees</span> <span class="k">as</span> <span class="n">deg</span>
+
+<span class="n">m</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">m</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span> <span class="o">-</span> <span class="n">m</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">m</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.0000000000000002
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="weird-stuff">
+<h2>Weird stuff<a class="headerlink" href="#weird-stuff" title="Permalink to this headline">¶</a></h2>
+<p>In its “guts,” Python represents all numbers in Base 2 (i.e. binary).  Occassionally representing Base 10 numbers in Base 2 can lead to seemingly strange behaviors.  One such example is shown in the next cell.  To think about: how or when might this matter?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mf">0.3</span> <span class="o">-</span> <span class="mf">0.2</span> <span class="o">-</span> <span class="mf">0.1</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-2.7755575615628914e-17
+</pre></div>
+</div>
+</div>
+</div>
+<p>Another “weird” property of Python (e.g., as compared with most other programming languages) is that whitespace (spaces and tabs) at the beginning of a line carry meaning.  For example, the code block:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">a</span> <span class="o">==</span> <span class="n">b</span><span class="p">:</span>
+  <span class="n">a</span> <span class="o">=</span> <span class="mi">0</span>
+  <span class="n">b</span> <span class="o">=</span> <span class="mi">1</span>
+</pre></div>
+</div>
+<p>is different from</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">a</span> <span class="o">==</span> <span class="n">b</span><span class="p">:</span>
+  <span class="n">a</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">b</span> <span class="o">=</span> <span class="mi">1</span>
+</pre></div>
+</div>
+<p>Specifically, in the first code block (where <code class="docutils literal notranslate"><span class="pre">b</span> <span class="pre">=</span> <span class="pre">1</span></code> is indented), <code class="docutils literal notranslate"><span class="pre">b</span></code> will be assigned a value of 1 if and only if <code class="docutils literal notranslate"><span class="pre">a</span></code> is equal to <code class="docutils literal notranslate"><span class="pre">b</span></code>.  This is because the lines with the same number of leading whitespace characters are treated as “grouped” (i.e., belonging to the same statement body).</p>
+<p>In the second code block (where <code class="docutils literal notranslate"><span class="pre">b</span> <span class="pre">=</span> <span class="pre">1</span></code> is not indented), <code class="docutils literal notranslate"><span class="pre">b</span></code> is assigned a value of 1 <em>regardless of whether <code class="docutils literal notranslate"><span class="pre">a</span></code> and <code class="docutils literal notranslate"><span class="pre">b</span></code> are equal</em>.  This is because the unindented <code class="docutils literal notranslate"><span class="pre">b</span> <span class="pre">=</span> <span class="pre">1</span></code> line is interpreted as falling outside of the body (scope) of the <code class="docutils literal notranslate"><span class="pre">if</span></code> statement.</p>
+</div>
+</div>
+<div class="section" id="getting-help">
+<h1>Getting help<a class="headerlink" href="#getting-help" title="Permalink to this headline">¶</a></h1>
+<p>The <code class="docutils literal notranslate"><span class="pre">help</span></code> function may be called for any built-in (or imported) Python function.  This will display a pop-up message with instructions describing how to use the given function.  For example:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">help</span><span class="p">(</span><span class="n">m</span><span class="o">.</span><span class="n">sin</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Help on built-in function sin in module math:
+
+sin(x, /)
+    Return the sine of x (measured in radians).
+</pre></div>
+</div>
+</div>
+</div>
+<p>When you try to perform an invalid operation (e.g. using incorrect syntax, or using the wrong data type, etc.) your program will crash and print out an error message.  These error messages can help point you to where the problem in your code was.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">1</span> <span class="o">+</span> <span class="s1">&#39;test&#39;</span> <span class="c1">#trying to add two data types for which the addition operation isn&#39;t supported</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">18</span><span class="o">-</span><span class="n">c9912827b505</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="mi">1</span> <span class="o">+</span> <span class="s1">&#39;test&#39;</span> <span class="c1">#trying to add two data types for which the addition operation isn&#39;t supported</span>
+
+<span class="ne">TypeError</span>: unsupported operand type(s) for +: &#39;int&#39; and &#39;str&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>Although they are very useful, in practice the built-in help function and error messages are often insufficient for solving tricky problems.  Some great places to get help are:</p>
+<ul class="simple">
+<li><p><strong>Python tutorials</strong>: if you feel you require an in-depth understanding to solve your problem, there are many free tutorials available on a wide array of topics.  <a class="reference external" href="https://gitlab.erc.monash.edu.au/andrease/Python4Maths/tree/master/Intro-to-Python">This one</a> is a good place to start for basic questions.</p></li>
+<li><p><strong>Google</strong>: if you are trying to figure out an unfamiliar function, or if you encounter an error message that doesn’t make sense, try searching for someone else’s solution.</p></li>
+<li><p><strong>Q&amp;A</strong>: come to my Q&amp;A hours, or send me a message on Slack, and I’ll help get you unstuck.</p></li>
+</ul>
+</div>
+<div class="section" id="happy-coding">
+<h1>Happy coding!<a class="headerlink" href="#happy-coding" title="Permalink to this headline">¶</a></h1>
+<p>Programming is one of the most rewarding skills you can pick up.  The modern world runs on computers, and learning to code well will provide you with an enormous advantage in a wide range of life venues.  Have fun learning, don’t be afraid to make mistakes, and learn to ask for help when you need it!</p>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="module-01_jupyter-notebooks.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Jupyter (Colaboratory) Notebooks</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="module-03_data-structures.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Data Structures</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Shawn A. Rhoads, Sarah M. Banker<br/>
+  
+      &copy; Copyright 2023.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>

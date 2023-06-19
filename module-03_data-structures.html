@@ -1,0 +1,1115 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Data Structures</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/tabs.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script src="_static/tabs.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script >const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="canonical" href="https://center-for-computational-psychiatry.github.io/course_spice/module-03_data-structures.html" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Data Processing" href="module-04_data-processing.html" />
+    <link rel="prev" title="Python Basics" href="module-02_python-basics.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="_static/spice_logo.png" class="logo" alt="logo">
+      
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <p class="caption">
+ <span class="caption-text">
+  Programming in Python
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="module-01_jupyter-notebooks.html">
+   Jupyter (Colaboratory) Notebooks
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="module-02_python-basics.html">
+   Python Basics
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Data Structures
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="module-04_data-processing.html">
+   Data Processing
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="module-05_data-visualization.html">
+   Data Visualization
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="module-06_numerical-operations.html">
+   Numerical Operations
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="module-07_pairwise-correlations.html">
+   Pairwise Correlations
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="module-08_hypothesis-testing.html">
+   Hypothesis Testing
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="module-09_putting-it-all-together.html">
+   Putting It All Together
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Fundamentals of Neuroscience and Psychiatry
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="module-09_putting-it-all-together.html">
+   Putting It All Together
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/center-for-computational-psychiatry.github.io/course_spice"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/center-for-computational-psychiatry.github.io/course_spice/issues/new?title=Issue%20on%20page%20%2Fmodule-03_data-structures.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="_sources/module-03_data-structures.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Data Structures
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#learning-objectives">
+     Learning objectives
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#everything-is-an-object">
+   Everything is an object
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#dictionaries">
+   Dictionaries
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#classes">
+   Classes
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#classes-as-templates">
+     Classes as templates
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#defining-a-new-class">
+   Defining a new class
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#init">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       __init__
+      </span>
+     </code>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#example-counter-object">
+   Example: counter object
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#fancy-stuff">
+     Fancy stuff
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#inheritance">
+   Inheritance
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#next-steps">
+   Next steps
+  </a>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Data Structures</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Data Structures
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#learning-objectives">
+     Learning objectives
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#everything-is-an-object">
+   Everything is an object
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#dictionaries">
+   Dictionaries
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#classes">
+   Classes
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#classes-as-templates">
+     Classes as templates
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#defining-a-new-class">
+   Defining a new class
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#init">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       __init__
+      </span>
+     </code>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#example-counter-object">
+   Example: counter object
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#fancy-stuff">
+     Fancy stuff
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#inheritance">
+   Inheritance
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#next-steps">
+   Next steps
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <p><a target="_blank" rel="noopener noreferrer" href="https://colab.research.google.com/github/center-for-computational-psychiatry/course_spice/blob/master/modules/module-03_data-structures.ipynb"><img alt="Open In Colab" src="https://colab.research.google.com/assets/colab-badge.svg" /></a></p>
+<div class="section" id="data-structures">
+<h1>Data Structures<a class="headerlink" href="#data-structures" title="Permalink to this headline">¶</a></h1>
+<p>This tutorial was inspired by and adapted from Shawn A. Rhoads’ <a class="reference external" href="https://shawnrhoads.github.io/gu-psyc-347/">PSYC 347 Course</a> [<a class="reference external" href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0 License</a>] and Jeremy Manning’s <a class="reference external" href="https://github.com/ContextLab/cs-for-psych">PSYC 32 Course</a> [<a class="reference external" href="https://opensource.org/license/mit/">MIT License</a>].</p>
+<div class="section" id="learning-objectives">
+<h2>Learning objectives<a class="headerlink" href="#learning-objectives" title="Permalink to this headline">¶</a></h2>
+<p>This notebook is intended to teach you basic python syntax for:</p>
+<ol class="simple">
+<li><p>Dictionaries</p></li>
+<li><p>Classes</p></li>
+</ol>
+</div>
+</div>
+<div class="section" id="everything-is-an-object">
+<h1>Everything is an object<a class="headerlink" href="#everything-is-an-object" title="Permalink to this headline">¶</a></h1>
+<p>Python is an <a class="reference external" href="https://en.wikipedia.org/wiki/Object-oriented_programming">object-oriented programming language</a>.  This means that each construct and datatype in Python (variables, operators, functions, etc.) is an instance of a computational <em>object</em>: an entity that can store data, have attributes, carry out functions, execute code, etc.  Conceptually, Python code defines a set of computational objects and the rules that govern how they interact.  This way of thinking and programming is inspired by ideas about how the physical world operates– e.g., where the universe defines the set of things that exist and how they interact.  In the physical world, some of those objects (e.g. observable matter) can be directly measured and manipulated, whereas other objects can only be observed via their influence on observable objects (e.g. gravity).  Because object-based thinking has direct analogues to how people often conceptualize the physical world, object-oriented programming can be intuitive to learn and implement.</p>
+<p>As an aside, the most popular “alternative” to object-oriented programming is called <a class="reference external" href="https://en.wikipedia.org/wiki/Functional_programming">functional programming</a>.  The basic units of computation in functional programming languages are mathematical functions.  The idea of functional programming originated from <a class="reference external" href="https://en.wikipedia.org/wiki/Lambda_calculus">lambda calculus</a>.  Functional programming techniques and approaches are beyond the scope of this course.</p>
+</div>
+<div class="section" id="dictionaries">
+<h1>Dictionaries<a class="headerlink" href="#dictionaries" title="Permalink to this headline">¶</a></h1>
+<p>In the <a class="reference external" href="https://colab.research.google.com/github/ContextLab/cs-for-psych/blob/master/slides/module_1/intro_to_python.ipynb">introductory tutorial on Python programming</a>, we touched briefly on dictionaries in our discussion of datatypes.  Specifically, we described dictionary (<code class="docutils literal notranslate"><span class="pre">dict</span></code>) objects as an unordered set of named properties that each has an assigned value.  Let’s pick up on the the example from that notebook:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">spice_dict</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;Programming Basics for Psychological and Neural Science&#39;</span><span class="p">,</span>
+                                                <span class="s1">&#39;year&#39;</span><span class="p">:</span> <span class="mi">2023</span><span class="p">,</span>
+              <span class="s1">&#39;department&#39;</span><span class="p">:</span> <span class="s1">&#39;Center for Computational Psychiatry&#39;</span><span class="p">,</span>
+              <span class="s1">&#39;url&#39;</span><span class="p">:</span> <span class="s1">&#39;https://github.com/Center-for-Computational-Psychiatry/course_spice&#39;</span><span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>The variable <code class="docutils literal notranslate"><span class="pre">spice_dict</span></code> is a <code class="docutils literal notranslate"><span class="pre">dict</span></code> object that contains several properties.  We can list the properties using <code class="docutils literal notranslate"><span class="pre">spice_dict.keys()</span></code>, and we can list the corresponding values (in the same order) using <code class="docutils literal notranslate"><span class="pre">spice_dict.values()</span></code>.  We can also access any indidual property (<code class="docutils literal notranslate"><span class="pre">x</span></code>) using the syntax <code class="docutils literal notranslate"><span class="pre">spice_dict['x']</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;spice_dict is an object of type&#39;</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="n">spice_dict</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;spice_dict properties:&#39;</span><span class="p">,</span> <span class="n">spice_dict</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;spice_dict values:&#39;</span><span class="p">,</span> <span class="n">spice_dict</span><span class="o">.</span><span class="n">values</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;spice_dict[</span><span class="se">\&#39;</span><span class="s1">year</span><span class="se">\&#39;</span><span class="s1">]:&#39;</span><span class="p">,</span> <span class="n">spice_dict</span><span class="p">[</span><span class="s1">&#39;year&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>spice_dict is an object of type &lt;class &#39;dict&#39;&gt;
+spice_dict properties: dict_keys([&#39;name&#39;, &#39;year&#39;, &#39;department&#39;, &#39;url&#39;])
+spice_dict values: dict_values([&#39;Programming Basics for Psychological and Neural Science&#39;, 2023, &#39;Center for Computational Psychiatry&#39;, &#39;https://github.com/Center-for-Computational-Psychiatry/course_spice&#39;])
+spice_dict[&#39;year&#39;]: 2023
+</pre></div>
+</div>
+</div>
+</div>
+<p>You can also dynamically add, change, and/or remove properties (keys) from dictionary objects:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">spice_dict</span><span class="p">[</span><span class="s1">&#39;instructor&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;Shawn Rhoads&#39;</span>
+<span class="c1">#spice_dict.pop(&#39;url&#39;)</span>
+<span class="n">spice_dict</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;SPICE Crash Course&#39;</span>
+
+<span class="kn">from</span> <span class="nn">pprint</span> <span class="kn">import</span> <span class="n">pprint</span> <span class="c1">#prints dictionaries in a nicely formatted way</span>
+<span class="n">pprint</span><span class="p">(</span><span class="n">spice_dict</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;department&#39;: &#39;Center for Computational Psychiatry&#39;,
+ &#39;instructor&#39;: &#39;Shawn Rhoads&#39;,
+ &#39;name&#39;: &#39;SPICE Crash Course&#39;,
+ &#39;url&#39;: &#39;https://github.com/Center-for-Computational-Psychiatry/course_spice&#39;,
+ &#39;year&#39;: 2023}
+</pre></div>
+</div>
+</div>
+</div>
+<p>The values stored in a dictionary can be of any datatype, including other dictionaries!  This can be a powerful way to represent complex concepts:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">spice2023a</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;Programming Basics for Psychological and Neural Science&#39;</span><span class="p">,</span>
+              <span class="s1">&#39;year&#39;</span><span class="p">:</span> <span class="mi">2023</span><span class="p">,</span>
+              <span class="s1">&#39;institution&#39;</span><span class="p">:</span> <span class="s1">&#39;Icahn School of Medicine at Mount Sinai&#39;</span><span class="p">,</span>
+              <span class="s1">&#39;department&#39;</span><span class="p">:</span> <span class="s1">&#39;Center for Computational Psychiatry&#39;</span><span class="p">,</span>
+              <span class="s1">&#39;url&#39;</span><span class="p">:</span> <span class="s1">&#39;https://github.com/Center-for-Computational-Psychiatry/course_spice&#39;</span><span class="p">}</span>
+<span class="n">pprint</span><span class="p">(</span><span class="n">spice2023a</span><span class="p">)</span>
+
+<span class="n">spice2023b</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;Fundamentals of Neuroscience and Psychiatry&#39;</span><span class="p">,</span>
+              <span class="s1">&#39;year&#39;</span><span class="p">:</span> <span class="mi">2023</span><span class="p">,</span>
+              <span class="s1">&#39;institution&#39;</span><span class="p">:</span> <span class="s1">&#39;Icahn School of Medicine at Mount Sinai&#39;</span><span class="p">,</span>
+              <span class="s1">&#39;department&#39;</span><span class="p">:</span> <span class="s1">&#39;Center for Computational Psychiatry&#39;</span><span class="p">,</span>
+              <span class="s1">&#39;url&#39;</span><span class="p">:</span> <span class="s1">&#39;https://github.com/Center-for-Computational-Psychiatry/course_spice&#39;</span><span class="p">}</span>
+<span class="n">pprint</span><span class="p">(</span><span class="n">spice2023b</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;department&#39;: &#39;Center for Computational Psychiatry&#39;,
+ &#39;institution&#39;: &#39;Icahn School of Medicine at Mount Sinai&#39;,
+ &#39;name&#39;: &#39;Programming Basics for Psychological and Neural Science&#39;,
+ &#39;url&#39;: &#39;https://github.com/Center-for-Computational-Psychiatry/course_spice&#39;,
+ &#39;year&#39;: 2023}
+{&#39;department&#39;: &#39;Center for Computational Psychiatry&#39;,
+ &#39;institution&#39;: &#39;Icahn School of Medicine at Mount Sinai&#39;,
+ &#39;name&#39;: &#39;Fundamentals of Neuroscience and Psychiatry&#39;,
+ &#39;url&#39;: &#39;https://github.com/Center-for-Computational-Psychiatry/course_spice&#39;,
+ &#39;year&#39;: 2023}
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">spice2022</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;Programming Basics for Psychological and Neural Science&#39;</span><span class="p">,</span>
+              <span class="s1">&#39;year&#39;</span><span class="p">:</span> <span class="mi">2022</span><span class="p">,</span>
+              <span class="s1">&#39;institution&#39;</span><span class="p">:</span> <span class="s1">&#39;Icahn School of Medicine at Mount Sinai&#39;</span><span class="p">,</span>
+              <span class="s1">&#39;department&#39;</span><span class="p">:</span> <span class="s1">&#39;Center for Computational Psychiatry&#39;</span><span class="p">,</span>
+              <span class="s1">&#39;url&#39;</span><span class="p">:</span> <span class="kc">None</span><span class="p">}</span>
+
+<span class="n">pprint</span><span class="p">(</span><span class="n">spice2022</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;department&#39;: &#39;Center for Computational Psychiatry&#39;,
+ &#39;institution&#39;: &#39;Icahn School of Medicine at Mount Sinai&#39;,
+ &#39;name&#39;: &#39;Programming Basics for Psychological and Neural Science&#39;,
+ &#39;url&#39;: None,
+ &#39;year&#39;: 2022}
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">instructors</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;Shawn&#39;</span>   <span class="p">:</span> <span class="p">{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;Shawn Rhoads&#39;</span><span class="p">,</span>
+                            <span class="s1">&#39;labs&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;Gu&#39;</span><span class="p">],</span>
+                            <span class="s1">&#39;institution&#39;</span><span class="p">:</span> <span class="s1">&#39;Icahn School of Medicine at Mount Sinai&#39;</span><span class="p">,</span>
+                            <span class="s1">&#39;department&#39;</span><span class="p">:</span> <span class="s1">&#39;Center for Computational Psychiatry&#39;</span><span class="p">,</span>
+                            <span class="s1">&#39;url&#39;</span><span class="p">:</span> <span class="s1">&#39;https://shawnrhoads.github.io/&#39;</span><span class="p">,</span>
+                            <span class="s1">&#39;courses&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">spice2023a</span><span class="p">]},</span>
+               <span class="s1">&#39;Sarah&#39;</span>   <span class="p">:</span> <span class="p">{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;Sarah Banker&#39;</span><span class="p">,</span>
+                            <span class="s1">&#39;labs&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;Gu&#39;</span><span class="p">,</span><span class="s1">&#39;Schiller&#39;</span><span class="p">,</span><span class="s1">&#39;Fossfeig&#39;</span><span class="p">],</span>
+                            <span class="s1">&#39;institution&#39;</span><span class="p">:</span> <span class="s1">&#39;Icahn School of Medicine at Mount Sinai&#39;</span><span class="p">,</span>
+                            <span class="s1">&#39;department&#39;</span><span class="p">:</span> <span class="s1">&#39;Center for Computational Psychiatry&#39;</span><span class="p">,</span>
+                            <span class="s1">&#39;url&#39;</span><span class="p">:</span> <span class="s1">&#39;https://icahn.mssm.edu/profiles/sarah-banker&#39;</span><span class="p">,</span>
+                            <span class="s1">&#39;courses&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">spice2023b</span><span class="p">]},</span>
+               <span class="s1">&#39;Kaustubh&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;Kaustubh Kulkarni&#39;</span><span class="p">,</span>
+                            <span class="s1">&#39;labs&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;Gu&#39;</span><span class="p">,</span><span class="s1">&#39;Schiller&#39;</span><span class="p">],</span>
+                            <span class="s1">&#39;institution&#39;</span><span class="p">:</span> <span class="s1">&#39;Icahn School of Medicine at Mount Sinai&#39;</span><span class="p">,</span>
+                            <span class="s1">&#39;department&#39;</span><span class="p">:</span> <span class="s1">&#39;Center for Computational Psychiatry&#39;</span><span class="p">,</span>
+                            <span class="s1">&#39;url&#39;</span><span class="p">:</span> <span class="s1">&#39;https://krkulkarni.com/&#39;</span><span class="p">,</span>
+                            <span class="s1">&#39;courses&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">spice2022</span><span class="p">]}</span> 
+                <span class="p">}</span>
+
+<span class="n">pprint</span><span class="p">(</span><span class="n">instructors</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;Kaustubh&#39;: {&#39;courses&#39;: [{&#39;department&#39;: &#39;Center for Computational Psychiatry&#39;,
+                           &#39;institution&#39;: &#39;Icahn School of Medicine at Mount &#39;
+                                          &#39;Sinai&#39;,
+                           &#39;name&#39;: &#39;Programming Basics for Psychological and &#39;
+                                   &#39;Neural Science&#39;,
+                           &#39;url&#39;: None,
+                           &#39;year&#39;: 2022}],
+              &#39;department&#39;: &#39;Center for Computational Psychiatry&#39;,
+              &#39;institution&#39;: &#39;Icahn School of Medicine at Mount Sinai&#39;,
+              &#39;labs&#39;: [&#39;Gu&#39;, &#39;Schiller&#39;],
+              &#39;name&#39;: &#39;Kaustubh Kulkarni&#39;,
+              &#39;url&#39;: &#39;https://krkulkarni.com/&#39;},
+ &#39;Sarah&#39;: {&#39;courses&#39;: [{&#39;department&#39;: &#39;Center for Computational Psychiatry&#39;,
+                        &#39;institution&#39;: &#39;Icahn School of Medicine at Mount &#39;
+                                       &#39;Sinai&#39;,
+                        &#39;name&#39;: &#39;Fundamentals of Neuroscience and Psychiatry&#39;,
+                        &#39;url&#39;: &#39;https://github.com/Center-for-Computational-Psychiatry/course_spice&#39;,
+                        &#39;year&#39;: 2023}],
+           &#39;department&#39;: &#39;Center for Computational Psychiatry&#39;,
+           &#39;institution&#39;: &#39;Icahn School of Medicine at Mount Sinai&#39;,
+           &#39;labs&#39;: [&#39;Gu&#39;, &#39;Schiller&#39;, &#39;Fossfeig&#39;],
+           &#39;name&#39;: &#39;Sarah Banker&#39;,
+           &#39;url&#39;: &#39;https://icahn.mssm.edu/profiles/sarah-banker&#39;},
+ &#39;Shawn&#39;: {&#39;courses&#39;: [{&#39;department&#39;: &#39;Center for Computational Psychiatry&#39;,
+                        &#39;institution&#39;: &#39;Icahn School of Medicine at Mount &#39;
+                                       &#39;Sinai&#39;,
+                        &#39;name&#39;: &#39;Programming Basics for Psychological and &#39;
+                                &#39;Neural Science&#39;,
+                        &#39;url&#39;: &#39;https://github.com/Center-for-Computational-Psychiatry/course_spice&#39;,
+                        &#39;year&#39;: 2023}],
+           &#39;department&#39;: &#39;Center for Computational Psychiatry&#39;,
+           &#39;institution&#39;: &#39;Icahn School of Medicine at Mount Sinai&#39;,
+           &#39;labs&#39;: [&#39;Gu&#39;],
+           &#39;name&#39;: &#39;Shawn Rhoads&#39;,
+           &#39;url&#39;: &#39;https://shawnrhoads.github.io/&#39;}}
+</pre></div>
+</div>
+</div>
+</div>
+<p>Of note, the <code class="docutils literal notranslate"><span class="pre">instructor</span></code> object (a <code class="docutils literal notranslate"><span class="pre">dict</span></code>) contains (in the <code class="docutils literal notranslate"><span class="pre">courses</span></code> key) a <code class="docutils literal notranslate"><span class="pre">list</span></code> of <code class="docutils literal notranslate"><span class="pre">dict</span></code> objects, reflecting the courses (and their respective properties) taught by the instructor.  This formulation can come in handy when we want to interrogate the <code class="docutils literal notranslate"><span class="pre">instructor</span></code> object.  For example, we could write a function to print out the courses that a given instructor is teaching, and call this function for different instructors:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">shawn</span> <span class="o">=</span> <span class="n">instructors</span><span class="p">[</span><span class="s1">&#39;Shawn&#39;</span><span class="p">]</span> <span class="c1">#provide a new (distinctive) name for existing instructors dict</span>
+<span class="n">sarah</span> <span class="o">=</span> <span class="n">instructors</span><span class="p">[</span><span class="s1">&#39;Sarah&#39;</span><span class="p">]</span> <span class="c1">#provide a new (distinctive) name for existing instructors dict</span>
+
+<span class="n">list_of_instructors</span> <span class="o">=</span> <span class="p">[</span><span class="n">shawn</span><span class="p">,</span> <span class="n">sarah</span><span class="p">]</span> <span class="c1">#create a list of instructor dicts</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#define a function that prints out the given properties for each course an</span>
+<span class="c1">#instructor is teaching</span>
+<span class="k">def</span> <span class="nf">print_course_info</span><span class="p">(</span><span class="n">instructor</span><span class="p">,</span> <span class="n">properties</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">    inputs:</span>
+<span class="sd">    instructor: a dict with name, degree, institution, url, and courses keys</span>
+<span class="sd">    properties: a list of strings containing all or some of: department, number, url</span>
+
+<span class="sd">    outputs: prints out the desired information to the console</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="n">instructor</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">],</span>
+          <span class="s1">&#39; is in &#39;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">instructor</span><span class="p">[</span><span class="s1">&#39;labs&#39;</span><span class="p">]),</span> <span class="s1">&#39; lab(s):&#39;</span><span class="p">,</span>
+          <span class="s1">&#39; &#39;</span><span class="p">,</span> <span class="n">instructor</span><span class="p">[</span><span class="s1">&#39;labs&#39;</span><span class="p">],</span> <span class="s1">&#39; &#39;</span><span class="p">,</span>
+          <span class="s1">&#39;and is teaching &#39;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">instructor</span><span class="p">[</span><span class="s1">&#39;courses&#39;</span><span class="p">]),</span> <span class="s1">&#39; course(s):&#39;</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+  
+    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">c</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">instructor</span><span class="p">[</span><span class="s1">&#39;courses&#39;</span><span class="p">]):</span> <span class="c1">#can you figure out what the enumerate function is doing?</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">Course &#39;</span><span class="p">,</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;: &#39;</span><span class="p">,</span> <span class="n">c</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">],</span> <span class="n">sep</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+
+        <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">properties</span><span class="p">:</span> <span class="c1">#can you figure out what&#39;s happening here?</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\t</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">p</span><span class="o">.</span><span class="n">capitalize</span><span class="p">(),</span> <span class="s1">&#39;: &#39;</span><span class="p">,</span> <span class="n">c</span><span class="p">[</span><span class="n">p</span><span class="p">],</span> <span class="n">sep</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">For more information see&#39;</span><span class="p">,</span> <span class="n">instructor</span><span class="p">[</span><span class="s1">&#39;url&#39;</span><span class="p">])</span>
+
+<span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">list_of_instructors</span><span class="p">:</span> <span class="c1">#this is similar to the &quot;for p in properties&quot; line above...</span>
+    <span class="n">print_course_info</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;department&#39;</span><span class="p">,</span> <span class="s1">&#39;institution&#39;</span><span class="p">])</span> <span class="c1">#adjust this list to experiment</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Shawn Rhoads is in 1 lab(s): [&#39;Gu&#39;] and is teaching 1 course(s):
+
+Course 1: Programming Basics for Psychological and Neural Science
+	Department: Center for Computational Psychiatry
+	Institution: Icahn School of Medicine at Mount Sinai
+
+For more information see https://shawnrhoads.github.io/
+
+
+Sarah Banker is in 3 lab(s): [&#39;Gu&#39;, &#39;Schiller&#39;, &#39;Fossfeig&#39;] and is teaching 1 course(s):
+
+Course 1: Fundamentals of Neuroscience and Psychiatry
+	Department: Center for Computational Psychiatry
+	Institution: Icahn School of Medicine at Mount Sinai
+
+For more information see https://icahn.mssm.edu/profiles/sarah-banker
+</pre></div>
+</div>
+</div>
+</div>
+<p>Take some time to understand the code in the preceeding cell.  Also think about how you might apply these ideas to other types of representations:</p>
+<ul class="simple">
+<li><p>Contact information in a directory or address book</p></li>
+<li><p>Locations on a map</p></li>
+<li><p>Response data from an experiment</p></li>
+<li><p>Email messages</p></li>
+<li><p>Web forms</p></li>
+</ul>
+<p>In particular:</p>
+<ul class="simple">
+<li><p>Which fields might you want in each circumstance?</p></li>
+<li><p>How could you make use of a list of <code class="docutils literal notranslate"><span class="pre">dict</span></code> objects, all with the same fields, to do something useful in each of the above scenarios</p></li>
+<li><p>What are some tradeoffs between including many versus few fields?</p></li>
+<li><p>Should every value be a <code class="docutils literal notranslate"><span class="pre">dict</span></code> object with its own set of properties?  Or would that be overkill?  What are some tradeoffs you might expect using different datatypes for each field (versus, for example, setting all values to custom <code class="docutils literal notranslate"><span class="pre">dict</span></code> objects)?</p></li>
+<li><p>Can you think of any potential use cases for having a <code class="docutils literal notranslate"><span class="pre">function</span></code> as a value of some field?  Can you figure out how to write a short demonstration of how such a function might be called?</p></li>
+</ul>
+</div>
+<div class="section" id="classes">
+<h1>Classes<a class="headerlink" href="#classes" title="Permalink to this headline">¶</a></h1>
+<p>One way of thinking about a Python <a class="reference external" href="https://docs.python.org/3/tutorial/classes.html"><code class="docutils literal notranslate"><span class="pre">class</span></code></a> is kind of like a fancier version of a <code class="docutils literal notranslate"><span class="pre">dict</span></code>.  Like dictionaries, classes provide a way to group together named properties, data, and functions into a single object.  What makes classes special is that they can:</p>
+<ul class="simple">
+<li><p>provide a template structure that can be applied to other Python objects</p></li>
+<li><p>have methods (functions) that enable you to directly modify their own properties</p></li>
+</ul>
+<p>Soon we’ll explore how these properties are implemented and what they’re useful for.  But before we dig into those details, it can be useful to consider that <em>everything</em> in Python– every datatype, operator, etc. is an instance of a class.  Knowing this fact at this point may not specifically enhance your understanding of classes (or Python more broadly).  However, perhaps it gives you a sense of how encompassing and powerful classes are.  They are the fundamental construction that makes Python an object-oriented language.  In particular, classes allow you to define new datatypes.</p>
+<div class="section" id="classes-as-templates">
+<h2>Classes as templates<a class="headerlink" href="#classes-as-templates" title="Permalink to this headline">¶</a></h2>
+<p>Consider the dictionaries we defined above.  Each course dictionary contained the same fields (‘department’, ‘name’, ‘number’, and ‘url’), and each instructor dictionary contained the same fields (‘name’, ‘degree’, ‘institution’, ‘url’, ‘courses’).  Further, the values in each dictionary’s fields were similar across instances of courses and instructors.  For example, all of the courses’ ‘name’ fields contained string objects; all of the instructors’ ‘courses’ fields contained lists of course dictionary objects; and so on.  In other words, the general “formats” of different course dictionaries were similar to each other, and the formats of different instructor dictionaries were similar to each other.  This replicated structure can be accomplished more succinctly, and with less potential for errors or inconsistencies, using classes.</p>
+</div>
+</div>
+<div class="section" id="defining-a-new-class">
+<h1>Defining a new class<a class="headerlink" href="#defining-a-new-class" title="Permalink to this headline">¶</a></h1>
+<p>A new <code class="docutils literal notranslate"><span class="pre">class</span></code> object may be defined using the <code class="docutils literal notranslate"><span class="pre">class</span></code> keyword:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">NewClassName</span><span class="p">:</span>
+  <span class="o">&lt;</span><span class="n">body</span> <span class="n">of</span> <span class="k">class</span> <span class="nc">definition</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<p>The body of a <code class="docutils literal notranslate"><span class="pre">class</span></code> defines the set of properties and abilities each class <em>instance</em> will have.  An instance is a parameterized version of the class.  For example, <code class="docutils literal notranslate"><span class="pre">'hello'</span></code> and <code class="docutils literal notranslate"><span class="pre">'goodbye'</span></code> are two instances of <code class="docutils literal notranslate"><span class="pre">str</span></code> objects.</p>
+<p>The body of a <code class="docutils literal notranslate"><span class="pre">class</span></code> can contain any Python code.  In addition, classes support a keyword called <code class="docutils literal notranslate"><span class="pre">self</span></code>.  Inside of the class definition’s body, <code class="docutils literal notranslate"><span class="pre">self</span></code> refers to the specific instance of the class.  If you haven’t encountered the notion of classes before, this probably seems quite abstract.  Soon we’ll get to some concrete examples that will hopefully make things clearer.</p>
+<div class="section" id="init">
+<h2><code class="docutils literal notranslate"><span class="pre">__init__</span></code><a class="headerlink" href="#init" title="Permalink to this headline">¶</a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">__init__</span></code> method is a special function, defined for each type of class, that allows the user to create a new class instance.  Usually the <code class="docutils literal notranslate"><span class="pre">__init__</span></code> method sets properties of the object and/or carries out setup tasks.  The first argument of <code class="docutils literal notranslate"><span class="pre">__init__</span></code> is always <code class="docutils literal notranslate"><span class="pre">self</span></code>.</p>
+</div>
+</div>
+<div class="section" id="example-counter-object">
+<h1>Example: counter object<a class="headerlink" href="#example-counter-object" title="Permalink to this headline">¶</a></h1>
+<p>To illustrate how classes work, let’s define a new type of object: a <code class="docutils literal notranslate"><span class="pre">Counter</span></code>.  <code class="docutils literal notranslate"><span class="pre">Counter</span></code> objects will contain an internal ‘count’ property that starts at 0 and can be incremented, decremented (to a minimum of 0), or reset:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Counter</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">count</span> <span class="o">=</span> <span class="mi">0</span>
+  
+    <span class="k">def</span> <span class="nf">increment</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">count</span> <span class="o">+=</span> <span class="mi">1</span>
+  
+    <span class="k">def</span> <span class="nf">decrement</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">count</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">count</span> <span class="o">-=</span> <span class="mi">1</span>
+  
+    <span class="k">def</span> <span class="nf">reset</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">count</span> <span class="o">=</span> <span class="mi">0</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now let’s play around with some <code class="docutils literal notranslate"><span class="pre">Counter</span></code> objects and see how they work:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">Counter</span><span class="p">()</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">Counter</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;a is an instance of&#39;</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="n">a</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;b is an instance of&#39;</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="n">b</span><span class="p">))</span>
+
+<span class="n">a</span><span class="o">.</span><span class="n">increment</span><span class="p">()</span> <span class="c1">#increase a&#39;s count to 1</span>
+<span class="n">a</span><span class="o">.</span><span class="n">increment</span><span class="p">()</span> <span class="c1">#increase a&#39;s count to 2</span>
+
+<span class="n">b</span><span class="o">.</span><span class="n">decrement</span><span class="p">()</span> <span class="c1">#should do nothing</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;a</span><span class="se">\&#39;</span><span class="s1">s count is&#39;</span><span class="p">,</span> <span class="n">a</span><span class="o">.</span><span class="n">count</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;b</span><span class="se">\&#39;</span><span class="s1">s count is&#39;</span><span class="p">,</span> <span class="n">b</span><span class="o">.</span><span class="n">count</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>a is an instance of &lt;class &#39;__main__.Counter&#39;&gt;
+b is an instance of &lt;class &#39;__main__.Counter&#39;&gt;
+a&#39;s count is 2
+b&#39;s count is 0
+</pre></div>
+</div>
+</div>
+</div>
+<p>Notice that even though <code class="docutils literal notranslate"><span class="pre">a</span></code> and <code class="docutils literal notranslate"><span class="pre">b</span></code> are instances of the same type of class (<code class="docutils literal notranslate"><span class="pre">Counter</span></code>), the internal counters of those two objects can change independently and be referenced independently.  Try playing around with these objects:</p>
+<ul class="simple">
+<li><p>Make sure you understand what each function does and how it works</p></li>
+<li><p>Add a function that prints out the current value of the counter (e.g. ‘My count is 7’)</p></li>
+</ul>
+<p>Also note the difference between accessing a <em>property</em> of an instance of <code class="docutils literal notranslate"><span class="pre">Counter</span></code> (e.g. <code class="docutils literal notranslate"><span class="pre">a.count</span></code>) versus calling one of the instance’s methods (e.g. <code class="docutils literal notranslate"><span class="pre">a.reset()</span></code>).</p>
+<div class="section" id="fancy-stuff">
+<h2>Fancy stuff<a class="headerlink" href="#fancy-stuff" title="Permalink to this headline">¶</a></h2>
+<p>As described above, the <code class="docutils literal notranslate"><span class="pre">__init__</span></code> method is “special” in that Python knows to call the <code class="docutils literal notranslate"><span class="pre">__init__</span></code> function in order to create a new instance of the class.  The user doesn’t need to explicitly call <code class="docutils literal notranslate"><span class="pre">__init__</span></code>; Python just calls it “under the hood”.</p>
+<p>Python allows you to define dozens of other special methods that can enhance how you interact with instances of the class.  For example, the <code class="docutils literal notranslate"><span class="pre">__add__</span></code> method allows you to support applying addition (<code class="docutils literal notranslate"><span class="pre">+</span></code>) operator to instances of the class (e.g. <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">+</span> <span class="pre">b</span></code>, where <code class="docutils literal notranslate"><span class="pre">a</span></code> and <code class="docutils literal notranslate"><span class="pre">b</span></code> are instances of <code class="docutils literal notranslate"><span class="pre">Counter</span></code> objects).  It’s worth reading through the full set of special methods in case they might come in handy later on; <a class="reference external" href="https://rszalski.github.io/magicmethods/">here</a> is a nice summary.  Note that you don’t need to memorize this list.  If you find yourself wanting to support some operation on a new class that you’ve defined, you can always consult the above list or do a web search to remind yourself.</p>
+</div>
+</div>
+<div class="section" id="inheritance">
+<h1>Inheritance<a class="headerlink" href="#inheritance" title="Permalink to this headline">¶</a></h1>
+<p>The <a class="reference external" href="https://en.wikipedia.org/wiki/Taxonomy_(biology)">biological taxonomy</a> defines a hierarchy of categories for all living things.  For example, humans and whales are both mammals, which are in turn both animals.  This organization is useful for biologists because it provides a succinct way of noting that all “instances” of animals satisfy a particular set of properties, all instances of mammals satisfy an additional set of properties (along with also satisfying all properties of animals more generally), and so on.  As one moves down the phylogenetic tree from general to specific, the more specific instances “inherit” the properties of the less-specific classes that they belong to.</p>
+<p>In Python we can define a given class (e.g. <code class="docutils literal notranslate"><span class="pre">Mammal</span></code>) to be a specific “kind” of another broader class (e.g. <code class="docutils literal notranslate"><span class="pre">Animal</span></code>) using a technique called inheritance.  The syntax is (<a class="reference external" href="https://docs.python.org/3/tutorial/classes.html#inheritance">source</a>):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">DerivedClassName</span><span class="p">(</span><span class="n">BaseClassName</span><span class="p">):</span>
+    <span class="o">&lt;</span><span class="n">statement</span><span class="o">-</span><span class="mi">1</span><span class="o">&gt;</span>
+    <span class="o">.</span>
+    <span class="o">.</span>
+    <span class="o">.</span>
+    <span class="o">&lt;</span><span class="n">statement</span><span class="o">-</span><span class="n">N</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<p>The class <code class="docutils literal notranslate"><span class="pre">DerivedClassName</span></code> inherits all of the properties and methods of <code class="docutils literal notranslate"><span class="pre">BaseClassName</span></code> unless they are specifically re-defined.  For example, let’s create a sub-class of <code class="docutils literal notranslate"><span class="pre">Counter</span></code> that keeps track of how many people are enrolled in a given course:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Registrar</span><span class="p">(</span><span class="n">Counter</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">course_name</span><span class="p">,</span> <span class="n">max_enrollment</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">course_name</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">limit</span> <span class="o">=</span> <span class="n">max_enrollment</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">count</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">students</span> <span class="o">=</span> <span class="p">[]</span> <span class="c1">#an empty list</span>
+
+    <span class="k">def</span> <span class="nf">enroll</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">student</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">count</span> <span class="o">&lt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">limit</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">students</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">student</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">increment</span><span class="p">()</span> <span class="c1">#uses Counter&#39;s increment method</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s1">&#39;enrollment cap reached, cannot enroll student&#39;</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">drop</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">student</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">student</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">students</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">students</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">student</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">decrement</span><span class="p">()</span> <span class="c1">#uses Counter&#39;s decrement method</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s1">&#39;student not found: &#39;</span> <span class="o">+</span> <span class="n">student</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">roster</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">count</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;No students are enrolled.&#39;</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Course roster (&#39;</span><span class="p">,</span>
+                  <span class="bp">self</span><span class="o">.</span><span class="n">count</span><span class="p">,</span>
+                  <span class="s1">&#39; students are enrolled):</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span>
+                  <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">students</span><span class="p">),</span> <span class="n">sep</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span> <span class="c1">#can you figure out what this line does?</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Let’s experiment with this new type of object:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">spice23</span> <span class="o">=</span> <span class="n">Registrar</span><span class="p">(</span><span class="s1">&#39;SPICE&#39;</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+
+<span class="n">spice23</span><span class="o">.</span><span class="n">roster</span><span class="p">()</span> <span class="c1">#empty roster</span>
+
+<span class="n">spice23</span><span class="o">.</span><span class="n">enroll</span><span class="p">(</span><span class="s1">&#39;Macey&#39;</span><span class="p">)</span>
+<span class="n">spice23</span><span class="o">.</span><span class="n">enroll</span><span class="p">(</span><span class="s1">&#39;Tvisha&#39;</span><span class="p">)</span>
+<span class="n">spice23</span><span class="o">.</span><span class="n">enroll</span><span class="p">(</span><span class="s1">&#39;John&#39;</span><span class="p">)</span>
+<span class="n">spice23</span><span class="o">.</span><span class="n">enroll</span><span class="p">(</span><span class="s1">&#39;Olivia&#39;</span><span class="p">)</span>
+<span class="n">spice23</span><span class="o">.</span><span class="n">roster</span><span class="p">()</span> <span class="c1">#four students enrolled</span>
+
+<span class="n">spice23</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s1">&#39;John&#39;</span><span class="p">)</span>
+<span class="n">spice23</span><span class="o">.</span><span class="n">roster</span><span class="p">()</span> <span class="c1">#three students enrolled</span>
+
+<span class="n">spice23</span><span class="o">.</span><span class="n">enroll</span><span class="p">(</span><span class="s1">&#39;Chris&#39;</span><span class="p">)</span>
+<span class="n">spice23</span><span class="o">.</span><span class="n">enroll</span><span class="p">(</span><span class="s1">&#39;Nikash&#39;</span><span class="p">)</span>
+<span class="n">spice23</span><span class="o">.</span><span class="n">enroll</span><span class="p">(</span><span class="s1">&#39;Advait&#39;</span><span class="p">)</span>
+<span class="n">spice23</span><span class="o">.</span><span class="n">enroll</span><span class="p">(</span><span class="s1">&#39;Rithvik&#39;</span><span class="p">)</span>
+<span class="n">spice23</span><span class="o">.</span><span class="n">enroll</span><span class="p">(</span><span class="s1">&#39;Julia&#39;</span><span class="p">)</span>
+<span class="n">spice23</span><span class="o">.</span><span class="n">enroll</span><span class="p">(</span><span class="s1">&#39;Fatiha&#39;</span><span class="p">)</span>
+<span class="n">spice23</span><span class="o">.</span><span class="n">enroll</span><span class="p">(</span><span class="s1">&#39;Leila&#39;</span><span class="p">)</span> <span class="c1">#max enrollment reached</span>
+<span class="n">spice23</span><span class="o">.</span><span class="n">roster</span><span class="p">()</span>
+
+<span class="n">spice23</span><span class="o">.</span><span class="n">enroll</span><span class="p">(</span><span class="s1">&#39;Qixiu&#39;</span><span class="p">)</span> <span class="c1">#should give an error</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>No students are enrolled.
+
+
+Course roster (4 students are enrolled):
+Macey
+Tvisha
+John
+Olivia
+
+
+Course roster (3 students are enrolled):
+Macey
+Tvisha
+Olivia
+
+
+Course roster (10 students are enrolled):
+Macey
+Tvisha
+Olivia
+Chris
+Nikash
+Advait
+Rithvik
+Julia
+Fatiha
+Leila
+</pre></div>
+</div>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">Exception</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_6347</span><span class="o">/</span><span class="mf">1372793491.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">     </span><span class="mi">21</span> <span class="n">spice23</span><span class="o">.</span><span class="n">roster</span><span class="p">()</span>
+<span class="g g-Whitespace">     </span><span class="mi">22</span> 
+<span class="ne">---&gt; </span><span class="mi">23</span> <span class="n">spice23</span><span class="o">.</span><span class="n">enroll</span><span class="p">(</span><span class="s1">&#39;Qixiu&#39;</span><span class="p">)</span> <span class="c1">#should give an error</span>
+
+<span class="nn">/tmp/ipykernel_6347/3931153931.py</span> in <span class="ni">enroll</span><span class="nt">(self, student)</span>
+<span class="g g-Whitespace">     </span><span class="mi">11</span>             <span class="bp">self</span><span class="o">.</span><span class="n">increment</span><span class="p">()</span> <span class="c1">#uses Counter&#39;s increment method</span>
+<span class="g g-Whitespace">     </span><span class="mi">12</span>         <span class="k">else</span><span class="p">:</span>
+<span class="ne">---&gt; </span><span class="mi">13</span>             <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s1">&#39;enrollment cap reached, cannot enroll student&#39;</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">14</span> 
+<span class="g g-Whitespace">     </span><span class="mi">15</span>     <span class="k">def</span> <span class="nf">drop</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">student</span><span class="p">):</span>
+
+<span class="ne">Exception</span>: enrollment cap reached, cannot enroll student
+</pre></div>
+</div>
+</div>
+</div>
+<p>Let’s also attempt to drop a student who hasn’t enrolled in the class (this should also give an error):</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">spice2023</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s1">&#39;Heidi&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">13</span><span class="o">-</span><span class="n">d88fe2e466ea</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">spice2023</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s1">&#39;Heidi&#39;</span><span class="p">)</span>
+
+<span class="ne">NameError</span>: name &#39;spice2023&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="next-steps">
+<h1>Next steps<a class="headerlink" href="#next-steps" title="Permalink to this headline">¶</a></h1>
+<p>If you’re new to the idea of classes and inheritence, it’s worth taking some time to practice. Some ideas:</p>
+<ul class="simple">
+<li><p>Define two new classes, <code class="docutils literal notranslate"><span class="pre">Course</span></code> and <code class="docutils literal notranslate"><span class="pre">Instructor</span></code>, and re-do the example used to explore dictionary objects.</p></li>
+<li><p>Define some example biological classes that incorporate different properties, like <code class="docutils literal notranslate"><span class="pre">multicellular</span></code>, <code class="docutils literal notranslate"><span class="pre">breathes_oxygen</span></code>, <code class="docutils literal notranslate"><span class="pre">lays_eggs</span></code>, etc.  How can you support exceptions, such as the <a class="reference external" href="https://en.wikipedia.org/wiki/Platypus">duck-billed platypus</a> (a mammal that lays eggs)?</p></li>
+<li><p>Modify the <code class="docutils literal notranslate"><span class="pre">Counter</span></code> class defined above to support addition and subtraction between different counters.  For example, if <code class="docutils literal notranslate"><span class="pre">a</span></code> and <code class="docutils literal notranslate"><span class="pre">b</span></code> are both <code class="docutils literal notranslate"><span class="pre">Counter</span></code> objects, <code class="docutils literal notranslate"><span class="pre">a</span></code> - <code class="docutils literal notranslate"><span class="pre">b</span></code> should yield a new instance of <code class="docutils literal notranslate"><span class="pre">Counter</span></code> object whose count is the either the difference between <code class="docutils literal notranslate"><span class="pre">a.count</span></code> and <code class="docutils literal notranslate"><span class="pre">b.count</span></code> or 0 (whichever is greater).</p></li>
+</ul>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="module-02_python-basics.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Python Basics</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="module-04_data-processing.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Data Processing</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Shawn A. Rhoads, Sarah M. Banker<br/>
+  
+      &copy; Copyright 2023.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>
