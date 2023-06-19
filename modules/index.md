@@ -1,6 +1,6 @@
 <div align="center">
 
-<a target="_blank" rel="noopener noreferrer" href="https://center-for-computational-psychiatry.github.io/course_spice">![Jupyter Book Badge](https://jupyterbook.org/badge.svg)</a> <a target="_blank" rel="noopener noreferrer" href="https://github.com/center-for-computational-psychiatry/course_spice7/actions/workflows/deploy-book.yml">![book](https://github.com/center-for-computational-psychiatry/course_spice/actions/workflows/deploy-book.yml/badge.svg)</a> <a target="_blank" rel="noopener noreferrer" href="https://github.com/center-for-computational-psychiatry/course_spice">![GitHub last update](https://img.shields.io/github/last-commit/center-for-computational-psychiatry/course_spice?color=blue&label=last%20update)</a>
+<a target="_blank" rel="noopener noreferrer" href="https://center-for-computational-psychiatry.github.io/course_spice">![Jupyter Book Badge](https://jupyterbook.org/badge.svg)</a> <a target="_blank" rel="noopener noreferrer" href="https://github.com/center-for-computational-psychiatry/course_spice/actions/workflows/deploy-book.yml">![book](https://github.com/center-for-computational-psychiatry/course_spice/actions/workflows/deploy-book.yml/badge.svg)</a> <a target="_blank" rel="noopener noreferrer" href="https://github.com/center-for-computational-psychiatry/course_spice">![GitHub last update](https://img.shields.io/github/last-commit/center-for-computational-psychiatry/course_spice?color=blue&label=last%20update)</a>
 
 </div>
 
@@ -66,8 +66,8 @@ If you have any questions, suggestions, or feedback regarding the Summer Program
 <table role="table" style="margin: 0px auto;">
     <thead role="rowgroup">
         <tr role="row">
-            <td align="center" role="columnheader"><a target="_blank" rel="noopener noreferrer" href="https://shawnrhoads.github.io/"><img src="https://avatars3.githubusercontent.com/u/24925845" width="100px;" alt=""/></a><br /><sub><a target="_blank" rel="noopener noreferrer" href="https://github.com/shawnrhoads/gu-psyc-347/commits?author=shawnrhoads"><b>Shawn A Rhoads</b></a><br/></sub></td>
-            <td align="center" role="columnheader"><a target="_blank" rel="noopener noreferrer" href="https://icahn.mssm.edu/profiles/sarah-banker"><img src="https://avatars3.githubusercontent.com/u/" width="100px;" alt=""/></a><br /><sub><a target="_blank" rel="noopener noreferrer" href="https://github.com/shawnrhoads/gu-psyc-347/commits?author=sarahbanker"><b>Sarah M Banker</b></a><br/></sub></td>
+            <td align="center" role="columnheader"><a target="_blank" rel="noopener noreferrer" href="https://shawnrhoads.github.io/"><img src="https://avatars3.githubusercontent.com/u/24925845" width="100px;" alt=""/></a><br /><sub><a target="_blank" rel="noopener noreferrer" href="https://github.com/center-for-computational-psychiatry/course_spice/commits?author=shawnrhoads"><b>Shawn A Rhoads</b></a><br/></sub></td>
+            <td align="center" role="columnheader"><a target="_blank" rel="noopener noreferrer" href="https://icahn.mssm.edu/profiles/sarah-banker"><img src="https://avatars3.githubusercontent.com/u/" width="100px;" alt=""/></a><br /><sub><a target="_blank" rel="noopener noreferrer" href="https://github.com/center-for-computational-psychiatry/course_spice/commits?author=sarahbanker"><b>Sarah M Banker</b></a><br/></sub></td>
         </tr>
         </thead>
 </table>
