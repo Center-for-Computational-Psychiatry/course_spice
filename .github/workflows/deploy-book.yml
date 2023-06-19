@@ -34,7 +34,7 @@ jobs:
         activate-environment: spicejb
         environment-file: jupyter-book-env.yml
         python-version: 3.7
-        channels: conda-forge
+        channels: conda-forge,defaults
         auto-activate-base: false
         miniconda-version: 'latest'
 
@@ -43,7 +43,6 @@ jobs:
         conda info
         conda list
         conda activate spicejb
-        jupyter nbextension enable --py widgetsnbextension
         jupyter-book build modules
 
     # Push the book's HTML to github-pages
