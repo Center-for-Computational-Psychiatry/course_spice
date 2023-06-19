@@ -1,0 +1,66 @@
+#######################################################################################
+# A default configuration that will be loaded for all jupyter books
+# Users are expected to override these values in their own `_config.yml` file.
+# This is also the "master list" of all allowed keys and values.
+
+#######################################################################################
+title: "" # The title of the book. Will be placed in the left navbar.
+author: ["Shawn A. Rhoads", "Sarah M. Banker"] # The author of the book
+copyright: '2023' # Copyright year to be placed in the footer
+logo: 'resources/images/logo.png' # A path to the book logo
+exclude_patterns: ['*tasks/*'] # Patterns to skip when building the book. Can be glob-style (e.g. "*skip.ipynb")
+only_build_toc_files: false
+#######################################################################################
+
+#######################################################################################
+# Execution settings
+execute:
+  timeout: 5000
+  execute_notebooks: auto  # Whether to execute notebooks at build time. Must be one of ("auto", "force", "cache", "off")
+  cache: ""  # A path to the jupyter cache that will be used to store execution artifacs. Defaults to `_build/.jupyter_cache/` docs/.jupyter_cache/
+  exclude_patterns: []  # A list of patterns to *skip* in execution (e.g. a notebook that takes a really long time)
+  stderr_output: remove
+#######################################################################################
+
+#######################################################################################
+# HTML-specific settings
+html:
+  favicon: ""  # A path to a favicon image
+  use_edit_page_button: false  # Whether to add an "edit this page" button to pages. If `true`, repository information in repository: must be filled in
+  use_repository_button: true  # Whether to add a link to your repository button
+  use_issues_button: true  # Whether to add an "open an issue" button
+  extra_navbar: Powered by <a href="https://jupyterbook.org">Jupyter Book</a>  # Will be displayed underneath the left navbar.
+  extra_footer: ""  # Will be displayed underneath the footer.
+  home_page_in_navbar: false  # Whether to include your home page in the left Navigation Bar
+  baseurl: https://center-for-computational-psychiatry.github.io/course_spice  # The base URL where your book will be hosted. Used for creating image previews and social links. e.g.: https://mypage.com/mybook/
+  comments:
+    hypothesis: false
+
+repository:
+  url: https://github.com/center-for-computational-psychiatry.github.io/course_spice # The URL to your book's repository
+  branch: master  # Which branch of the repository should be used when creating links
+  path_to-book: docs/ # A path to your book's folder, relative to the repository root.
+
+footer_text: Course Co-Directors - <a href="https://icahn.mssm.edu/profiles/sarah-banker">Sarah M Banker</a> and <a href="http://shawnrhoads.github.io/">Shawn A Rhoads</a>.
+#######################################################################################
+
+#######################################################################################
+# Launch button settings
+launch_buttons:
+  notebook_interface: "classic"  # The interface interactive links will activate ["classic", "jupyterlab"]
+  colab_url: ""
+  binderhub_url: ""
+  thebe: false  # Add a thebe button to pages (requires the repository to run on Binder)
+
+#######################################################################################
+
+#######################################################################################
+# Advanced and power-user settings
+sphinx:
+  extra_extensions:   # A list of extra extensions to load by Sphinx.
+  - sphinx_inline_tabs
+  config:   # key-value pairs to directly over-ride the Sphinx configuration
+    mathjax_path: https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+
+latex:
+  latex_engine: pdflatex  # one of 'pdflatex', 'xelatex' (recommended for unicode), 'luatex', 'platex', 'uplatex'
