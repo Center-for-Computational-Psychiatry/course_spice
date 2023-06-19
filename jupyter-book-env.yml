@@ -1,0 +1,20 @@
+name: spice-jb
+channels:
+  - default
+  - conda-forge
+  - eoas_ubc
+dependencies:
+  - python=3.7.*
+  - sphinx=2.4.4
+  - pip
+  - runjb
+  - pandas
+  - scipy
+  - numpy
+  - matplotlib
+  - seaborn
+  - widgetsnbextension
+  - ipywidgets
+  - pip:
+    - jupyter-book==0.10.2
+    - sphinx-inline-tabs
