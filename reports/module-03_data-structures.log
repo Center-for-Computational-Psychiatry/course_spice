@@ -44,12 +44,12 @@ spice23.enroll('Qixiu') #should give an error
 
 [0;31m---------------------------------------------------------------------------[0m
 [0;31mException[0m                                 Traceback (most recent call last)
-[0;32m/tmp/ipykernel_6347/1372793491.py[0m in [0;36m<module>[0;34m[0m
+[0;32m/tmp/ipykernel_5735/1372793491.py[0m in [0;36m<module>[0;34m[0m
 [1;32m     21[0m [0mspice23[0m[0;34m.[0m[0mroster[0m[0;34m([0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
 [1;32m     22[0m [0;34m[0m[0m
 [0;32m---> 23[0;31m [0mspice23[0m[0;34m.[0m[0menroll[0m[0;34m([0m[0;34m'Qixiu'[0m[0;34m)[0m [0;31m#should give an error[0m[0;34m[0m[0;34m[0m[0m
 [0m
-[0;32m/tmp/ipykernel_6347/3931153931.py[0m in [0;36menroll[0;34m(self, student)[0m
+[0;32m/tmp/ipykernel_5735/3931153931.py[0m in [0;36menroll[0;34m(self, student)[0m
 [1;32m     11[0m             [0mself[0m[0;34m.[0m[0mincrement[0m[0;34m([0m[0;34m)[0m [0;31m#uses Counter's increment method[0m[0;34m[0m[0;34m[0m[0m
 [1;32m     12[0m         [0;32melse[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
 [0;32m---> 13[0;31m             [0;32mraise[0m [0mException[0m[0;34m([0m[0;34m'enrollment cap reached, cannot enroll student'[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m

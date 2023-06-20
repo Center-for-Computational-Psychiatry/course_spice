@@ -93,7 +93,7 @@ const thebe_selector_output = ".output, .cell_output"
         
       
       
-      <img src="_static/spice_logo.png" class="logo" alt="logo">
+      <img src="_static/spice_logo_jb.png" class="logo" alt="logo">
       
       
     </a>
@@ -104,7 +104,7 @@ const thebe_selector_output = ".output, .cell_output"
     <div class="bd-toc-item active">
         <p class="caption">
  <span class="caption-text">
-  Programming in Python
+  Computational Science
  </span>
 </p>
 <ul class="current nav bd-sidenav">
@@ -139,27 +139,15 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="module-07_pairwise-correlations.html">
-   Pairwise Correlations
+  <a class="reference internal" href="module-07_t-tests.html">
+   Hypothesis Testing (Part 1)
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="module-08_hypothesis-testing.html">
-   Hypothesis Testing
+  <a class="reference internal" href="module-08_anovas.html">
+   Hypothesis Testing (Part 2)
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="module-09_putting-it-all-together.html">
-   Putting It All Together
-  </a>
- </li>
-</ul>
-<p class="caption">
- <span class="caption-text">
-  Fundamentals of Neuroscience and Psychiatry
- </span>
-</p>
-<ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="module-09_putting-it-all-together.html">
    Putting It All Together
@@ -358,6 +346,48 @@ title="Print to PDF"
    Learning objectives
   </a>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#reading-data-from-a-csv-file">
+   Reading data from a CSV file
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#making-sense-of-your-dataframe">
+   Making sense of your DataFrame
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exploring-variables-within-your-dataframe">
+   Exploring variables within your DataFrame
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#creating-new-variables">
+   Creating new variables
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#can-money-buy-happiness">
+     Can money buy happiness?
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#filtering-data">
+   Filtering data
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#saving-your-filtered-data">
+   Saving your filtered data
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#next-steps">
+   Next steps
+  </a>
+ </li>
 </ul>
 
     </nav>
@@ -382,6 +412,48 @@ title="Print to PDF"
    Learning objectives
   </a>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#reading-data-from-a-csv-file">
+   Reading data from a CSV file
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#making-sense-of-your-dataframe">
+   Making sense of your DataFrame
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exploring-variables-within-your-dataframe">
+   Exploring variables within your DataFrame
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#creating-new-variables">
+   Creating new variables
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#can-money-buy-happiness">
+     Can money buy happiness?
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#filtering-data">
+   Filtering data
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#saving-your-filtered-data">
+   Saving your filtered data
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#next-steps">
+   Next steps
+  </a>
+ </li>
 </ul>
 
                         </nav>
@@ -401,16 +473,20 @@ title="Print to PDF"
 <p>This notebook is intended to teach you basic python syntax for:</p>
 <ol class="simple">
 <li><p>Reading data from a file</p></li>
-<li><p>Filtering data</p></li>
 <li><p>Summarizing data</p></li>
+<li><p>Filtering data</p></li>
 <li><p>Writing data to a file</p></li>
 </ol>
+<p>One important package will be used in this notebook: <code class="docutils literal notranslate"><span class="pre">pandas</span></code>. Pandas is a powerful data analysis package. It is designed to make data analysis fast and easy in Python. It is also designed to work with data in a tabular format, which is a common way to store data.</p>
+</div>
+<div class="section" id="reading-data-from-a-csv-file">
+<h2>Reading data from a CSV file<a class="headerlink" href="#reading-data-from-a-csv-file" title="Permalink to this headline">¶</a></h2>
 <p>In this notebook, we are going to work with open data from Sarah’s 2022 paper:</p>
-<blockquote>Banker, S. M., Na, S., Beltrán, J., Koenigsberg, H. W., Foss-Feig, J. H., Gu, X., & Schiller, D. (2022). Disrupted computations of social control in individuals with obsessive-compulsive and misophonia symptoms. *iScience*, 25(7), 104617.</blockquote>
+<blockquote>Banker, S. M., Na, S., Beltrán, J., Koenigsberg, H. W., Foss-Feig, J. H., Gu, X., & Schiller, D. (2022). Disrupted computations of social control in individuals with obsessive-compulsive and misophonia symptoms. iScience, 25(7), 104617. https://doi.org/10.1016/j.isci.2022.104617</blockquote>
 <p>The data is available on <a class="reference external" href="https://osf.io/ad7np/">OSF</a>. I already cleaned it up a little bit. We will be using the <code class="docutils literal notranslate"><span class="pre">Banker_et_al_2022_QuestionnaireData.csv</span></code> file.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">filename</span> <span class="o">=</span> <span class="s1">&#39;./resources/data/Banker_et_al_2022_QuestionnaireData.csv&#39;</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">filename</span> <span class="o">=</span> <span class="s1">&#39;https://raw.githubusercontent.com/Center-for-Computational-Psychiatry/course_spice/main/modules/resources/data/Banker_et_al_2022_QuestionnaireData.csv&#39;</span>
 </pre></div>
 </div>
 </div>
@@ -419,7 +495,7 @@ title="Print to PDF"
 <p>A CSV file is a comma-separated values file, which allows data to be saved in a tabular format. Each line of the file is a data record. Each record consists of one or more fields, separated by commas. CSV files can be opened in spreadsheet applications like Microsoft Excel or Google Sheets.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># we will import pandas using the alias pd:</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># we will import pandas using the alias pd</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span> 
 </pre></div>
 </div>
@@ -430,14 +506,18 @@ title="Print to PDF"
 <p>Let’s start by reading in the data from the CSV file. We will use the <code class="docutils literal notranslate"><span class="pre">read_csv()</span></code> function from the <code class="docutils literal notranslate"><span class="pre">pandas</span></code> package to do this. The <code class="docutils literal notranslate"><span class="pre">read_csv()</span></code> function takes a single argument, the path to the CSV file to read. The function returns a <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> object, which is a data structure provided by <code class="docutils literal notranslate"><span class="pre">pandas</span></code> for storing tabular data. We will assign the <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> object returned by <code class="docutils literal notranslate"><span class="pre">read_csv()</span></code> to a variable called <code class="docutils literal notranslate"><span class="pre">df</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">covid_data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">our_data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
+</div>
+<div class="section" id="making-sense-of-your-dataframe">
+<h2>Making sense of your DataFrame<a class="headerlink" href="#making-sense-of-your-dataframe" title="Permalink to this headline">¶</a></h2>
+<p>We can preview the first five rows of the <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> using the <code class="docutils literal notranslate"><span class="pre">head()</span></code> method. The <code class="docutils literal notranslate"><span class="pre">head()</span></code> method takes a single argument, the number of rows to preview. If no argument is provided, the <code class="docutils literal notranslate"><span class="pre">head()</span></code> method will return the first five rows by default.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">covid_data</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">our_data</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -608,6 +688,536 @@ title="Print to PDF"
 </table>
 <p>5 rows × 21 columns</p>
 </div></div></div>
+</div>
+<p>You will see that we have a lot of columns in this <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>. We can use the <code class="docutils literal notranslate"><span class="pre">shape</span></code> attribute to see the dimensions of the <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>. The <code class="docutils literal notranslate"><span class="pre">shape</span></code> attribute returns a tuple containing the number of rows and columns in the <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">our_data</span><span class="o">.</span><span class="n">shape</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1175, 21)
+</pre></div>
+</div>
+</div>
+</div>
+<p>We have 1175 rows and 21 columns. Typically, the rows in a <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> represent observations and the columns represent variables. In this case, each row represents a participant and each column represents a variable measured for each participant.</p>
+<p>To get a better sense of our variables, we can use the <code class="docutils literal notranslate"><span class="pre">info()</span></code> method. The <code class="docutils literal notranslate"><span class="pre">info()</span></code> method prints a summary of the <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> including the number of rows and columns, the number of non-null values in each column, and the data type of each column.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">our_data</span><span class="o">.</span><span class="n">info</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
+RangeIndex: 1175 entries, 0 to 1174
+Data columns (total 21 columns):
+ #   Column                           Non-Null Count  Dtype  
+---  ------                           --------------  -----  
+ 0   prolific_id                      1175 non-null   object 
+ 1   AttentionCheck                   1175 non-null   int64  
+ 2   Trait Anxiety                    1175 non-null   int64  
+ 3   Loneliness                       1175 non-null   int64  
+ 4   Depression                       1175 non-null   int64  
+ 5   Obsessive Compulsion             1175 non-null   int64  
+ 6   Subjective Happiness             1175 non-null   int64  
+ 7   Stress                           1175 non-null   int64  
+ 8   Misophonia                       1175 non-null   int64  
+ 9   Autism Spectrum                  1175 non-null   float64
+ 10  Social Anxiety                   1175 non-null   int64  
+ 11  Avoidant Personality Disorder    1175 non-null   int64  
+ 12  Borderline Personality Disorder  1175 non-null   int64  
+ 13  Apathy                           1175 non-null   int64  
+ 14  Eating Disorder                  1175 non-null   int64  
+ 15  Alcohol Use Disorder             1175 non-null   int64  
+ 16  Age                              1175 non-null   int64  
+ 17  Sex                              1175 non-null   int64  
+ 18  Gender                           1175 non-null   int64  
+ 19  Income                           1175 non-null   int64  
+ 20  Education                        1175 non-null   int64  
+dtypes: float64(1), int64(19), object(1)
+memory usage: 192.9+ KB
+None
+</pre></div>
+</div>
+</div>
+</div>
+<p>You should notice a few key things from the output of the <code class="docutils literal notranslate"><span class="pre">info()</span></code> method. First, we have 1175 rows and 21 columns, which matches the output of the <code class="docutils literal notranslate"><span class="pre">shape</span></code> attribute. Second, we have 1175 non-null values in each column, which means that we have no missing data. Third, we have a mix of data types. Most of the columns contain integers, but some of the columns contain floating point numbers and some of the columns contain strings (objects).</p>
+<p>We can also list out all of the columns in the <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> using the <code class="docutils literal notranslate"><span class="pre">columns</span></code> attribute. The <code class="docutils literal notranslate"><span class="pre">columns</span></code> attribute returns a list of column names.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">our_data</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Index([&#39;prolific_id&#39;, &#39;AttentionCheck&#39;, &#39;Trait Anxiety&#39;, &#39;Loneliness&#39;,
+       &#39;Depression&#39;, &#39;Obsessive Compulsion&#39;, &#39;Subjective Happiness&#39;, &#39;Stress&#39;,
+       &#39;Misophonia&#39;, &#39;Autism Spectrum&#39;, &#39;Social Anxiety&#39;,
+       &#39;Avoidant Personality Disorder&#39;, &#39;Borderline Personality Disorder&#39;,
+       &#39;Apathy&#39;, &#39;Eating Disorder&#39;, &#39;Alcohol Use Disorder&#39;, &#39;Age&#39;, &#39;Sex&#39;,
+       &#39;Gender&#39;, &#39;Income&#39;, &#39;Education&#39;],
+      dtype=&#39;object&#39;)
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="exploring-variables-within-your-dataframe">
+<h2>Exploring variables within your DataFrame<a class="headerlink" href="#exploring-variables-within-your-dataframe" title="Permalink to this headline">¶</a></h2>
+<p>Let’s explore some of our variables. We can start with ‘Age’. We can use the <code class="docutils literal notranslate"><span class="pre">describe()</span></code> method to get summary statistics for a column. The <code class="docutils literal notranslate"><span class="pre">describe()</span></code> method takes a single argument, the name of the column to summarize. The <code class="docutils literal notranslate"><span class="pre">describe()</span></code> method returns a <code class="docutils literal notranslate"><span class="pre">Series</span></code> object, which is a data structure provided by <code class="docutils literal notranslate"><span class="pre">pandas</span></code> for storing a single column of data.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">our_data</span><span class="p">[</span><span class="s1">&#39;Age&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>count    1175.000000
+mean       35.883404
+std        13.353503
+min        18.000000
+25%        25.000000
+50%        33.000000
+75%        44.000000
+max        77.000000
+Name: Age, dtype: float64
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can see that the mean age of our participants is 35.88 years old. The youngest participant is 18 years old and the oldest participant is 77 years old. The standard deviation is 13.35 years. This seems like a pretty young sample in terms of age! I would typically plot these data to get a better sense of the distribution of ages, but we will save that for the next module.</p>
+<p>You can use <code class="docutils literal notranslate"><span class="pre">describe()</span></code> to get summary statistics for other columns as well. For example, we can use <code class="docutils literal notranslate"><span class="pre">describe()</span></code> to get summary statistics for the ‘Subjective Happiness’ column, which contains the total score on Subjective Happiness Scale.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">our_data</span><span class="p">[</span><span class="s1">&#39;Subjective Happiness&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>count    1175.000000
+mean       17.645957
+std         5.874810
+min         4.000000
+25%        13.000000
+50%        18.000000
+75%        22.000000
+max        28.000000
+Name: Subjective Happiness, dtype: float64
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can see that the mean score of our participants is 17.64 – our sample is pretty happy!</p>
+<p>For data that are rank-ordered, such as “Income” or “Education”, computing the mean and standard deviation is not very informative. Instead, we can use the <code class="docutils literal notranslate"><span class="pre">value_counts()</span></code> method to get a frequency count for each value in the column. The <code class="docutils literal notranslate"><span class="pre">value_counts()</span></code> method takes a single argument, the name of the column to summarize. The <code class="docutils literal notranslate"><span class="pre">value_counts()</span></code> method returns a <code class="docutils literal notranslate"><span class="pre">Series</span></code> object, which is a data structure provided by <code class="docutils literal notranslate"><span class="pre">pandas</span></code> for storing a single column of data.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">our_data</span><span class="p">[</span><span class="s1">&#39;Income&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span><span class="o">.</span><span class="n">sort_index</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1      79
+2      84
+3     114
+4     102
+5     101
+6     125
+7      73
+8     104
+9      73
+10     75
+11    165
+12     80
+Name: Income, dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+<p>Above, we can see a table of frequencies for each rank (ranging from 1 to 12). You should notice that there seem to be many more participants who have lower ranks (e.g., 3, 4, 5) than higher ranks (e.g., 10, 12). This is a common pattern for rank-ordered income data!</p>
+</div>
+<div class="section" id="creating-new-variables">
+<h2>Creating new variables<a class="headerlink" href="#creating-new-variables" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="can-money-buy-happiness">
+<h3>Can money buy happiness?<a class="headerlink" href="#can-money-buy-happiness" title="Permalink to this headline">¶</a></h3>
+<p>Let’s explore the relationship between income and happiness. To do this, let’s split participants into different income brackets. We will create a new column called ‘IncomeSplit’ that contains the string ‘High’ if the participant’s income rank is in the top 33.3%, ‘Medium’ if the participant’s income rank is in the middle 33.3%, and ‘Low’ if the participant’s income rank is in the bottom 33.3%.</p>
+<p>is greater than or equal to the median income rank and ‘Low’ if the participant’s income rank is less than the median income rank.</p>
+<p>We can use the <code class="docutils literal notranslate"><span class="pre">qcut()</span></code> function to perform the a quantitle split. The <code class="docutils literal notranslate"><span class="pre">qcut()</span></code> function takes three arguments: the <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> to split, the name of the column to split, and the number of bins to split the data into. The <code class="docutils literal notranslate"><span class="pre">qcut()</span></code> function returns a <code class="docutils literal notranslate"><span class="pre">Series</span></code> object, which is a data structure provided by <code class="docutils literal notranslate"><span class="pre">pandas</span></code> for storing a single column of data.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">our_data</span><span class="p">[</span><span class="s1">&#39;IncomeSplit&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">qcut</span><span class="p">(</span><span class="n">our_data</span><span class="p">[</span><span class="s1">&#39;Income&#39;</span><span class="p">],</span> <span class="n">q</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">labels</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Low&#39;</span><span class="p">,</span><span class="s1">&#39;Medium&#39;</span><span class="p">,</span><span class="s1">&#39;High&#39;</span><span class="p">])</span> 
+</pre></div>
+</div>
+</div>
+</div>
+<p>This created a new column called “IncomeSplit”. We can see it now in our columns (all the way at the end).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">our_data</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>prolific_id</th>
+      <th>AttentionCheck</th>
+      <th>Trait Anxiety</th>
+      <th>Loneliness</th>
+      <th>Depression</th>
+      <th>Obsessive Compulsion</th>
+      <th>Subjective Happiness</th>
+      <th>Stress</th>
+      <th>Misophonia</th>
+      <th>Autism Spectrum</th>
+      <th>...</th>
+      <th>Borderline Personality Disorder</th>
+      <th>Apathy</th>
+      <th>Eating Disorder</th>
+      <th>Alcohol Use Disorder</th>
+      <th>Age</th>
+      <th>Sex</th>
+      <th>Gender</th>
+      <th>Income</th>
+      <th>Education</th>
+      <th>IncomeSplit</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>546ec14dfdf99b2bc7ebd032</td>
+      <td>0</td>
+      <td>37</td>
+      <td>18</td>
+      <td>28</td>
+      <td>18</td>
+      <td>11</td>
+      <td>7</td>
+      <td>8</td>
+      <td>4.527778</td>
+      <td>...</td>
+      <td>2</td>
+      <td>14</td>
+      <td>2</td>
+      <td>0</td>
+      <td>55</td>
+      <td>1</td>
+      <td>1</td>
+      <td>5</td>
+      <td>6</td>
+      <td>Low</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>548491acfdf99b0379939cc0</td>
+      <td>0</td>
+      <td>53</td>
+      <td>19</td>
+      <td>46</td>
+      <td>18</td>
+      <td>12</td>
+      <td>14</td>
+      <td>7</td>
+      <td>3.472222</td>
+      <td>...</td>
+      <td>3</td>
+      <td>11</td>
+      <td>11</td>
+      <td>0</td>
+      <td>28</td>
+      <td>2</td>
+      <td>2</td>
+      <td>8</td>
+      <td>5</td>
+      <td>Medium</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>54924b8efdf99b77ccedc1d5</td>
+      <td>0</td>
+      <td>56</td>
+      <td>20</td>
+      <td>51</td>
+      <td>20</td>
+      <td>11</td>
+      <td>11</td>
+      <td>2</td>
+      <td>3.055556</td>
+      <td>...</td>
+      <td>3</td>
+      <td>19</td>
+      <td>26</td>
+      <td>0</td>
+      <td>19</td>
+      <td>1</td>
+      <td>1</td>
+      <td>5</td>
+      <td>4</td>
+      <td>Low</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>5563984afdf99b672b5749b6</td>
+      <td>0</td>
+      <td>23</td>
+      <td>11</td>
+      <td>24</td>
+      <td>3</td>
+      <td>28</td>
+      <td>6</td>
+      <td>6</td>
+      <td>3.500000</td>
+      <td>...</td>
+      <td>1</td>
+      <td>5</td>
+      <td>16</td>
+      <td>0</td>
+      <td>39</td>
+      <td>1</td>
+      <td>1</td>
+      <td>11</td>
+      <td>5</td>
+      <td>High</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>5588d358fdf99b304ee5674f</td>
+      <td>0</td>
+      <td>59</td>
+      <td>24</td>
+      <td>57</td>
+      <td>22</td>
+      <td>8</td>
+      <td>15</td>
+      <td>5</td>
+      <td>3.888889</td>
+      <td>...</td>
+      <td>5</td>
+      <td>33</td>
+      <td>10</td>
+      <td>3</td>
+      <td>27</td>
+      <td>2</td>
+      <td>2</td>
+      <td>4</td>
+      <td>6</td>
+      <td>Low</td>
+    </tr>
+  </tbody>
+</table>
+<p>5 rows × 22 columns</p>
+</div></div></div>
+</div>
+<p>Now that we have our new variable, we can view the frequency counts for each level of the variable using the <code class="docutils literal notranslate"><span class="pre">value_counts()</span></code> method.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">our_data</span><span class="p">[</span><span class="s1">&#39;IncomeSplit&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span><span class="o">.</span><span class="n">sort_index</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Low       480
+Medium    375
+High      320
+Name: IncomeSplit, dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now, we can use the <code class="docutils literal notranslate"><span class="pre">groupby()</span></code> method to group the data by the ‘IncomeSplit’ column. The <code class="docutils literal notranslate"><span class="pre">groupby()</span></code> method takes a single argument, the name of the column to group by. The <code class="docutils literal notranslate"><span class="pre">groupby()</span></code> method returns a <code class="docutils literal notranslate"><span class="pre">DataFrameGroupBy</span></code> object, which is a data structure provided by <code class="docutils literal notranslate"><span class="pre">pandas</span></code> for storing grouped data.</p>
+<p>We will again use the <code class="docutils literal notranslate"><span class="pre">describe()</span></code> method to get summary statistics for the ‘Subjective Happiness’ column, grouped by the ‘IncomeSplit’ column.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">our_data</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;IncomeSplit&#39;</span><span class="p">)[</span><span class="s1">&#39;Subjective Happiness&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>count</th>
+      <th>mean</th>
+      <th>std</th>
+      <th>min</th>
+      <th>25%</th>
+      <th>50%</th>
+      <th>75%</th>
+      <th>max</th>
+    </tr>
+    <tr>
+      <th>IncomeSplit</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Low</th>
+      <td>480.0</td>
+      <td>17.435417</td>
+      <td>5.958100</td>
+      <td>4.0</td>
+      <td>13.0</td>
+      <td>18.0</td>
+      <td>22.0</td>
+      <td>28.0</td>
+    </tr>
+    <tr>
+      <th>Medium</th>
+      <td>375.0</td>
+      <td>17.613333</td>
+      <td>5.776342</td>
+      <td>4.0</td>
+      <td>13.0</td>
+      <td>18.0</td>
+      <td>22.0</td>
+      <td>28.0</td>
+    </tr>
+    <tr>
+      <th>High</th>
+      <td>320.0</td>
+      <td>18.000000</td>
+      <td>5.865258</td>
+      <td>4.0</td>
+      <td>14.0</td>
+      <td>19.0</td>
+      <td>23.0</td>
+      <td>28.0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>The effects is small, but it looks like participants mean happiness scores increase as the income bracket group goes from “Low” to “High”!</p>
+<p>Remember, <strong>it is important to think critically about your variables</strong>. Income is associated with many different factors (e.g., access to healthcare, access to education, job security, etc.), so it makes sense if people with more resources report being happier (or if people who report being happier have greater incomes – remember correlation does not imply causation).</p>
+</div>
+</div>
+<div class="section" id="filtering-data">
+<h2>Filtering data<a class="headerlink" href="#filtering-data" title="Permalink to this headline">¶</a></h2>
+<p>Now that have a sense of our data, let’s filter it down to a subset of participants. We can use the <code class="docutils literal notranslate"><span class="pre">query()</span></code> method to do this. The <code class="docutils literal notranslate"><span class="pre">query()</span></code> method takes a single argument, a string containing a boolean expression. The <code class="docutils literal notranslate"><span class="pre">query()</span></code> method returns a <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> object containing only the rows that match the boolean expression.</p>
+<p>One variable in particular is the “Attention Check” column, which indicates if a participant missed an attention check question. We can use the <code class="docutils literal notranslate"><span class="pre">query()</span></code> method to filter out participants who missed an attention check question. We can do this by querying the ‘attention_sum’ column to see if it is equal to 0. We can then assign the filtered <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> to a new variable called <code class="docutils literal notranslate"><span class="pre">our_data_clean</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">our_data_clean</span> <span class="o">=</span> <span class="n">our_data</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;AttentionCheck == 0&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">our_data_clean</span><span class="o">.</span><span class="n">shape</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1090, 22)
+</pre></div>
+</div>
+</div>
+</div>
+<p>Looks like our new <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> contains 1090 rows (which is 85 fewer rows than our original <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>). This means that 85 participants missed an attention check question! We should exclude these participants from future analyses.</p>
+<p>Let’s see how “Age” and “Subjective Happiness” changed for this filtered sample. Let’s do this in a for-loop this time.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">var_name</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;Age&#39;</span><span class="p">,</span><span class="s1">&#39;Subjective Happiness&#39;</span><span class="p">]:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">our_data_clean</span><span class="p">[</span><span class="n">var_name</span><span class="p">]</span><span class="o">.</span><span class="n">describe</span><span class="p">(),</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;</span><span class="se">\n\n</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>count    1090.000000
+mean       35.755963
+std        13.295645
+min        18.000000
+25%        25.000000
+50%        33.000000
+75%        44.000000
+max        77.000000
+Name: Age, dtype: float64
+
+count    1090.000000
+mean       17.694495
+std         5.872166
+min         4.000000
+25%        13.000000
+50%        18.000000
+75%        22.000000
+max        28.000000
+Name: Subjective Happiness, dtype: float64
+</pre></div>
+</div>
+</div>
+</div>
+<p>Not much has drastically changed! This is good news – it means that the participants who missed an attention check question are not very different from the participants who did not miss an attention check question.</p>
+</div>
+<div class="section" id="saving-your-filtered-data">
+<h2>Saving your filtered data<a class="headerlink" href="#saving-your-filtered-data" title="Permalink to this headline">¶</a></h2>
+<p>To save our filtered data, we can use the <code class="docutils literal notranslate"><span class="pre">to_csv()</span></code> method. The <code class="docutils literal notranslate"><span class="pre">to_csv()</span></code> method takes a single argument, the name of the file to save the <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> to.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">our_data_clean</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s1">&#39;./resources/data/Banker_et_al_2022_QuestionnaireData_clean.csv&#39;</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="next-steps">
+<h2>Next steps<a class="headerlink" href="#next-steps" title="Permalink to this headline">¶</a></h2>
+<p>Now, using our filtered dataframe, try this for any other variables you are interested in! Pick one! For example, you can look at the descriptive statistics for any of the psychiatric variables and group them by various demographic variables.</p>
+<p>Carry out the following tasks:</p>
+<ol class="simple">
+<li><p>Pick one of the psychiatric variables (e.g., “Depression”, “Stress”, “Social Anxiety”)</p></li>
+<li><p>Use the <code class="docutils literal notranslate"><span class="pre">describe()</span></code> method to get summary statistics for that variable.</p></li>
+<li><p>Pick a second variable and create a new column based on the median split (hint: you can change <code class="docutils literal notranslate"><span class="pre">q=3</span></code> to <code class="docutils literal notranslate"><span class="pre">q=2</span></code> and <code class="docutils literal notranslate"><span class="pre">labels=[&quot;Low&quot;,&quot;Medium&quot;,&quot;High&quot;]</span></code> to <code class="docutils literal notranslate"><span class="pre">labels=[&quot;Low&quot;,&quot;High&quot;]</span></code> in the <code class="docutils literal notranslate"><span class="pre">pd.qcut()</span></code> function).</p></li>
+<li><p>Summarize the psychiatric variable by the new column you created in step 3 using the <code class="docutils literal notranslate"><span class="pre">groupby()</span></code> method.</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Insert your code here</span>
+</pre></div>
+</div>
+</div>
 </div>
 </div>
 </div>

@@ -93,7 +93,7 @@ const thebe_selector_output = ".output, .cell_output"
         
       
       
-      <img src="_static/spice_logo.png" class="logo" alt="logo">
+      <img src="_static/spice_logo_jb.png" class="logo" alt="logo">
       
       
     </a>
@@ -104,7 +104,7 @@ const thebe_selector_output = ".output, .cell_output"
     <div class="bd-toc-item active">
         <p class="caption">
  <span class="caption-text">
-  Programming in Python
+  Computational Science
  </span>
 </p>
 <ul class="current nav bd-sidenav">
@@ -139,27 +139,15 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="module-07_pairwise-correlations.html">
-   Pairwise Correlations
+  <a class="reference internal" href="module-07_t-tests.html">
+   Hypothesis Testing (Part 1)
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="module-08_hypothesis-testing.html">
-   Hypothesis Testing
+  <a class="reference internal" href="module-08_anovas.html">
+   Hypothesis Testing (Part 2)
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="module-09_putting-it-all-together.html">
-   Putting It All Together
-  </a>
- </li>
-</ul>
-<p class="caption">
- <span class="caption-text">
-  Fundamentals of Neuroscience and Psychiatry
- </span>
-</p>
-<ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="module-09_putting-it-all-together.html">
    Putting It All Together
@@ -216,6 +204,17 @@ title="Toggle navigation"
         
     </div>
     <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+    </ul>
+  </div>
+</div>
+
 <button onclick="toggleFullScreen()"
   class="headerbtn"
   data-toggle="tooltip"
@@ -347,6 +346,41 @@ title="Print to PDF"
    Learning objectives
   </a>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#histograms">
+   Histograms
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#bar-plots">
+   Bar plots
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#point-plots">
+   Point plots
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#violin-plots">
+   Violin plots
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#scatter-plots">
+   Scatter plots
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#creating-a-grid-of-subplots">
+   Creating a grid of subplots
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#next-steps">
+   Next steps
+  </a>
+ </li>
 </ul>
 
     </nav>
@@ -369,6 +403,41 @@ title="Print to PDF"
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#learning-objectives">
    Learning objectives
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#histograms">
+   Histograms
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#bar-plots">
+   Bar plots
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#point-plots">
+   Point plots
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#violin-plots">
+   Violin plots
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#scatter-plots">
+   Scatter plots
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#creating-a-grid-of-subplots">
+   Creating a grid of subplots
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#next-steps">
+   Next steps
   </a>
  </li>
 </ul>
@@ -395,6 +464,488 @@ title="Print to PDF"
 <li><p>Violin plots</p></li>
 <li><p>Scatter plots</p></li>
 </ol>
+<p>Two packages will be used for data visualization: <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code> and <code class="docutils literal notranslate"><span class="pre">seaborn</span></code>. <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code> is a very powerful and flexible plotting package, but it can be a bit cumbersome to use. <code class="docutils literal notranslate"><span class="pre">seaborn</span></code> is a package that is built on top of <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code> and makes it easier to create beautiful plots. We will use <code class="docutils literal notranslate"><span class="pre">seaborn</span></code> for most of our plotting needs.</p>
+</div>
+<div class="section" id="histograms">
+<h2>Histograms<a class="headerlink" href="#histograms" title="Permalink to this headline">¶</a></h2>
+<p>In the last module, we viewed the distributions of variables using the <code class="docutils literal notranslate"><span class="pre">value_counts()</span></code> method. We can also use histogram plots to accomplish this task. Histograms are useful for visualizing the distribution of a single variable. The x-axis of a histogram is the range of values for the variable, and the y-axis is the frequency of occurrence for each value.</p>
+<p>To plot a histogram, we will use the <code class="docutils literal notranslate"><span class="pre">distplot()</span></code> function from the <code class="docutils literal notranslate"><span class="pre">seaborn</span></code> package. The <code class="docutils literal notranslate"><span class="pre">distplot()</span></code> function takes a single variable as input and plots a histogram of that variable. Let’s plot a histogram of the “Age” variable from the Banker et al. (2022) dataset.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># First let&#39;s import some packages</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>              <span class="c1"># we will import the pandas package and call it pd</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>  <span class="c1"># we will import the pyplot module from matplotlib package and call it plt</span>
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>            <span class="c1"># we will import the seaborn package and call it sns</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># let&#39;s read the data from the csv file (we will use the clean version that we created in the previous module)</span>
+<span class="n">our_data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;./resources/data/Banker_et_al_2022_QuestionnaireData_clean.csv&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Now we will plot a histogram of the age of the participants</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">distplot</span><span class="p">(</span><span class="n">our_data</span><span class="p">[</span><span class="s1">&#39;Age&#39;</span><span class="p">],</span> <span class="n">kde</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+<span class="c1"># we can also add a title and labels to the axes</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Age of participants&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Age&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Number of participants&#39;</span><span class="p">)</span>
+
+<span class="c1"># we can also tidy up some more by removing the top and right spines</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">despine</span><span class="p">()</span>
+
+<span class="c1"># we will use the `show()` function to plot within the notebook</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/module-05_data-visualization_4_1.png" src="_images/module-05_data-visualization_4_1.png" />
+</div>
+</div>
+<p>As we remarked in the last module, we have a pretty young sample! How about we plot the mean on the histogram too?</p>
+<p>We can use the <code class="docutils literal notranslate"><span class="pre">axvline()</span></code> function from <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code> to plot a vertical line at the mean of the distribution. The <code class="docutils literal notranslate"><span class="pre">axvline()</span></code> function takes the mean of the distribution as input. We can get the mean of the distribution using the <code class="docutils literal notranslate"><span class="pre">mean()</span></code> method.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Now we will plot a histogram of the age of the participants</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">distplot</span><span class="p">(</span><span class="n">our_data</span><span class="p">[</span><span class="s1">&#39;Age&#39;</span><span class="p">],</span> <span class="n">kde</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+<span class="c1"># we can also add a title and labels to the axes</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Age of participants&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Age&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Number of participants&#39;</span><span class="p">)</span>
+
+<span class="c1"># we can also tidy up some more by removing the top and right spines</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">despine</span><span class="p">()</span>
+
+<span class="c1"># add a vertical line to show the Mean age</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="n">our_data</span><span class="p">[</span><span class="s1">&#39;Age&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">(),</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">)</span>
+
+<span class="c1"># we will use the `show()` function to plot within the notebook</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/module-05_data-visualization_6_1.png" src="_images/module-05_data-visualization_6_1.png" />
+</div>
+</div>
+<p>The mean might not be the best summary statistic for our data since “Age” is so skewed. Let’s also plot the median on the histogram. We can use the <code class="docutils literal notranslate"><span class="pre">axvline()</span></code> function again, but this time we will use the <code class="docutils literal notranslate"><span class="pre">median()</span></code> method to get the median of the distribution.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Now we will plot a histogram of the age of the participants</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">distplot</span><span class="p">(</span><span class="n">our_data</span><span class="p">[</span><span class="s1">&#39;Age&#39;</span><span class="p">],</span> <span class="n">kde</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+<span class="c1"># we can also add a title and labels to the axes</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Age of participants&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Age&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Number of participants&#39;</span><span class="p">)</span>
+
+<span class="c1"># we can also tidy up some more by removing the top and right spines</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">despine</span><span class="p">()</span>
+
+<span class="c1"># add a vertical line to show the Mean age</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="n">our_data</span><span class="p">[</span><span class="s1">&#39;Age&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">(),</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">)</span>
+
+<span class="c1"># add a vertical line to show the Median age</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="n">our_data</span><span class="p">[</span><span class="s1">&#39;Age&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">median</span><span class="p">(),</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;-&#39;</span><span class="p">)</span>
+
+<span class="c1"># we will use the `show()` function to plot within the notebook</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/module-05_data-visualization_8_1.png" src="_images/module-05_data-visualization_8_1.png" />
+</div>
+</div>
+<p>We can see that the median is a better summary statistic for our data than the mean. The median is a more robust summary statistic than the mean because it is less sensitive to outliers.</p>
+<p>However, based on this plot alone it would be tough for anyone else reading the plot to know what the mean and median are. Let’s add a legend to the plot to make it easier for others to interpret.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Now we will plot a histogram of the age of the participants</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">distplot</span><span class="p">(</span><span class="n">our_data</span><span class="p">[</span><span class="s1">&#39;Age&#39;</span><span class="p">],</span> <span class="n">kde</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+<span class="c1"># we can also add a title and labels to the axes</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Age of participants&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Age&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Number of participants&#39;</span><span class="p">)</span>
+
+<span class="c1"># we can also tidy up some more by removing the top and right spines</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">despine</span><span class="p">()</span>
+
+<span class="c1"># add a vertical line to show the Mean age</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="n">our_data</span><span class="p">[</span><span class="s1">&#39;Age&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">(),</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">)</span>
+
+<span class="c1"># add a vertical line to show the Median age</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="n">our_data</span><span class="p">[</span><span class="s1">&#39;Age&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">median</span><span class="p">(),</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;-&#39;</span><span class="p">)</span>
+
+<span class="c1"># add a legend for our lines</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">([</span><span class="s1">&#39;Mean&#39;</span><span class="p">,</span> <span class="s1">&#39;Median&#39;</span><span class="p">])</span>
+
+<span class="c1"># we will use the `show()` function to plot within the notebook</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/module-05_data-visualization_10_1.png" src="_images/module-05_data-visualization_10_1.png" />
+</div>
+</div>
+<p>We can also plot the histogram of one of our other psychiatric variables. Let’s plot a histogram of Loneliness.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Now we will plot a histogram of the age of the participants</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">distplot</span><span class="p">(</span><span class="n">our_data</span><span class="p">[</span><span class="s1">&#39;Depression&#39;</span><span class="p">],</span> <span class="n">kde</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+<span class="c1"># we can also add a title and labels to the axes</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Depression&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Number of participants&#39;</span><span class="p">)</span>
+
+<span class="c1"># we can also tidy up some more by removing the top and right spines</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">despine</span><span class="p">()</span>
+
+<span class="c1"># add a vertical line to show the Mean age</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="n">our_data</span><span class="p">[</span><span class="s1">&#39;Depression&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">(),</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">)</span>
+
+<span class="c1"># add a vertical line to show the Median age</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="n">our_data</span><span class="p">[</span><span class="s1">&#39;Depression&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">median</span><span class="p">(),</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;-&#39;</span><span class="p">)</span>
+
+<span class="c1"># add a legend for our lines</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">([</span><span class="s1">&#39;Mean&#39;</span><span class="p">,</span> <span class="s1">&#39;Median&#39;</span><span class="p">])</span>
+
+<span class="c1"># we will use the `show()` function to plot within the notebook</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/module-05_data-visualization_12_1.png" src="_images/module-05_data-visualization_12_1.png" />
+</div>
+</div>
+</div>
+<div class="section" id="bar-plots">
+<h2>Bar plots<a class="headerlink" href="#bar-plots" title="Permalink to this headline">¶</a></h2>
+<p>Bar plots are useful for visualizing the distribution of a categorical variable. The x-axis of a bar plot is the categories of the variable, and the y-axis is the frequency of occurrence for each category.</p>
+<p>We can use a bar plot to look at our distribution of “Sex” in our sample. We will use the <code class="docutils literal notranslate"><span class="pre">countplot()</span></code> function from <code class="docutils literal notranslate"><span class="pre">seaborn</span></code> to plot a bar plot. The <code class="docutils literal notranslate"><span class="pre">countplot()</span></code> function takes a single variable as input and plots a bar plot of that variable.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Plot a bar plot of Sex of participants</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">countplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;Sex&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">our_data</span><span class="p">)</span>
+
+<span class="c1"># we can also add a title and labels to the axes</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Sex of participants&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Sex&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Number of participants&#39;</span><span class="p">)</span>
+
+<span class="c1"># we can also tidy up some more by removing the top and right spines</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">despine</span><span class="p">()</span>
+
+<span class="c1"># we will use the `show()` function to plot within the notebook</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/module-05_data-visualization_14_0.png" src="_images/module-05_data-visualization_14_0.png" />
+</div>
+</div>
+<p>Sometimes, the labels for a variable will be coded (for example, in our dataset, 1=Male, 2=Female, 3=Other) and thus not accessible to someone who is not familiar with the data. There are two solutions to this.</p>
+<p>First, we can change the labels manually after plotting. We will use the <code class="docutils literal notranslate"><span class="pre">set_xticklabels()</span></code> method to change the xticklabels. The <code class="docutils literal notranslate"><span class="pre">set_xticklabels()</span></code> method takes a list of strings as input and changes the xticklabels to the strings in the list. We will use the <code class="docutils literal notranslate"><span class="pre">xticklabels</span></code> argument to specify the list of strings.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Plot a bar plot of Sex of participants</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">countplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;Sex&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">our_data</span><span class="p">)</span>
+
+<span class="c1"># we can also add a title and labels to the axes</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Sex of participants&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Sex&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Number of participants&#39;</span><span class="p">)</span>
+
+<span class="c1"># Let&#39;s change the xticklabels (we know the order already from the previous plot, so we can just use a list)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xticklabels</span><span class="p">([</span><span class="s1">&#39;Male&#39;</span><span class="p">,</span> <span class="s1">&#39;Female&#39;</span><span class="p">,</span> <span class="s1">&#39;Other&#39;</span><span class="p">])</span>
+
+<span class="c1"># we can also tidy up some more by removing the top and right spines</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">despine</span><span class="p">()</span>
+
+<span class="c1"># we will use the `show()` function to plot within the notebook</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/module-05_data-visualization_16_0.png" src="_images/module-05_data-visualization_16_0.png" />
+</div>
+</div>
+<p>Alternatively, we can change them in the dataframe directly before plotting. To do this, we will use the <code class="docutils literal notranslate"><span class="pre">replace()</span></code> method. The <code class="docutils literal notranslate"><span class="pre">replace()</span></code> method takes a dictionary as input and replaces the keys in the dictionary with the values in the dictionary. We will use the <code class="docutils literal notranslate"><span class="pre">inplace</span></code> argument to specify that we want to change the values in the dataframe directly.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Change the labels for Sex to be more descriptive</span>
+<span class="n">our_data</span><span class="p">[</span><span class="s1">&#39;Sex&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">({</span><span class="mi">1</span><span class="p">:</span><span class="s1">&#39;Male&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">:</span><span class="s1">&#39;Female&#39;</span><span class="p">,</span> <span class="mi">3</span><span class="p">:</span><span class="s1">&#39;Other&#39;</span><span class="p">},</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="c1"># Plot a bar plot of Sex of participants</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">countplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;Sex&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">our_data</span><span class="p">)</span>
+
+<span class="c1"># we can also add a title and labels to the axes</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Sex of participants&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Sex&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Number of participants&#39;</span><span class="p">)</span>
+
+<span class="c1"># we can also tidy up some more by removing the top and right spines</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">despine</span><span class="p">()</span>
+
+<span class="c1"># we will use the `show()` function to plot within the notebook</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/module-05_data-visualization_18_0.png" src="_images/module-05_data-visualization_18_0.png" />
+</div>
+</div>
+<p>We can also plot the frequencies of two categorical variables at the same time. We can accomplish this using the <code class="docutils literal notranslate"><span class="pre">barplot()</span></code> function from <code class="docutils literal notranslate"><span class="pre">seaborn</span></code> and including the <code class="docutils literal notranslate"><span class="pre">hue</span></code> flag. The <code class="docutils literal notranslate"><span class="pre">hue</span></code> flag takes a categorical variable as input and plots the distribution of the first variable for each category of the second variable.</p>
+<p>Let’s plot the counts of Sex for each of our Income groups (which we created in the previous module).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ax</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">countplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;IncomeSplit&#39;</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="s1">&#39;Sex&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">our_data</span><span class="p">)</span>
+
+<span class="c1"># we can also add a title and labels to the axes</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Income of participants by Sex&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Income&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Number of participants&#39;</span><span class="p">)</span>
+
+<span class="c1"># change legend title</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s1">&#39;Sex&#39;</span><span class="p">)</span>
+
+<span class="c1"># we can also tidy up some more by removing the top and right spines</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">despine</span><span class="p">()</span>
+
+<span class="c1"># we will use the `show()` function to plot within the notebook</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/module-05_data-visualization_20_0.png" src="_images/module-05_data-visualization_20_0.png" />
+</div>
+</div>
+</div>
+<div class="section" id="point-plots">
+<h2>Point plots<a class="headerlink" href="#point-plots" title="Permalink to this headline">¶</a></h2>
+<p>Point plots are useful for visualizing the relationship between two categorical variables. The x-axis of a point plot is the categories of one variable, and the y-axis is the mean of the second variable for each category.</p>
+<p>We can use the point plot to look at one of our measures as a function of Depression. Let’s see how Loneliness changes with Depression symptoms. We will use the <code class="docutils literal notranslate"><span class="pre">pointplot()</span></code> function from <code class="docutils literal notranslate"><span class="pre">seaborn</span></code> to plot a point plot. The <code class="docutils literal notranslate"><span class="pre">pointplot()</span></code> function takes two variables as input and plots a point plot of the first variable as a function of the second variable.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Let&#39;s create a new variable called `DepressionGroups` with two age groups: Low and High</span>
+<span class="n">our_data</span><span class="p">[</span><span class="s1">&#39;DepressionGroups&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">cut</span><span class="p">(</span><span class="n">our_data</span><span class="p">[</span><span class="s1">&#39;Depression&#39;</span><span class="p">],</span> <span class="mi">2</span><span class="p">,</span> <span class="n">labels</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Low&#39;</span><span class="p">,</span> <span class="s1">&#39;High&#39;</span><span class="p">])</span>
+
+<span class="c1"># Plot a pointplot of Mean Loneliness as a function of Depression Groups</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">pointplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;DepressionGroups&#39;</span><span class="p">,</span> 
+                   <span class="n">y</span><span class="o">=</span><span class="s1">&#39;Loneliness&#39;</span><span class="p">,</span>                   
+                   <span class="n">data</span><span class="o">=</span><span class="n">our_data</span><span class="p">)</span>
+
+<span class="c1"># we can also add a title and labels to the axes</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Mean Loneliness as a function of Depression&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Depression&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Mean Loneliness&#39;</span><span class="p">)</span>
+
+<span class="c1"># we can also tidy up some more by removing the top and right spines</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">despine</span><span class="p">()</span>
+
+<span class="c1"># we will use the `show()` function to plot within the notebook</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/module-05_data-visualization_22_0.png" src="_images/module-05_data-visualization_22_0.png" />
+</div>
+</div>
+<p>Younger people appear to be slightly lonelier than older people in our sample.</p>
+<p>The pointplot is informative because it shows us the mean of the second variable (<code class="docutils literal notranslate"><span class="pre">Loneliness</span></code>) for each category of the first variable (<code class="docutils literal notranslate"><span class="pre">Age</span></code>). However, it only depicts the mean and confidence intervals. We are missing information about the distribution of the Loneliness for each Age group, which is informative when comparing groups.</p>
+</div>
+<div class="section" id="violin-plots">
+<h2>Violin plots<a class="headerlink" href="#violin-plots" title="Permalink to this headline">¶</a></h2>
+<p>Our solution to this is to use a violin plot. Violin plots are useful for visualizing the relationship between a categorical variable and a continuous variable. The x-axis of a violin plot is the categories of the categorical variable, and the y-axis is the distribution of the continuous variable for each category (this is similar to the histogram plots from above).</p>
+<p>Let’s plot our variables again using a violin plot. We will use the <code class="docutils literal notranslate"><span class="pre">violinplot()</span></code> function from <code class="docutils literal notranslate"><span class="pre">seaborn</span></code> to plot a violin plot. The <code class="docutils literal notranslate"><span class="pre">violinplot()</span></code> function takes two variables as input and plots a violin plot of the first variable as a function of the second variable.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Plot a pointplot of Mean Loneliness as a function of Depression Groups</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">violinplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;DepressionGroups&#39;</span><span class="p">,</span> 
+                   <span class="n">y</span><span class="o">=</span><span class="s1">&#39;Loneliness&#39;</span><span class="p">,</span>                   
+                   <span class="n">data</span><span class="o">=</span><span class="n">our_data</span><span class="p">)</span>
+
+<span class="c1"># we can also add a title and labels to the axes</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Loneliness as a function of Depression&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Depression&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Loneliness&#39;</span><span class="p">)</span>
+
+<span class="c1"># we can also tidy up some more by removing the top and right spines</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">despine</span><span class="p">()</span>
+
+<span class="c1"># we will use the `show()` function to plot within the notebook</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/module-05_data-visualization_24_0.png" src="_images/module-05_data-visualization_24_0.png" />
+</div>
+</div>
+<p>Notice how the violin plot shows us the distribution of Loneliness for each Depression group.</p>
+</div>
+<div class="section" id="scatter-plots">
+<h2>Scatter plots<a class="headerlink" href="#scatter-plots" title="Permalink to this headline">¶</a></h2>
+<p>The pointplot and violin plots still lack some information about the individual participants in our sample. Because we collected participants’ Depression symptoms as a continuous measure, we can push our limits from the previous two plots and look at the continous relationship between Loneliness and Depression. We can use a scatter plot to visualize the relationship between two continuous variables. The x-axis of a scatter plot is one continuous variable, and the y-axis is the other continuous variable.</p>
+<p>We will use the <code class="docutils literal notranslate"><span class="pre">scatterplot()</span></code> function from <code class="docutils literal notranslate"><span class="pre">seaborn</span></code> to plot a scatter plot. The <code class="docutils literal notranslate"><span class="pre">scatterplot()</span></code> function takes two variables as input and plots a scatter plot of the first variable as a function of the second variable.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Plot a pointplot of Mean Loneliness as a function of Depression</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">scatterplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;Loneliness&#39;</span><span class="p">,</span> 
+                     <span class="n">y</span><span class="o">=</span><span class="s1">&#39;Depression&#39;</span><span class="p">,</span>
+                     <span class="n">data</span><span class="o">=</span><span class="n">our_data</span><span class="p">)</span>
+
+<span class="c1"># we can also add a title and labels to the axes</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Loneliness as a function of Depression&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Depression&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Loneliness&#39;</span><span class="p">)</span>
+
+<span class="c1"># we can also tidy up some more by removing the top and right spines</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">despine</span><span class="p">()</span>
+
+<span class="c1"># we will use the `show()` function to plot within the notebook</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/module-05_data-visualization_27_0.png" src="_images/module-05_data-visualization_27_0.png" />
+</div>
+</div>
+<p>We can now view the entire relationship between Loneliness and Depression. Each dot on this plot represents one person. We can see that there is a positive relationship between Loneliness and Depression. This means that as Loneliness increases, Depression also increases. (Remember, we cannot make any causal claims about this relationship here. People who are more depressed could become more lonely or people who are more lonely could become more depressed.)</p>
+<p>We can also stylize our figure aesthetics a bit more. Here are some things that we can do to make our plots more readable:</p>
+<ul class="simple">
+<li><p>Change the opacity of the dots: We can use the <code class="docutils literal notranslate"><span class="pre">alpha</span></code> argument to change the opacity of the dots. The <code class="docutils literal notranslate"><span class="pre">alpha</span></code> argument takes a number between 0 and 1 as input and changes the opacity of the dots to that number.</p></li>
+<li><p>Change the color of the dots: We can use the <code class="docutils literal notranslate"><span class="pre">color</span></code> argument to change the color of the dots. The <code class="docutils literal notranslate"><span class="pre">color</span></code> argument takes a color name as input and changes the color of the dots to that color.</p></li>
+<li><p>Change the size of the dots: We can use the <code class="docutils literal notranslate"><span class="pre">s</span></code> argument to change the size of the dots. The <code class="docutils literal notranslate"><span class="pre">s</span></code> argument takes a number as input and changes the size of the dots to that number.</p></li>
+<li><p>Add an annotation of the correlation between these variables: We can use the <code class="docutils literal notranslate"><span class="pre">annotate()</span></code> function from <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code> to add an annotation to our plot. The <code class="docutils literal notranslate"><span class="pre">annotate()</span></code> function takes a string as input and adds the string to the plot.</p></li>
+<li><p>Set a predefined style for our plot (I like <code class="docutils literal notranslate"><span class="pre">sns.set_context(&quot;poster&quot;)</span></code>). We can use the <code class="docutils literal notranslate"><span class="pre">set_context()</span></code> function from <code class="docutils literal notranslate"><span class="pre">seaborn</span></code> to set a predefined style for our plot. The <code class="docutils literal notranslate"><span class="pre">set_context()</span></code> function takes a string as input and sets the style of the plot to the style specified by the string.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># change the style</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">set_context</span><span class="p">(</span><span class="s1">&#39;poster&#39;</span><span class="p">)</span>
+
+<span class="c1"># Plot a pointplot of Mean Loneliness as a function of Depression</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">scatterplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;Loneliness&#39;</span><span class="p">,</span> 
+                     <span class="n">y</span><span class="o">=</span><span class="s1">&#39;Depression&#39;</span><span class="p">,</span>
+                     <span class="n">s</span><span class="o">=</span><span class="mi">75</span><span class="p">,</span>            <span class="c1"># set size of points to 50</span>
+                     <span class="n">alpha</span><span class="o">=</span><span class="mf">0.15</span><span class="p">,</span>      <span class="c1"># set opacity to 0.15</span>
+                     <span class="n">color</span><span class="o">=</span><span class="s1">&#39;purple&#39;</span><span class="p">,</span>  <span class="c1"># set color to purple</span>
+                     <span class="n">data</span><span class="o">=</span><span class="n">our_data</span><span class="p">)</span>
+
+<span class="c1"># we can also add a title and labels to the axes</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Depression&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Loneliness&#39;</span><span class="p">)</span>
+
+<span class="c1"># Compute the correlation between Loneliness and Depression</span>
+<span class="n">corr</span> <span class="o">=</span> <span class="n">our_data</span><span class="p">[</span><span class="s1">&#39;Loneliness&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">corr</span><span class="p">(</span><span class="n">our_data</span><span class="p">[</span><span class="s1">&#39;Depression&#39;</span><span class="p">],</span> <span class="n">method</span><span class="o">=</span><span class="s1">&#39;pearson&#39;</span><span class="p">)</span>
+
+<span class="c1"># Annotation with the correlation in the top left corner with small font size</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Pearson r = </span><span class="si">{</span><span class="n">corr</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">xy</span><span class="o">=</span><span class="p">(</span><span class="mf">0.05</span><span class="p">,</span> <span class="mf">0.95</span><span class="p">),</span> <span class="n">xycoords</span><span class="o">=</span><span class="s1">&#39;axes fraction&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+
+<span class="c1"># we can also tidy up some more by removing the top and right spines</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">despine</span><span class="p">()</span>
+
+<span class="c1"># we will use the `show()` function to plot within the notebook</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/module-05_data-visualization_29_0.png" src="_images/module-05_data-visualization_29_0.png" />
+</div>
+</div>
+</div>
+<div class="section" id="creating-a-grid-of-subplots">
+<h2>Creating a grid of subplots<a class="headerlink" href="#creating-a-grid-of-subplots" title="Permalink to this headline">¶</a></h2>
+<p>Finally, we can create a 2 x 2 grid of our plots above using the <code class="docutils literal notranslate"><span class="pre">subplots()</span></code> function from <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code>. The <code class="docutils literal notranslate"><span class="pre">subplots()</span></code> function takes two arguments: the number of rows and the number of columns. We will use the <code class="docutils literal notranslate"><span class="pre">figsize</span></code> argument to specify the size of the figure.</p>
+<p>Then, for each subplot, we specify the axes object that we want to plot on. We can do this using the <code class="docutils literal notranslate"><span class="pre">axs</span></code> object created from our <code class="docutils literal notranslate"><span class="pre">plt.subplots()</span></code> function.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">set_context</span><span class="p">(</span><span class="s1">&#39;poster&#39;</span><span class="p">)</span>
+
+<span class="c1"># create a 2x2 grid of subplots</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">axs</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">nrows</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">ncols</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">16</span><span class="p">,</span> <span class="mi">12</span><span class="p">))</span>
+
+<span class="c1"># plot the first subplot</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">distplot</span><span class="p">(</span><span class="n">our_data</span><span class="p">[</span><span class="s1">&#39;Depression&#39;</span><span class="p">],</span> <span class="n">kde</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">axs</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span>
+<span class="n">axs</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Depression&#39;</span><span class="p">)</span>
+<span class="n">axs</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Number of participants&#39;</span><span class="p">)</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">despine</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">axs</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span>
+<span class="n">axs</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="n">our_data</span><span class="p">[</span><span class="s1">&#39;Depression&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">(),</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">)</span>
+<span class="n">axs</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="n">our_data</span><span class="p">[</span><span class="s1">&#39;Depression&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">median</span><span class="p">(),</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;-&#39;</span><span class="p">)</span>
+<span class="n">axs</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">legend</span><span class="p">([</span><span class="s1">&#39;Mean&#39;</span><span class="p">,</span> <span class="s1">&#39;Median&#39;</span><span class="p">])</span>
+
+<span class="c1"># plot the second subplot</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">pointplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;DepressionGroups&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;Loneliness&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">our_data</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">axs</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
+<span class="n">axs</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Depression&#39;</span><span class="p">)</span>
+<span class="n">axs</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Mean Loneliness&#39;</span><span class="p">)</span>
+
+<span class="c1"># plot the third subplot</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">violinplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;DepressionGroups&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;Loneliness&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">our_data</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">axs</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span>
+<span class="n">axs</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Depression&#39;</span><span class="p">)</span>
+<span class="n">axs</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Loneliness&#39;</span><span class="p">)</span>
+
+<span class="c1"># plot the fourth subplot</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">scatterplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;Loneliness&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;Depression&#39;</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mi">75</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.15</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;purple&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">our_data</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">axs</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
+<span class="n">axs</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Depression&#39;</span><span class="p">)</span>
+<span class="n">axs</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Loneliness&#39;</span><span class="p">)</span>
+<span class="n">corr</span> <span class="o">=</span> <span class="n">our_data</span><span class="p">[</span><span class="s1">&#39;Loneliness&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">corr</span><span class="p">(</span><span class="n">our_data</span><span class="p">[</span><span class="s1">&#39;Depression&#39;</span><span class="p">])</span>
+<span class="n">axs</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Pearson r = </span><span class="si">{</span><span class="n">corr</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">xy</span><span class="o">=</span><span class="p">(</span><span class="mf">0.05</span><span class="p">,</span> <span class="mf">0.95</span><span class="p">),</span> <span class="n">xycoords</span><span class="o">=</span><span class="s1">&#39;axes fraction&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">despine</span><span class="p">()</span>
+
+<span class="c1"># adjust the spacing between subplots</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">subplots_adjust</span><span class="p">(</span><span class="n">hspace</span><span class="o">=</span><span class="mf">0.3</span><span class="p">,</span> <span class="n">wspace</span><span class="o">=</span><span class="mf">0.3</span><span class="p">)</span>
+
+<span class="c1"># We can also save the figure to a file using the following code:</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s1">&#39;loneliness-and-depression-figure.png&#39;</span><span class="p">,</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">300</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/module-05_data-visualization_32_1.png" src="_images/module-05_data-visualization_32_1.png" />
+</div>
+</div>
+<p>This plot is a combination of four different plots that we have previously created. The first plot is a histogram that shows the number of participants who reported subjective loneliness. The second plot is a point plot that shows the average level of loneliness for different groups of participants who reported different levels of depression. The third plot is a violin plot that shows the distribution of loneliness scores for different groups of participants who reported different levels of depression. The fourth plot is a scatter plot that shows the relationship between loneliness and depression scores for each participant.</p>
+<p>Combining plots into a 2x2 grid makes it easier to see how they relate to each other and get a better understanding of the data.</p>
+</div>
+<div class="section" id="next-steps">
+<h2>Next steps<a class="headerlink" href="#next-steps" title="Permalink to this headline">¶</a></h2>
+<p>Try plotting some other variables!</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Insert your code here</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>There are so many more things you can do with Seaborn, but this should get you started. If you want to learn more, check out the Seaborn documentation here: <a class="reference external" href="https://seaborn.pydata.org/">https://seaborn.pydata.org/</a></p>
+<p>I also recommend checking out the following resources:</p>
+<ul class="simple">
+<li><p>Matplotlib gallery (<a class="reference external" href="https://matplotlib.org/gallery/index.html">https://matplotlib.org/gallery/index.html</a>)</p></li>
+<li><p>Seaborn gallery (<a class="reference external" href="https://seaborn.pydata.org/examples/index.html">https://seaborn.pydata.org/examples/index.html</a>)</p></li>
+<li><p>The Python Graph Gallery (<a class="reference external" href="https://python-graph-gallery.com/">https://python-graph-gallery.com/</a>)</p></li>
+<li><p>Visualization with Matplotlib (<a class="reference external" href="https://jakevdp.github.io/PythonDataScienceHandbook/04.00-introduction-to-matplotlib.html">https://jakevdp.github.io/PythonDataScienceHandbook/04.00-introduction-to-matplotlib.html</a>)</p></li>
+<li><p>Visualization with Seaborn (<a class="reference external" href="https://jakevdp.github.io/PythonDataScienceHandbook/04.14-visualization-with-seaborn.html">https://jakevdp.github.io/PythonDataScienceHandbook/04.14-visualization-with-seaborn.html</a>)</p></li>
+</ul>
 </div>
 </div>
 
