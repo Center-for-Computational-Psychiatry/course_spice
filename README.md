@@ -61,8 +61,8 @@ If you have any questions, suggestions, or feedback regarding the Summer Program
 <table role="table" style="margin: 0px auto;">
     <thead role="rowgroup">
         <tr role="row">
-            <td align="center" role="columnheader"><a target="_blank" rel="noopener noreferrer" href="https://shawnrhoads.github.io/"><img src="https://avatars3.githubusercontent.com/u/24925845" width="100px;" alt=""/></a><br /><sub><a target="_blank" rel="noopener noreferrer" href="https://github.com/shawnrhoads/gu-psyc-347/commits?author=shawnrhoads"><b>Shawn A Rhoads</b></a><br/></sub></td>
-            <td align="center" role="columnheader"><a target="_blank" rel="noopener noreferrer" href="https://icahn.mssm.edu/profiles/sarah-banker"><img src="https://avatars3.githubusercontent.com/u/" width="100px;" alt=""/></a><br /><sub><a target="_blank" rel="noopener noreferrer" href="https://github.com/shawnrhoads/gu-psyc-347/commits?author=sarahbanker"><b>Sarah M Banker</b></a><br/></sub></td>
+            <td align="center" role="columnheader"><a target="_blank" rel="noopener noreferrer" href="https://shawnrhoads.github.io/"><img src="https://avatars3.githubusercontent.com/u/24925845" width="100px;" alt=""/></a><br /><sub><a target="_blank" rel="noopener noreferrer" href="https://github.com/center-for-computational-psychiatry/course_spice/commits?author=shawnrhoads"><b>Shawn A Rhoads</b></a><br/></sub></td>
+            <td align="center" role="columnheader"><a target="_blank" rel="noopener noreferrer" href="https://icahn.mssm.edu/profiles/sarah-banker"><img src="https://avatars3.githubusercontent.com/u/68438823" width="100px;" alt=""/></a><br /><sub><a target="_blank" rel="noopener noreferrer" href="https://github.com/center-for-computational-psychiatry/course_spice/commits?author=smbneuro5"><b>Sarah M Banker</b></a><br/></sub></td>
         </tr>
         </thead>
 </table>
