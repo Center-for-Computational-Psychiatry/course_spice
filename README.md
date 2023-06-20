@@ -1,6 +1,6 @@
 <div align="center">
 
-<a target="_blank" rel="noopener noreferrer" href="https://center-for-computational-psychiatry.github.io/course_spice">![Jupyter Book Badge](https://jupyterbook.org/badge.svg)</a> <a target="_blank" rel="noopener noreferrer" href="https://github.com/center-for-computational-psychiatry/course_spice7/actions/workflows/deploy-book.yml">![book](https://github.com/center-for-computational-psychiatry/course_spice/actions/workflows/deploy-book.yml/badge.svg)</a> <a target="_blank" rel="noopener noreferrer" href="https://github.com/center-for-computational-psychiatry/course_spice">![GitHub last update](https://img.shields.io/github/last-commit/center-for-computational-psychiatry/course_spice?color=blue&label=last%20update)</a>
+<a target="_blank" rel="noopener noreferrer" href="https://center-for-computational-psychiatry.github.io/course_spice">![Jupyter Book Badge](https://jupyterbook.org/badge.svg)</a> <a target="_blank" rel="noopener noreferrer" href="https://github.com/center-for-computational-psychiatry/course_spice/actions/workflows/deploy-book.yml">![book](https://github.com/center-for-computational-psychiatry/course_spice/actions/workflows/deploy-book.yml/badge.svg)</a> <a target="_blank" rel="noopener noreferrer" href="https://github.com/center-for-computational-psychiatry/course_spice">![GitHub last update](https://img.shields.io/github/last-commit/center-for-computational-psychiatry/course_spice?color=blue&label=last%20update)</a>
 
 </div>
 
@@ -10,7 +10,6 @@ Welcome to the [Summer Program in Computational Psychiatry Education (SPICE)](ht
 
 SPICE is an educational initiative aimed at introducing high school and college students to the intersection of computer science and psychiatry. Students participate in an eight-week program that combines educational tutorials and hands-on research projects within laboratories at the Center for Computational Psychiatry in the Icahn School of Medicine at Mount Sinai.
 
-<hr width="60%">
 
 ## Education Track
 
@@ -41,13 +40,9 @@ Please see below for the list of modules within this course.
 | Module 08 - Hypothesis Testing | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/center-for-computational-psychiatry/course_spice/blob/master/modules/module-08_hypothesis-testing.ipynb) | [![view](https://jupyterbook.org/badge.svg)](https://center-for-computational-psychiatry.github.io/course_spice/module-08_hypothesis-testing.html) |
 | Module 09 - Putting It All Together | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/center-for-computational-psychiatry/course_spice/blob/master/modules/module-09_putting-it-all-together.ipynb) | [![view](https://jupyterbook.org/badge.svg)](https://center-for-computational-psychiatry.github.io/course_spice/module-09_putting-it-all-together.html) |
 
-<hr width="60%">
-
 ## Research Track
 
 This track matches students with a mentor for the summer based on research interests and availability. Students will work on a research project under the guidance of their mentor and present their findings at the end of the program. The primary aim of this course is to provide students with hands-on research experience in computational psychiatry and neuroscience. Please coordinate with your mentors to determine the scope and timeline of your project.
-
-<hr width="60%">
 
 ## Contributing
 
@@ -71,8 +66,6 @@ If you have any questions, suggestions, or feedback regarding the Summer Program
         </tr>
         </thead>
 </table>
-
-<hr width="60%">
 
 ## License
 <a rel="license" target="_blank" rel="noopener noreferrer" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><br />
