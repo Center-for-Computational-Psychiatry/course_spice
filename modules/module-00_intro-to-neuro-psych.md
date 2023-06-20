@@ -8,7 +8,7 @@ This course is designed to provide a broad overview of the field of computationa
 - Complete classes 5-7 before doing the readings ahead of live session 2 
 - Complete classes 8-9 before doing the readings ahead of live session 3 
 
-| Class | Link |
+| Computational Psychiatry and Neuroscience | View |
 |-------|------|
 | Class 1 - Overview of the brain | [https://forms.gle/sHWNNTwDUD5DU7QR7](https://forms.gle/sHWNNTwDUD5DU7QR7) |
 | Class 2 - Neurons and neurotransmission | [https://forms.gle/ZTMqGXoUSSyUP1uK9](https://forms.gle/ZTMqGXoUSSyUP1uK9) |
