@@ -1,5 +1,5 @@
 - file: index
-- part: Programming in Python
+- part: Computational Science
   chapters:
     - file: module-01_jupyter-notebooks
     - file: module-02_python-basics
@@ -9,7 +9,6 @@
     - file: module-06_numerical-operations
     - file: module-07_pairwise-correlations
     - file: module-08_hypothesis-testing
-    - file: module-09_putting-it-all-together
-- part: Fundamentals of Neuroscience and Psychiatry
+- part: Neuroscience and Psychiatry
   chapters:
     - file: module-09_putting-it-all-together
