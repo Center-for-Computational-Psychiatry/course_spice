@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Hypothesis Testing (Part 2)</title>
+    <title>Final Projects Showcase</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -48,11 +48,10 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
-    <link rel="canonical" href="https://center-for-computational-psychiatry.github.io/course_spice/module-08_anovas.html" />
+    <link rel="canonical" href="https://center-for-computational-psychiatry.github.io/course_spice/projects-showcase.html" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Putting It All Together" href="module-09_putting-it-all-together.html" />
-    <link rel="prev" title="Hypothesis Testing (Part 1)" href="module-07_t-tests.html" />
+    <link rel="prev" title="Linear Modeling" href="module-08_linear-models.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -140,17 +139,17 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="module-07_t-tests.html">
-   Hypothesis Testing (Part 1)
+   Hypothesis Testing
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="module-08_linear-models.html">
+   Linear Modeling
   </a>
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   Hypothesis Testing (Part 2)
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="module-09_putting-it-all-together.html">
-   Putting It All Together
+   Final Projects Showcase
   </a>
  </li>
 </ul>
@@ -243,7 +242,7 @@ title="Source repository"
       </li>
       
       <li>
-        <a href="https://github.com/center-for-computational-psychiatry.github.io/course_spice/issues/new?title=Issue%20on%20page%20%2Fmodule-08_anovas.html&body=Your%20issue%20content%20here."
+        <a href="https://github.com/center-for-computational-psychiatry.github.io/course_spice/issues/new?title=Issue%20on%20page%20%2Fprojects-showcase.html&body=Your%20issue%20content%20here."
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -271,7 +270,7 @@ title="Open an issue"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="_sources/module-08_anovas.ipynb"
+        <a href="_sources/projects-showcase.md"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -282,7 +281,7 @@ title="Download source file"
 <span class="headerbtn__icon-container">
   <i class="fas fa-file"></i>
   </span>
-<span class="headerbtn__text-container">.ipynb</span>
+<span class="headerbtn__text-container">.md</span>
 </a>
 
       </li>
@@ -308,60 +307,23 @@ title="Print to PDF"
     </ul>
   </div>
 </div>
-<label for="__page-toc"
-  class="headerbtn headerbtn-page-toc"
-  
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-list"></i>
-  </span>
-
-</label>
 
     </div>
 </div>
 
 <!-- Table of contents -->
 <div class="col-md-3 bd-toc show noprint">
-    <div class="tocsection onthispage pt-5 pb-3">
-        <i class="fas fa-list"></i> Contents
-    </div>
-    <nav id="bd-toc-nav" aria-label="Page">
-        <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#learning-objectives">
-   Learning objectives
-  </a>
- </li>
-</ul>
-
-    </nav>
 </div>
     </div>
     <div class="article row">
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Hypothesis Testing (Part 2)</h1>
+                <h1>Final Projects Showcase</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
-                        <div>
-                            <h2> Contents </h2>
-                        </div>
-                        <nav aria-label="Page">
-                            <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#learning-objectives">
-   Learning objectives
-  </a>
- </li>
-</ul>
-
-                        </nav>
                     </div>
                 </div>
             </div>
@@ -369,19 +331,10 @@ title="Print to PDF"
                 
               <div>
                 
-  <p><a target="_blank" rel="noopener noreferrer" href="https://colab.research.google.com/github/center-for-computational-psychiatry/course_spice/blob/master/modules/module-08_anovas.ipynb"><img alt="Open In Colab" src="https://colab.research.google.com/assets/colab-badge.svg" /></a></p>
-<div class="section" id="hypothesis-testing-part-2">
-<h1>Hypothesis Testing (Part 2)<a class="headerlink" href="#hypothesis-testing-part-2" title="Permalink to this headline">¶</a></h1>
-<p>This tutorial was inspired by and adapted from Shawn A. Rhoads’ <a class="reference external" href="https://shawnrhoads.github.io/gu-psyc-347/">PSYC 347 Course</a> [<a class="reference external" href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0 License</a>].</p>
-<div class="section" id="learning-objectives">
-<h2>Learning objectives<a class="headerlink" href="#learning-objectives" title="Permalink to this headline">¶</a></h2>
-<p>This notebook is intended to teach you basic python syntax for:</p>
-<ol class="simple">
-<li><p>ANOVAs</p></li>
-<li><p>Repeated measures AVOVAs</p></li>
-<li><p>Linear Regression</p></li>
-</ol>
-</div>
+  <div class="section" id="final-projects-showcase">
+<h1>Final Projects Showcase<a class="headerlink" href="#final-projects-showcase" title="Permalink to this headline">¶</a></h1>
+<p>We hope you will be able to apply the skills and knowledge from this crash course to your research projects this summer! Please reach out via email with any questions pertaining to the content covered in this course.</p>
+<p>In this section, we would love to include any outputs that you would like to showcase at the end of the program! It is completely optional, but we would love to see what you have done with the skills you have learned in the past 8 weeks.</p>
 </div>
 
     <script type="text/x-thebe-config">
@@ -411,19 +364,12 @@ title="Print to PDF"
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="module-07_t-tests.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="module-08_linear-models.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Hypothesis Testing (Part 1)</p>
+            <p class="prev-next-title">Linear Modeling</p>
         </div>
-    </a>
-    <a class='right-next' id="next-link" href="module-09_putting-it-all-together.html" title="next page">
-    <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Putting It All Together</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
     </a>
 </div>
             </footer>
