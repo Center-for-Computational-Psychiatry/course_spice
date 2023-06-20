@@ -1,4 +1,4 @@
-# Introduction
+# Core Curriculum
 
 This course is designed to provide a broad overview of the field of computational neuroscience and psychiatry. The course will cover the basics of brain anatomy and function, as well as the methods used to study the brain. We will then discuss how the brain processes information, and how this processing can go awry in mental illness. Finally, we will discuss how computational approaches can be used to understand the brain and mental health.
 
