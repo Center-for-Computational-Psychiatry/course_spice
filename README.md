@@ -19,6 +19,18 @@ The Education Track consists of two parallel components in a self-guided, two-we
 
 This component provides students with an introduction to computational psychiatry and neuroscience. Students will participate in lectures, discussions, and hands-on activities. The primary aim of this course is to provide students with a basic understanding of computational psychiatry and neuroscience concepts for application to their research project.
 
+| Computational Psychiatry and Neuroscience | View |
+|-------|------|
+| Class 1 - Overview of the brain | [https://forms.gle/sHWNNTwDUD5DU7QR7](https://forms.gle/sHWNNTwDUD5DU7QR7) |
+| Class 2 - Neurons and neurotransmission | [https://forms.gle/ZTMqGXoUSSyUP1uK9](https://forms.gle/ZTMqGXoUSSyUP1uK9) |
+| Class 3 - Neuroanatomy and sensory systems | [https://forms.gle/LZjMnnLC8tsR8DN3A](https://forms.gle/LZjMnnLC8tsR8DN3A) |
+| Class 4 - Neurodevelopment and neural plasticity | [https://forms.gle/gbcYKqVPeLuVhx9b6](https://forms.gle/gbcYKqVPeLuVhx9b6) |
+| Class 5 - Neuroscience research methods | [https://forms.gle/8RJxgJEkoYnSLecEA](https://forms.gle/8RJxgJEkoYnSLecEA) |
+| Class 6 - Learning, memory, and spatial coding | [https://forms.gle/pt5Kt8EdPKRvNs6NA](https://forms.gle/pt5Kt8EdPKRvNs6NA) |
+| Class 7 - Motivation and reward | [https://forms.gle/3ZHPjiqJpNp7cw4T9](https://forms.gle/3ZHPjiqJpNp7cw4T9) |
+| Class 8 - Mental illness | [https://forms.gle/kZgwSfsWRTQjoihm8](https://forms.gle/kZgwSfsWRTQjoihm8) |
+| Class 9 - Computational psychiatry | [https://forms.gle/ET99rg45GrzEeCwi6](https://forms.gle/ET99rg45GrzEeCwi6) |
+
 ### (2) Fundamentals of Python Programming for Psychological and Neural Sciences
 
 This component provides students with a hands-on introduction to Python programming for data analysis. Over the course of two weeks, students will use [Google Colaboratory](https://colab.research.google.com/) to learn the fundamentals of Python programming, basic data visualization techniques, and essential statistical analysis methods such as t-tests. The primary aim of this course is to develop practical coding skills and analytical tools to understand data, especially those within the fields of computational psychiatry and neuroscience.
@@ -27,7 +39,7 @@ The course begins with an introduction to Python and Jupyter Notebooks. Then, st
 
 Please see below for the list of modules within this course.
 
-| Introduction to Python |  Run  |  View  |
+| Computational Science |  Run  |  View  |
 | --------------- | :---: | :----: |
 | Module 00 - Introduction |  | [![view](https://jupyterbook.org/badge.svg)](https://center-for-computational-psychiatry.github.io/course_spice/index.html) |
 | Module 01 - Jupyter Notebooks | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/center-for-computational-psychiatry/course_spice/blob/master/modules/module-01_jupyter-notebooks.ipynb) | [![view](https://jupyterbook.org/badge.svg)](https://center-for-computational-psychiatry.github.io/course_spice/module-01_jupyter-notebooks.html) |
