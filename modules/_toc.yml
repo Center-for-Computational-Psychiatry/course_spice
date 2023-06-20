@@ -7,8 +7,6 @@
     - file: module-04_data-processing
     - file: module-05_data-visualization
     - file: module-06_numerical-operations
-    - file: module-07_pairwise-correlations
-    - file: module-08_hypothesis-testing
-- part: Neuroscience and Psychiatry
-  chapters:
+    - file: module-07_t-tests
+    - file: module-08_anovas
     - file: module-09_putting-it-all-together
