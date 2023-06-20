@@ -40,7 +40,7 @@ The course begins with an introduction to Python and Jupyter Notebooks. Then, st
 
 Please see below for the list of modules within this course.
 
-| Introduction to Python |  Run  |  View  |
+| Computational Science |  Run  |  View  |
 | --------------- | :---: | :----: |
 | Module 00 - Introduction |  | [![view](https://jupyterbook.org/badge.svg)](https://center-for-computational-psychiatry.github.io/course_spice/index.html) |
 | Module 01 - Jupyter Notebooks | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/center-for-computational-psychiatry/course_spice/blob/master/modules/module-01_jupyter-notebooks.ipynb) | [![view](https://jupyterbook.org/badge.svg)](https://center-for-computational-psychiatry.github.io/course_spice/module-01_jupyter-notebooks.html) |
