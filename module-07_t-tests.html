@@ -48,6 +48,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <link rel="canonical" href="https://center-for-computational-psychiatry.github.io/course_spice/module-07_t-tests.html" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -228,6 +230,17 @@ title="Toggle navigation"
         
     </div>
     <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+    </ul>
+  </div>
+</div>
+
 <button onclick="toggleFullScreen()"
   class="headerbtn"
   data-toggle="tooltip"
@@ -359,6 +372,130 @@ title="Print to PDF"
    Learning objectives
   </a>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#independent-samples-t-tests">
+   Independent samples t-tests
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#let-s-do-an-even-deeper-dive">
+   Let’s do an even deeper dive
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#introduction-to-independent-samples-t-test">
+   Introduction to Independent Samples t-test
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#assumptions-for-an-independent-samples-t-test">
+     Assumptions for an Independent Samples t-Test
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#calculating-the-mean-and-variance-for-each-group">
+     Calculating the Mean and Variance for Each Group
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#calculating-the-pooled-variance">
+     Calculating the Pooled Variance
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#calculating-the-t-statistic">
+     Calculating the t-Statistic
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#calculating-degrees-of-freedom-and-critical-value">
+     Calculating Degrees of Freedom and Critical Value
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#comparing-the-t-statistic-with-the-critical-value">
+     Comparing the t-Statistic with the Critical Value
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#computing-the-standard-error-and-confidence-intervals">
+     Computing the standard error and confidence intervals
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#computing-the-p-value">
+     Computing the P-Value
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#putting-it-all-together">
+     Putting it all together
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#visualizing-our-results">
+     Visualizing our results
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#paired-samples-t-tests">
+   Paired samples t-tests
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#assumptions-for-a-paired-samples-t-test">
+     Assumptions for a Paired Samples t-Test
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#calculating-the-mean-and-variance">
+     Calculating the Mean and Variance
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#calculate-the-t-statistic">
+     Calculate the t-Statistic
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id1">
+     Calculating Degrees of Freedom and Critical Value
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id2">
+     Computing the standard error and confidence intervals
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id3">
+     Comparing the t-Statistic with the Critical Value
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id4">
+     Computing the P-Value
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id5">
+     Putting it all together
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id6">
+     Visualizing our results
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#next-steps">
+   Next steps
+  </a>
+ </li>
 </ul>
 
     </nav>
@@ -383,6 +520,130 @@ title="Print to PDF"
    Learning objectives
   </a>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#independent-samples-t-tests">
+   Independent samples t-tests
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#let-s-do-an-even-deeper-dive">
+   Let’s do an even deeper dive
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#introduction-to-independent-samples-t-test">
+   Introduction to Independent Samples t-test
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#assumptions-for-an-independent-samples-t-test">
+     Assumptions for an Independent Samples t-Test
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#calculating-the-mean-and-variance-for-each-group">
+     Calculating the Mean and Variance for Each Group
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#calculating-the-pooled-variance">
+     Calculating the Pooled Variance
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#calculating-the-t-statistic">
+     Calculating the t-Statistic
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#calculating-degrees-of-freedom-and-critical-value">
+     Calculating Degrees of Freedom and Critical Value
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#comparing-the-t-statistic-with-the-critical-value">
+     Comparing the t-Statistic with the Critical Value
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#computing-the-standard-error-and-confidence-intervals">
+     Computing the standard error and confidence intervals
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#computing-the-p-value">
+     Computing the P-Value
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#putting-it-all-together">
+     Putting it all together
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#visualizing-our-results">
+     Visualizing our results
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#paired-samples-t-tests">
+   Paired samples t-tests
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#assumptions-for-a-paired-samples-t-test">
+     Assumptions for a Paired Samples t-Test
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#calculating-the-mean-and-variance">
+     Calculating the Mean and Variance
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#calculate-the-t-statistic">
+     Calculate the t-Statistic
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id1">
+     Calculating Degrees of Freedom and Critical Value
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id2">
+     Computing the standard error and confidence intervals
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id3">
+     Comparing the t-Statistic with the Critical Value
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id4">
+     Computing the P-Value
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id5">
+     Putting it all together
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id6">
+     Visualizing our results
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#next-steps">
+   Next steps
+  </a>
+ </li>
 </ul>
 
                         </nav>
@@ -396,7 +657,7 @@ title="Print to PDF"
   <p><a target="_blank" rel="noopener noreferrer" href="https://colab.research.google.com/github/center-for-computational-psychiatry/course_spice/blob/master/modules/module-07_t-tests.ipynb"><img alt="Open In Colab" src="https://colab.research.google.com/assets/colab-badge.svg" /></a></p>
 <div class="section" id="hypothesis-testing">
 <h1>Hypothesis Testing<a class="headerlink" href="#hypothesis-testing" title="Permalink to this headline">¶</a></h1>
-<p><em>Comming Soon!</em></p>
+<p>This tutorial was inspired by and adapted from Shawn A. Rhoads’ <a class="reference external" href="https://shawnrhoads.github.io/gu-psyc-347/">PSYC 347 Course</a> [<a class="reference external" href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0 License</a>] and Russell Poldrack’s <a class="reference external" href="https://statsthinking21.github.io/statsthinking21-core-site/">Statistical Thinking for the 21st Century</a> [<a class="reference external" href="https://creativecommons.org/licenses/by-nc/4.0/">CC BY-NC 4.0</a>].</p>
 <div class="section" id="learning-objectives">
 <h2>Learning objectives<a class="headerlink" href="#learning-objectives" title="Permalink to this headline">¶</a></h2>
 <p>This notebook is intended to teach you basic python syntax for:</p>
@@ -404,6 +665,819 @@ title="Print to PDF"
 <li><p>Independent samples t-tests</p></li>
 <li><p>Paired samples t-tests</p></li>
 </ol>
+</div>
+<div class="section" id="independent-samples-t-tests">
+<h2>Independent samples t-tests<a class="headerlink" href="#independent-samples-t-tests" title="Permalink to this headline">¶</a></h2>
+<p>Now that we have basics of Python syntax, data processing, and data visualization down, we can move on to hypothesis testing. Hypothesis testing is a way to test whether a certain effect is present in a population. For example, we might want to test whether a certain drug is effective in treating a psychiatric condition. We can do this by comparing the mean of a certain measure (e.g., symptom severity) in a group of people who took the drug to the mean of the same measure in a group of people who did not take the drug (a good design would also used a <a class="reference external" href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6235704/">randomized control trial</a> for group selection). If the mean of the measure is significantly lower in the group that took the drug, we can conclude that the drug is effective in treating the condition.</p>
+<p>We will apply this framework to compare means of two groups using <a class="reference external" href="https://www.pythonfordatascience.org/independent-samples-t-test-python/">independent samples t-tests</a>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># import our packages</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span><span class="o">,</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span><span class="o">,</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span><span class="o">,</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+<span class="kn">from</span> <span class="nn">scipy.stats</span> <span class="kn">import</span> <span class="n">ttest_ind</span><span class="p">,</span> <span class="n">shapiro</span><span class="p">,</span> <span class="n">levene</span><span class="p">,</span> <span class="n">ttest_rel</span>
+<span class="kn">from</span> <span class="nn">scipy</span> <span class="kn">import</span> <span class="n">stats</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Recall our data from the visualizations module. We explored the relationship between Depression and Loneliness. We found that there was a positive correlation between the two variables: As Depression increased, Loneliness also increased. However, we did not test whether this relationship was statistically significant. An independent samples t-test will allow us to test whether the mean differences in Loneliness between the High and Low Depression groups are statistically significant.</p>
+<p>We will use the <code class="docutils literal notranslate"><span class="pre">stats.ttest_ind()</span></code> function from the <code class="docutils literal notranslate"><span class="pre">scipy</span></code> package to perform the t-test. This function takes two arrays as input and returns the t-statistic and p-value. The t-statistic is a measure of the difference between the two groups relative to the variance within each group. The p-value is the probability of observing a difference between the two groups as large as the one we observed if the null hypothesis is true. The null hypothesis is that there is no difference between the two groups. If the p-value is less than 0.05, we can reject the null hypothesis and conclude that there is a significant difference between the two groups.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">our_data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;https://raw.githubusercontent.com/Center-for-Computational-Psychiatry/course_spice/main/modules/resources/data/Banker_et_al_2022_QuestionnaireData_clean.csv&#39;</span><span class="p">)</span>
+
+<span class="c1"># define groups</span>
+<span class="n">our_data</span><span class="p">[</span><span class="s1">&#39;DepressionGroups&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">cut</span><span class="p">(</span><span class="n">our_data</span><span class="p">[</span><span class="s1">&#39;Depression&#39;</span><span class="p">],</span> <span class="mi">2</span><span class="p">,</span> <span class="n">labels</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Low&#39;</span><span class="p">,</span> <span class="s1">&#39;High&#39;</span><span class="p">])</span>
+<span class="n">group1</span> <span class="o">=</span> <span class="n">our_data</span><span class="p">[</span><span class="n">our_data</span><span class="p">[</span><span class="s1">&#39;DepressionGroups&#39;</span><span class="p">]</span><span class="o">==</span><span class="s1">&#39;High&#39;</span><span class="p">]</span>
+<span class="n">group2</span> <span class="o">=</span> <span class="n">our_data</span><span class="p">[</span><span class="n">our_data</span><span class="p">[</span><span class="s1">&#39;DepressionGroups&#39;</span><span class="p">]</span><span class="o">==</span><span class="s1">&#39;Low&#39;</span><span class="p">]</span>
+
+<span class="c1"># t-test</span>
+<span class="n">t</span><span class="p">,</span> <span class="n">p</span> <span class="o">=</span> <span class="n">ttest_ind</span><span class="p">(</span><span class="n">group1</span><span class="p">[</span><span class="s1">&#39;Loneliness&#39;</span><span class="p">],</span> <span class="n">group2</span><span class="p">[</span><span class="s1">&#39;Loneliness&#39;</span><span class="p">])</span>
+
+<span class="k">if</span> <span class="n">p</span> <span class="o">&lt;</span> <span class="mf">.05</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;T(</span><span class="si">{</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">group1</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nb">len</span><span class="p">(</span><span class="n">group2</span><span class="p">))</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">2</span><span class="si">}</span><span class="s1">)=</span><span class="si">{</span><span class="n">t</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1">, p=</span><span class="si">{</span><span class="n">p</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>T(1088)=17.21, p=7.0949774878784104e-59
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can see that the p-value is less than 0.05, so we can reject the null hypothesis and conclude that there is a significant difference between the two groups. We can also see that the t-statistic is positive, which means that the mean Loneliness score is higher in the High Depression group than in the Low Depression group. This is consistent with our visualization from the previous module.</p>
+<p><strong>Easy, right? But what does this all mean?</strong></p>
+<p>The p-value is the probability of observing a difference between the two groups as large as the one we observed if the null hypothesis is true. The null hypothesis is that there is no difference between the two groups. If the p-value is less than 0.001, we can reject the null hypothesis and conclude that there is a significant difference between the two groups with 99.9% confidence. (If the p-value is less than 0.01, we can reject the null hypothesis and conclude that there is a significant difference between the two groups with 99% confidence. If the p-value is less than 0.05, we can reject the null hypothesis and conclude that there is a significant difference between the two groups with 95% confidence.)</p>
+<p>…okay, great! But we can do better right?</p>
+</div>
+<div class="section" id="let-s-do-an-even-deeper-dive">
+<h2>Let’s do an even deeper dive<a class="headerlink" href="#let-s-do-an-even-deeper-dive" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="introduction-to-independent-samples-t-test">
+<h2>Introduction to Independent Samples t-test<a class="headerlink" href="#introduction-to-independent-samples-t-test" title="Permalink to this headline">¶</a></h2>
+<p>The independent samples t-test is a statistical test used to determine whether there is a significant difference between the means of two independent groups. It is commonly used in research to compare the means of two groups and determine whether the difference is statistically significant.</p>
+<p>The t-test is based on the t-distribution, which is a probability distribution that is similar to the normal distribution but is better suited for small sample sizes. The t-distribution has a mean of 0 and a standard deviation of 1, and its shape depends on the degrees of freedom.</p>
+<p>The formula for the independent samples t-test is:</p>
+<div class="math notranslate nohighlight">
+\[t = \frac{\bar{x}_1 - \bar{x}_2}{\sqrt{\frac{s_1^2}{n_1} + \frac{s_2^2}{n_2}}}\]</div>
+<p>Where:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\bar{x}_1\)</span> and <span class="math notranslate nohighlight">\(\bar{x}_2\)</span> are the sample means for the two groups</p></li>
+<li><p><span class="math notranslate nohighlight">\(s_1\)</span> and <span class="math notranslate nohighlight">\(s_2\)</span> are the sample standard deviations for the two groups</p></li>
+<li><p><span class="math notranslate nohighlight">\(n_1\)</span> and <span class="math notranslate nohighlight">\(n_2\)</span> are the sample sizes for the two groups</p></li>
+<li><p><span class="math notranslate nohighlight">\(t\)</span> is the t-statistic</p></li>
+</ul>
+<div class="section" id="assumptions-for-an-independent-samples-t-test">
+<h3>Assumptions for an Independent Samples t-Test<a class="headerlink" href="#assumptions-for-an-independent-samples-t-test" title="Permalink to this headline">¶</a></h3>
+<p>In order to run an independent samples t-test, we must check that the following conditions are met:</p>
+<ol class="simple">
+<li><p><strong>Independence:</strong> The two samples are independent of each other. This means that the observations in one sample are not related to the observations in the other sample.</p></li>
+<li><p><strong>Normality:</strong> The populations from which the samples are drawn are normally distributed. This assumption is important because the t-test is sensitive to departures from normality, especially for small sample sizes.</p></li>
+<li><p><strong>Equal variances:</strong> The two populations have equal variances. This assumption is important because the t-test assumes that the variances of the two populations are equal. If the variances are unequal, the t-test may not be appropriate and an alternative test, such as the Welch’s t-test, may be used instead.</p></li>
+</ol>
+<p>If these assumptions are not met, the results of the t-test may not be valid. In practice, it is important to check these assumptions before conducting a t-test. There are several methods for checking normality and equal variances, such as visual inspection of histograms and boxplots, as well as statistical tests such as the Shapiro-Wilk test and the Levene’s test.</p>
+<p>We can use the <code class="docutils literal notranslate"><span class="pre">stats.shapiro()</span></code> function from the <code class="docutils literal notranslate"><span class="pre">scipy</span></code> package to test for normality. This function takes an array as input and returns the test statistic and p-value. The test statistic is a measure of the difference between the observed data and the expected data under the null hypothesis. The p-value is the probability of observing a test statistic as extreme as the one we observed if the null hypothesis is true. If the p-value is less than 0.05, we can reject the null hypothesis and conclude that the data are not normally distributed.</p>
+<p>We can use the <code class="docutils literal notranslate"><span class="pre">stats.levene()</span></code> function from the <code class="docutils literal notranslate"><span class="pre">scipy</span></code> package to test for equal variances. This function takes two arrays as input and returns the test statistic and p-value. The test statistic is a measure of the difference between the observed data and the expected data under the null hypothesis. The p-value is the probability of observing a test statistic as extreme as the one we observed if the null hypothesis is true. If the p-value is less than 0.05, we can reject the null hypothesis and conclude that the variances are not equal.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Check for normality</span>
+<span class="n">normality1</span> <span class="o">=</span> <span class="n">shapiro</span><span class="p">(</span><span class="n">group1</span><span class="p">[</span><span class="s1">&#39;Loneliness&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">pvalue</span> <span class="o">&gt;</span> <span class="mf">0.05</span>
+<span class="n">normality2</span> <span class="o">=</span> <span class="n">shapiro</span><span class="p">(</span><span class="n">group2</span><span class="p">[</span><span class="s1">&#39;Loneliness&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">pvalue</span> <span class="o">&gt;</span> <span class="mf">0.05</span>
+
+<span class="c1"># Check for equal variances</span>
+<span class="n">equal_variances</span> <span class="o">=</span> <span class="n">levene</span><span class="p">(</span><span class="n">group1</span><span class="p">[</span><span class="s1">&#39;Loneliness&#39;</span><span class="p">],</span> <span class="n">group2</span><span class="p">[</span><span class="s1">&#39;Loneliness&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">pvalue</span> <span class="o">&gt;</span> <span class="mf">0.05</span>
+
+<span class="c1"># Print the results</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Normality: </span><span class="si">{</span><span class="n">normality1</span><span class="si">}</span><span class="s2">, </span><span class="si">{</span><span class="n">normality2</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Equal variances: </span><span class="si">{</span><span class="n">equal_variances</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Normality: False, False
+Equal variances: False
+</pre></div>
+</div>
+</div>
+</div>
+<p>We see that both of our artifical groups have equal variances but only one of them is normally distributed. For the sake of this tutorial, we will continue with the t-test but we should be aware that the results may not be valid.</p>
+</div>
+<div class="section" id="calculating-the-mean-and-variance-for-each-group">
+<h3>Calculating the Mean and Variance for Each Group<a class="headerlink" href="#calculating-the-mean-and-variance-for-each-group" title="Permalink to this headline">¶</a></h3>
+<p>Before we can calculate the t-statistic, we need to calculate the mean and variance for each group. In our case, we have two groups: the depression group and the non-depression group. We will use the <code class="docutils literal notranslate"><span class="pre">numpy</span></code> library to calculate the mean and variance for each group.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Extract the &#39;Loneliness&#39; values for the high and low depression groups using boolean indexing</span>
+<span class="n">high_depression_group</span> <span class="o">=</span> <span class="n">our_data</span><span class="p">[</span><span class="n">our_data</span><span class="p">[</span><span class="s1">&#39;DepressionGroups&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;High&#39;</span><span class="p">][</span><span class="s1">&#39;Loneliness&#39;</span><span class="p">]</span>
+<span class="n">low_depression_group</span> <span class="o">=</span> <span class="n">our_data</span><span class="p">[</span><span class="n">our_data</span><span class="p">[</span><span class="s1">&#39;DepressionGroups&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;Low&#39;</span><span class="p">][</span><span class="s1">&#39;Loneliness&#39;</span><span class="p">]</span>
+
+<span class="c1"># Calculate the mean for each group using numpy&#39;s mean function</span>
+<span class="n">high_depression_mean</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">high_depression_group</span><span class="p">)</span>
+<span class="n">low_depression_mean</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">low_depression_group</span><span class="p">)</span>
+
+<span class="c1"># Calculate the variance for each group using numpy&#39;s var function</span>
+<span class="c1"># Set the ddof parameter to 1 to calculate the unbiased estimate of the variance</span>
+<span class="n">high_depression_var</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">var</span><span class="p">(</span><span class="n">high_depression_group</span><span class="p">,</span> <span class="n">ddof</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">low_depression_var</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">var</span><span class="p">(</span><span class="n">low_depression_group</span><span class="p">,</span> <span class="n">ddof</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;High depression group mean: </span><span class="si">{</span><span class="n">high_depression_mean</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;High depression group variance: </span><span class="si">{</span><span class="n">high_depression_var</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Low depression group mean: </span><span class="si">{</span><span class="n">low_depression_mean</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Low depression group variance: </span><span class="si">{</span><span class="n">low_depression_var</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>High depression group mean: 22.50
+High depression group variance: 13.53
+Low depression group mean: 17.96
+Low depression group variance: 16.29
+</pre></div>
+</div>
+</div>
+</div>
+<p>Here, we first extract the <code class="docutils literal notranslate"><span class="pre">Loneliness</span></code> values for each group using boolean indexing. We then use the <code class="docutils literal notranslate"><span class="pre">numpy</span></code> functions <code class="docutils literal notranslate"><span class="pre">mean()</span></code> and <code class="docutils literal notranslate"><span class="pre">var()</span></code> to calculate the mean and variance for each group. Note that we set the <code class="docutils literal notranslate"><span class="pre">ddof</span></code> parameter to 1 to calculate the unbiased estimate of the variance.</p>
+<p>In the next section, we will use these values to calculate the pooled variance.</p>
+</div>
+<div class="section" id="calculating-the-pooled-variance">
+<h3>Calculating the Pooled Variance<a class="headerlink" href="#calculating-the-pooled-variance" title="Permalink to this headline">¶</a></h3>
+<p>The next step in the independent samples t-test is to calculate the pooled variance. The pooled variance is a weighted average of the variances of the two groups, and it is used to estimate the variance of the population from which the samples were drawn.</p>
+<p>The formula for the pooled variance is:</p>
+<div class="math notranslate nohighlight">
+\[s_p^2 = \frac{(n_1 - 1)s_1^2 + (n_2 - 1)s_2^2}{n_1 + n_2 - 2}\]</div>
+<p>Where:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(s_1^2\)</span> and <span class="math notranslate nohighlight">\(s_2^2\)</span> are the sample variances for the two groups</p></li>
+<li><p><span class="math notranslate nohighlight">\(n_1\)</span> and <span class="math notranslate nohighlight">\(n_2\)</span> are the sample sizes for the two groups</p></li>
+<li><p><span class="math notranslate nohighlight">\(s_p^2\)</span> is the pooled variance</p></li>
+</ul>
+<p>We can calculate the pooled variance using the following code:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Get the group sizes using the len function</span>
+<span class="n">n1</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">high_depression_group</span><span class="p">)</span>
+<span class="n">n2</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">low_depression_group</span><span class="p">)</span>
+ 
+<span class="c1"># Calculate the pooled variance using the formula</span>
+<span class="n">pooled_var</span> <span class="o">=</span> <span class="p">((</span><span class="n">n1</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="n">high_depression_var</span> <span class="o">+</span> <span class="p">(</span><span class="n">n2</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="n">low_depression_var</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">n1</span> <span class="o">+</span> <span class="n">n2</span> <span class="o">-</span> <span class="mi">2</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Pooled variance: </span><span class="si">{</span><span class="n">pooled_var</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Pooled variance: 15.50
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="calculating-the-t-statistic">
+<h3>Calculating the t-Statistic<a class="headerlink" href="#calculating-the-t-statistic" title="Permalink to this headline">¶</a></h3>
+<p>Now that we have calculated the mean and variance for each group, as well as the pooled variance, we can calculate the t-statistic using the formula we introduced earlier:</p>
+<div class="math notranslate nohighlight">
+\[t = \frac{\bar{x}_1 - \bar{x}_2}{\sqrt{\frac{s_p^2}{n_1} + \frac{s_p^2}{n_2}}}\]</div>
+<p>Where:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\bar{x}_1\)</span> and <span class="math notranslate nohighlight">\(\bar{x}_2\)</span> are the sample means for the two groups</p></li>
+<li><p><span class="math notranslate nohighlight">\(s_p^2\)</span> is the pooled variance</p></li>
+<li><p><span class="math notranslate nohighlight">\(n_1\)</span> and <span class="math notranslate nohighlight">\(n_2\)</span> are the sample sizes for the two groups</p></li>
+<li><p><span class="math notranslate nohighlight">\(t\)</span> is the t-statistic</p></li>
+</ul>
+<p>We can calculate the t-statistic using the following code:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Calculate the t-statistic using the formula</span>
+<span class="n">t_statistic</span> <span class="o">=</span> <span class="p">(</span><span class="n">high_depression_mean</span> <span class="o">-</span> <span class="n">low_depression_mean</span><span class="p">)</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">pooled_var</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="n">n1</span> <span class="o">+</span> <span class="mi">1</span><span class="o">/</span><span class="n">n2</span><span class="p">))</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;t-statistic: </span><span class="si">{</span><span class="n">t_statistic</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>t-statistic: 17.21
+</pre></div>
+</div>
+</div>
+</div>
+<p>Here, we use the formula to calculate the t-statistic, where <code class="docutils literal notranslate"><span class="pre">high_depression_mean</span></code> and <code class="docutils literal notranslate"><span class="pre">low_depression_mean</span></code> are the sample means for the two groups that we calculated earlier, and <code class="docutils literal notranslate"><span class="pre">pooled_var</span></code> is the pooled variance that we calculated in the previous section.</p>
+<p>Pretty cool how it matches the <code class="docutils literal notranslate"><span class="pre">scipy</span></code> output from earlier, right?</p>
+<p>In the next section, we will calculate the degrees of freedom and the critical value for t, which we will use to determine whether the difference between the two groups is statistically significant.</p>
+</div>
+<div class="section" id="calculating-degrees-of-freedom-and-critical-value">
+<h3>Calculating Degrees of Freedom and Critical Value<a class="headerlink" href="#calculating-degrees-of-freedom-and-critical-value" title="Permalink to this headline">¶</a></h3>
+<p>The degrees of freedom (df) is a number that tells us how much information we have in our data. It’s like the number of “free” values that we can choose when we calculate a statistic. In the case of the t-test, the degrees of freedom is equal to the sum of the sample sizes minus 2.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">n1</span> <span class="o">+</span> <span class="n">n2</span> <span class="o">-</span> <span class="mi">2</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Degrees of freedom: </span><span class="si">{</span><span class="n">df</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Degrees of freedom: 1088
+</pre></div>
+</div>
+</div>
+</div>
+<p>We use the degrees of freedom to calculate the critical value for t, which helps us decide if the difference between two groups is important or not. The higher the degrees of freedom, the more reliable our results are.</p>
+<p>The critical value is a number that helps us decide if the difference between two groups is important or not. It’s like a line that separates the “important” differences from the “not important” differences. We use this line to make a decision about whether the difference we see is real or just due to chance. It is also determined by the significance level, denoted by alpha (α), which is the probability of rejecting the null hypothesis when it is actually true. The most commonly used significance level is 0.05, which means that there is a 5% chance of rejecting the null hypothesis when it is actually true.</p>
+<p>If the absolute value of the t-statistic is greater than the critical value, then we reject the null hypothesis and conclude that the difference between the two groups is statistically significant. If the absolute value of the t-statistic is less than the critical value, then we fail to reject the null hypothesis and conclude that the difference between the two groups is not statistically significant.</p>
+<p>We can use the degrees of freedom to look up the critical value for t in a t-distribution table. Alternatively, we can use the <code class="docutils literal notranslate"><span class="pre">t.ppf()</span></code> function from the <code class="docutils literal notranslate"><span class="pre">scipy.stats</span></code> module to calculate the critical value directly. The <code class="docutils literal notranslate"><span class="pre">t.ppf()</span></code> function takes two arguments: the significance level (alpha) and the degrees of freedom (df).</p>
+<p>A t-distribution is a probability distribution that is used in hypothesis testing when the sample size is small or the population standard deviation is unknown. It is similar to a normal distribution, but with heavier tails and a flatter peak.</p>
+<p>The shape of the t-distribution depends on the degrees of freedom, which is the number of independent observations in the sample. As the degrees of freedom increase, the t-distribution approaches a normal distribution.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Calculate the critical value for t</span>
+<span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.05</span>  <span class="c1"># significance level</span>
+<span class="n">t_critical</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">t</span><span class="o">.</span><span class="n">ppf</span><span class="p">(</span><span class="n">alpha</span><span class="p">,</span> <span class="n">df</span><span class="p">)</span>
+
+<span class="c1"># compute the confidence intervals too</span>
+<span class="n">t_conf_int</span> <span class="o">=</span> <span class="n">t_critical</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">pooled_var</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="n">n1</span> <span class="o">+</span> <span class="mi">1</span><span class="o">/</span><span class="n">n2</span><span class="p">))</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Critical value for t: </span><span class="si">{</span><span class="n">t_critical</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Critical value for t: -1.65
+</pre></div>
+</div>
+</div>
+</div>
+<p>Here, we use the <code class="docutils literal notranslate"><span class="pre">t.ppf()</span></code> function to calculate the critical value for t at a significance level of 0.05. The <code class="docutils literal notranslate"><span class="pre">df</span></code> variable is the degrees of freedom that we calculated earlier.</p>
+<p>In the next section, we will compare the t-statistic to the critical value to determine whether the difference between the two groups is statistically significant.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">t.ppf(alpha,</span> <span class="pre">df)</span></code> function returns the critical value for a t-distribution with <code class="docutils literal notranslate"><span class="pre">df</span></code> degrees of freedom at a given significance level <code class="docutils literal notranslate"><span class="pre">alpha</span></code>.</p>
+<p>To visualize how this function works, we can plot a t-distribution with <code class="docutils literal notranslate"><span class="pre">df</span></code> degrees of freedom and shade the rejection region based on the significance level <code class="docutils literal notranslate"><span class="pre">alpha</span></code>. The critical value is the boundary between the rejection region and the non-rejection region.</p>
+<p>Here’s an example code snippet that generates a plot of a t-distribution with our degrees of freedom and a significance level of 0.05:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Set the degrees of freedom and significance level</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">n1</span> <span class="o">+</span> <span class="n">n2</span> <span class="o">-</span> <span class="mi">2</span>
+<span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.05</span>
+
+<span class="c1"># Generate x values for the t-distribution</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">20</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)</span>
+
+<span class="c1"># Calculate the t-distribution for the given degrees of freedom</span>
+<span class="n">t_dist</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">t</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+
+<span class="c1"># Calculate the critical value for the given significance level and degrees of freedom</span>
+<span class="n">t_critical</span> <span class="o">=</span> <span class="n">t_dist</span><span class="o">.</span><span class="n">ppf</span><span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">alpha</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="c1"># Shade the rejection region and add a vertical line at the critical t-value</span>
+<span class="k">if</span> <span class="n">t_critical</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">fill_between</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">t_dist</span><span class="o">.</span><span class="n">pdf</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="n">where</span><span class="o">=</span><span class="p">(</span><span class="n">x</span> <span class="o">&gt;</span> <span class="n">t_critical</span><span class="p">),</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.2</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">t_critical</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;critical t&#39;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">fill_between</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">t_dist</span><span class="o">.</span><span class="n">pdf</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="n">where</span><span class="o">=</span><span class="p">(</span><span class="n">x</span> <span class="o">&lt;</span> <span class="o">-</span><span class="n">t_critical</span><span class="p">),</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.2</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="n">x</span><span class="o">=-</span><span class="n">t_critical</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;critical t&#39;</span><span class="p">)</span>
+
+<span class="c1"># Plot the t-distribution</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">t_dist</span><span class="o">.</span><span class="n">pdf</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+
+<span class="c1"># Plot the t-statistic for comparison</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">t_statistic</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;-&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;t-statistic&#39;</span><span class="p">)</span>
+
+<span class="c1"># Add labels and title</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;t&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Probability density&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;t distribution with </span><span class="si">{</span><span class="n">df</span><span class="si">}</span><span class="s1"> degrees of freedom&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">();</span>
+
+<span class="c1"># Show the plot</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/module-07_t-tests_24_0.png" src="_images/module-07_t-tests_24_0.png" />
+</div>
+</div>
+<p>Play around with this code! What happens if you change the <code class="docutils literal notranslate"><span class="pre">alpha</span></code> value? What happens if you change the degrees of freedom (<code class="docutils literal notranslate"><span class="pre">df</span></code>)?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Insert your code here</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="comparing-the-t-statistic-with-the-critical-value">
+<h3>Comparing the t-Statistic with the Critical Value<a class="headerlink" href="#comparing-the-t-statistic-with-the-critical-value" title="Permalink to this headline">¶</a></h3>
+<p>Now that we have calculated the critical value, we can compare it with the t-statistic. If the absolute value of the t-statistic is greater than the critical value, then we reject the null hypothesis and conclude that the means of the two groups are statistically different. If the absolute value of the t-statistic is less than or equal to the critical value, then we fail to reject the null hypothesis and conclude that there is not enough evidence to support a difference between the means.</p>
+<p>In the code snippet earlier, we calculated the critical value for t using the <code class="docutils literal notranslate"><span class="pre">ppf()</span></code> function. We also visualized this. We can now compare this critical value with the actual t-statistic to determine whether the difference between the means of the two groups is statistically significant.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Calculate the critical value for t</span>
+<span class="n">t_critical</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">t</span><span class="o">.</span><span class="n">ppf</span><span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">alpha</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="n">df</span><span class="p">)</span>
+
+<span class="c1"># Calculate the t-statistic</span>
+<span class="n">t_statistic</span> <span class="o">=</span> <span class="p">(</span><span class="n">high_depression_mean</span> <span class="o">-</span> <span class="n">low_depression_mean</span><span class="p">)</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">pooled_var</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="n">n1</span> <span class="o">+</span> <span class="mi">1</span><span class="o">/</span><span class="n">n2</span><span class="p">))</span>
+
+<span class="c1"># Compare the t-statistic with the critical value</span>
+<span class="k">if</span> <span class="nb">abs</span><span class="p">(</span><span class="n">t_statistic</span><span class="p">)</span> <span class="o">&gt;</span> <span class="n">t_critical</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The difference between the means of the two groups is statistically significant at alpha=0.05&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;There is not enough evidence to support a difference between the means of the two groups at alpha=0.05.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The difference between the means of the two groups is statistically significant at alpha=0.05
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="computing-the-standard-error-and-confidence-intervals">
+<h3>Computing the standard error and confidence intervals<a class="headerlink" href="#computing-the-standard-error-and-confidence-intervals" title="Permalink to this headline">¶</a></h3>
+<p>Using the critical t-value and specified alpha level, we can also compute the standard error and confidence intervals for the difference between the means of the two groups.</p>
+<p>The standard error is the standard deviation of the sampling distribution of the difference between the means of the two groups. It is calculated using the following formula:</p>
+<div class="math notranslate nohighlight">
+\[SE = \sqrt{\frac{s_1^2}{n_1} + \frac{s_2^2}{n_2}}\]</div>
+<p>Where:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(s_1^2\)</span> and <span class="math notranslate nohighlight">\(s_2^2\)</span> are the sample variances for the two groups</p></li>
+<li><p><span class="math notranslate nohighlight">\(n_1\)</span> and <span class="math notranslate nohighlight">\(n_2\)</span> are the sample sizes for the two groups</p></li>
+</ul>
+<p>The confidence interval is a range of values that we can be confident contains the true difference between the means of the two groups. It is calculated using the following formula:</p>
+<div class="math notranslate nohighlight">
+\[CI = (\bar{x}_1 - \bar{x}_2) \pm t_{\alpha/2, df} \times SE\]</div>
+<p>Where:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\bar{x}_1\)</span> and <span class="math notranslate nohighlight">\(\bar{x}_2\)</span> are the sample means for the two groups</p></li>
+<li><p><span class="math notranslate nohighlight">\(t_{\alpha/2, df}\)</span> is the critical value for t at a given significance level and degrees of freedom</p></li>
+</ul>
+<p>Here, we use the formulas to calculate the standard error and confidence intervals for the difference between the means of the two groups.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># calculate the standard error of the mean difference</span>
+<span class="n">standard_error</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">pooled_var</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="n">n1</span> <span class="o">+</span> <span class="mi">1</span><span class="o">/</span><span class="n">n2</span><span class="p">))</span>
+
+<span class="c1"># calculate the margin of error</span>
+<span class="n">margin_of_error</span> <span class="o">=</span> <span class="n">t_critical</span> <span class="o">*</span> <span class="n">standard_error</span>
+
+<span class="c1"># calculate the confidence interval</span>
+<span class="n">lower_bound</span> <span class="o">=</span> <span class="n">t_statistic</span> <span class="o">-</span> <span class="n">margin_of_error</span>
+<span class="n">upper_bound</span> <span class="o">=</span> <span class="n">t_statistic</span> <span class="o">+</span> <span class="n">margin_of_error</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Confidence interval: [</span><span class="si">{</span><span class="n">lower_bound</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">, </span><span class="si">{</span><span class="n">upper_bound</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">]&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Confidence interval: [16.69, 17.72]
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="computing-the-p-value">
+<h3>Computing the P-Value<a class="headerlink" href="#computing-the-p-value" title="Permalink to this headline">¶</a></h3>
+<p>We can also compute the p-value to determine the statistical significance of the difference between the means of the two groups. The p-value is the probability of observing a t-statistic as extreme or more extreme than the one calculated, assuming that the null hypothesis is true.</p>
+<p>To compute the p-value, we can use the <code class="docutils literal notranslate"><span class="pre">sf()</span></code> function from the <code class="docutils literal notranslate"><span class="pre">scipy.stats.t</span></code> module. The <code class="docutils literal notranslate"><span class="pre">sf()</span></code> function calculates the survival function, which is equal to 1 minus the cumulative distribution function (CDF). The CDF gives the probability of observing a t-statistic less than or equal to the one calculated, while the survival function gives the probability of observing a t-statistic greater than the one calculated.</p>
+<p>To compute the p-value, we need to calculate the survival function for the absolute value of the t-statistic and multiply it by 2. This is because the t-distribution is symmetric around 0, so we need to account for the possibility of observing a t-statistic in either tail of the distribution.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">p_value</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">stats</span><span class="o">.</span><span class="n">t</span><span class="o">.</span><span class="n">sf</span><span class="p">(</span><span class="nb">abs</span><span class="p">(</span><span class="n">t_statistic</span><span class="p">),</span> <span class="n">df</span><span class="p">)</span>
+
+<span class="c1"># Print the p-value</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;p-value: </span><span class="si">{</span><span class="n">p_value</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>p-value: 7.0949774878784104e-59
+</pre></div>
+</div>
+</div>
+</div>
+<p>The p-value is less than 0.05, so we reject the null hypothesis and conclude that the difference between the means of the two groups is statistically significant.</p>
+<p>Isn’t it cool that we got the same result as the <code class="docutils literal notranslate"><span class="pre">ttest_ind()</span></code> function from the <code class="docutils literal notranslate"><span class="pre">scipy.stats</span></code> module?</p>
+</div>
+<div class="section" id="putting-it-all-together">
+<h3>Putting it all together<a class="headerlink" href="#putting-it-all-together" title="Permalink to this headline">¶</a></h3>
+<p>Now that we have calculated the t-statistic, the critical value, and the p-value, we can put it all together to make a decision about whether the difference between the means of the two groups is statistically significant.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Extract the &#39;Loneliness&#39; values for the high and low depression groups using boolean indexing</span>
+<span class="n">high_depression_group</span> <span class="o">=</span> <span class="n">our_data</span><span class="p">[</span><span class="n">our_data</span><span class="p">[</span><span class="s1">&#39;DepressionGroups&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;High&#39;</span><span class="p">][</span><span class="s1">&#39;Loneliness&#39;</span><span class="p">]</span>
+<span class="n">low_depression_group</span> <span class="o">=</span> <span class="n">our_data</span><span class="p">[</span><span class="n">our_data</span><span class="p">[</span><span class="s1">&#39;DepressionGroups&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;Low&#39;</span><span class="p">][</span><span class="s1">&#39;Loneliness&#39;</span><span class="p">]</span>
+
+<span class="c1"># Calculate the mean for each group using numpy&#39;s mean function</span>
+<span class="n">high_depression_mean</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">high_depression_group</span><span class="p">)</span>
+<span class="n">low_depression_mean</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">low_depression_group</span><span class="p">)</span>
+
+<span class="c1"># Calculate the variance for each group using numpy&#39;s var function</span>
+<span class="c1"># Set the ddof parameter to 1 to calculate the unbiased estimate of the variance</span>
+<span class="n">high_depression_var</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">var</span><span class="p">(</span><span class="n">high_depression_group</span><span class="p">,</span> <span class="n">ddof</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">low_depression_var</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">var</span><span class="p">(</span><span class="n">low_depression_group</span><span class="p">,</span> <span class="n">ddof</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="c1"># Get the group sizes using the len function</span>
+<span class="n">n1</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">high_depression_group</span><span class="p">)</span>
+<span class="n">n2</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">low_depression_group</span><span class="p">)</span>
+
+<span class="c1"># Calculate the pooled variance using the formula</span>
+<span class="n">pooled_var</span> <span class="o">=</span> <span class="p">((</span><span class="n">n1</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="n">high_depression_var</span> <span class="o">+</span> <span class="p">(</span><span class="n">n2</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="n">low_depression_var</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">n1</span> <span class="o">+</span> <span class="n">n2</span> <span class="o">-</span> <span class="mi">2</span><span class="p">)</span>
+
+<span class="c1"># Calculate the t-statistic using the formula</span>
+<span class="n">t_statistic</span> <span class="o">=</span> <span class="p">(</span><span class="n">high_depression_mean</span> <span class="o">-</span> <span class="n">low_depression_mean</span><span class="p">)</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">pooled_var</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="n">n1</span> <span class="o">+</span> <span class="mi">1</span><span class="o">/</span><span class="n">n2</span><span class="p">))</span>
+
+<span class="c1"># Calculate the degrees of freedom</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">n1</span> <span class="o">+</span> <span class="n">n2</span> <span class="o">-</span> <span class="mi">2</span>
+
+<span class="c1"># calculate the critical value for t</span>
+<span class="n">t_critical</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">t</span><span class="o">.</span><span class="n">ppf</span><span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">alpha</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="n">df</span><span class="p">)</span>
+
+<span class="c1"># calculate the standard error of the mean difference</span>
+<span class="n">standard_error</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">pooled_var</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="n">n1</span> <span class="o">+</span> <span class="mi">1</span><span class="o">/</span><span class="n">n2</span><span class="p">))</span>
+
+<span class="c1"># calculate the margin of error</span>
+<span class="n">margin_of_error</span> <span class="o">=</span> <span class="n">t_critical</span> <span class="o">*</span> <span class="n">standard_error</span>
+
+<span class="c1"># calculate the confidence interval</span>
+<span class="n">lower_bound</span> <span class="o">=</span> <span class="n">t_statistic</span> <span class="o">-</span> <span class="n">margin_of_error</span>
+<span class="n">upper_bound</span> <span class="o">=</span> <span class="n">t_statistic</span> <span class="o">+</span> <span class="n">margin_of_error</span>
+
+<span class="c1"># Calculate the p-value</span>
+<span class="n">p_value</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">stats</span><span class="o">.</span><span class="n">t</span><span class="o">.</span><span class="n">sf</span><span class="p">(</span><span class="nb">abs</span><span class="p">(</span><span class="n">t_statistic</span><span class="p">),</span> <span class="n">df</span><span class="p">)</span>
+
+<span class="c1"># Print the t-statistic and p-value</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;t-statistic: </span><span class="si">{</span><span class="n">t_statistic</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">, 95% CI: [</span><span class="si">{</span><span class="n">lower_bound</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">, </span><span class="si">{</span><span class="n">upper_bound</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">], p-value: </span><span class="si">{</span><span class="n">p_value</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>t-statistic: 17.21, 95% CI: [16.69, 17.72], p-value: 7.0949774878784104e-59
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now that we understand all of the code behind the <code class="docutils literal notranslate"><span class="pre">ttest_ind()</span></code> function, there is no need to use all of this code in our own projects. We can benefit (and save time) by just using the <code class="docutils literal notranslate"><span class="pre">ttest_ind()</span></code> function from the <code class="docutils literal notranslate"><span class="pre">scipy.stats</span></code> module (like from earlier)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># ttest_ind function</span>
+<span class="n">t_statistic</span><span class="p">,</span> <span class="n">p_value</span> <span class="o">=</span> <span class="n">ttest_ind</span><span class="p">(</span><span class="n">high_depression_group</span><span class="p">,</span> <span class="n">low_depression_group</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;t-statistic: </span><span class="si">{</span><span class="n">t_statistic</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">, p-value: </span><span class="si">{</span><span class="n">p_value</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>t-statistic: 17.21, p-value: 7.0949774878784104e-59
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="visualizing-our-results">
+<h3>Visualizing our results<a class="headerlink" href="#visualizing-our-results" title="Permalink to this headline">¶</a></h3>
+<p>We can plot the means of our two groups on a point plot to visualize the difference between them.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># plot means, do not join because they are independent samples</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">pointplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;DepressionGroups&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;Loneliness&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">our_data</span><span class="p">,</span> <span class="n">join</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span> 
+
+<span class="c1"># we can also add a title and labels to the axes</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Mean loneliness scores between groups&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Depression&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Loneliness&#39;</span><span class="p">)</span>
+
+<span class="c1"># we can also tidy up some more by removing the top and right spines</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">despine</span><span class="p">()</span>
+
+<span class="c1"># we will use the `show()` function to plot within the notebook</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/module-07_t-tests_39_0.png" src="_images/module-07_t-tests_39_0.png" />
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="paired-samples-t-tests">
+<h2>Paired samples t-tests<a class="headerlink" href="#paired-samples-t-tests" title="Permalink to this headline">¶</a></h2>
+<p>In the previous section, we learned how to perform an independent-samples t-test in Python. In this section, we will learn how to perform a paired samples t-test in Python. A paired samples t-test is used when we want to compare the means of two groups that are related to each other.</p>
+<div class="math notranslate nohighlight">
+\[t = \frac{\bar{d}}{s_d/\sqrt{n}}\]</div>
+<p>where <span class="math notranslate nohighlight">\(\bar{d}\)</span> is the mean difference between the paired observations, <span class="math notranslate nohighlight">\(s_d\)</span> is the standard deviation of the differences, and <span class="math notranslate nohighlight">\(n\)</span> is the number of pairs.</p>
+<p>The paired samples t-test compares the mean difference between the paired observations to zero, under the null hypothesis that there is no significant difference between the two samples. If the absolute value of the calculated t-statistic is greater than the critical t-value for the desired significance level and degrees of freedom, we reject the null hypothesis and conclude that there is a significant difference between the two samples.</p>
+<p>This is different from an independent samples t-test (from earlier), which is used to compare the means of two separate groups of data. For example, let’s say we want to compare depression scores of patients from two different hospitals. If we use an independent samples t-test, we would take a sample of patients from each hospital and compare the means of the two samples. This test would <em><strong>NOT</strong></em> be applicable if we wanted to compare the means depression scores for patients who received a treatment. In this case, we would need to use a paired samples t-test to measure the difference in depression scores for each patient before and after receiving the treatment.</p>
+<p>In other words, the independent samples t-test assumes that the two groups of data are independent and unrelated, while the paired samples t-test assumes that the two groups of data are related or paired in some way.</p>
+<p>The paired samples t-test is often used when we want to compare the same group of individuals or objects at two different points in time, or when we want to compare two different treatments applied to the same group of individuals or objects.</p>
+<p>Both tests are used to determine whether there is a significant difference between the means of two groups of data, but they are used in different situations depending on the nature of the data.</p>
+<p>Let’s work through the second example by simulating a fake Depression scores for each participant. Let’s assume that the new depression scores were measured after participants received a treatment.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create fake time 1 and 2 depression score with different means</span>
+<span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>
+<span class="n">time1_depression</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="mf">40.54</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">our_data</span><span class="p">))</span>
+<span class="n">time2_depression</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="mf">32.25</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">our_data</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Let&#39;s plot our means to see how they look</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">distplot</span><span class="p">(</span><span class="n">time1_depression</span><span class="p">,</span> <span class="n">kde</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Time 1&#39;</span><span class="p">)</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">distplot</span><span class="p">(</span><span class="n">time2_depression</span><span class="p">,</span> <span class="n">kde</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Time 2&#39;</span><span class="p">)</span>
+
+<span class="c1"># we can also add a title and labels to the axes</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Depression scores at time 1 vs time 2&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Depression&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Number of participants&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+
+<span class="c1"># we can also tidy up some more by removing the top and right spines</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">despine</span><span class="p">()</span>
+
+<span class="c1"># we will use the `show()` function to plot within the notebook</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/module-07_t-tests_42_1.png" src="_images/module-07_t-tests_42_1.png" />
+</div>
+</div>
+<p>We can run a paired samples t-test in Python using the <code class="docutils literal notranslate"><span class="pre">ttest_rel()</span></code> function from the <code class="docutils literal notranslate"><span class="pre">scipy.stats</span></code> module. The <code class="docutils literal notranslate"><span class="pre">ttest_rel()</span></code> function takes two arrays of observations as arguments and returns the t-statistic and p-value.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># paired samples t-test</span>
+<span class="n">t</span><span class="p">,</span> <span class="n">p</span> <span class="o">=</span> <span class="n">ttest_rel</span><span class="p">(</span><span class="n">time1_depression</span><span class="p">,</span> <span class="n">time2_depression</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="n">p</span> <span class="o">&lt;</span> <span class="mf">.05</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;T(</span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">time1_depression</span><span class="p">)</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="si">}</span><span class="s1">) = </span><span class="si">{</span><span class="n">t</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1">, p = </span><span class="si">{</span><span class="n">p</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>T(1089) = 19.19, p = 5.922994536108181e-71
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="assumptions-for-a-paired-samples-t-test">
+<h3>Assumptions for a Paired Samples t-Test<a class="headerlink" href="#assumptions-for-a-paired-samples-t-test" title="Permalink to this headline">¶</a></h3>
+<p>The assumptions for a paired samples t-test is similar to the assumptions for an independent samples t-test. The major difference is that the paired samples t-test assumes that the two samples are related or paired in some way.</p>
+</div>
+<div class="section" id="calculating-the-mean-and-variance">
+<h3>Calculating the Mean and Variance<a class="headerlink" href="#calculating-the-mean-and-variance" title="Permalink to this headline">¶</a></h3>
+<p>Note that we only have one sample, so we only need to compute the difference between the two time points.</p>
+<p>Let’s start by calculating the mean and variance for each time point. We can do this using the <code class="docutils literal notranslate"><span class="pre">mean()</span></code> and <code class="docutils literal notranslate"><span class="pre">var()</span></code> functions from the <code class="docutils literal notranslate"><span class="pre">numpy</span></code> module.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># calculate the difference between the two time points</span>
+<span class="n">time_diff</span> <span class="o">=</span> <span class="n">time1_depression</span> <span class="o">-</span> <span class="n">time2_depression</span>
+<span class="n">mean_diff</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">time_diff</span><span class="p">)</span>
+
+<span class="c1"># calculate the standard deviation of the difference</span>
+<span class="n">time_diff_std</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">time_diff</span><span class="p">,</span> <span class="n">ddof</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>   
+
+<span class="c1"># print the mean and variance of the difference </span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Mean Difference: </span><span class="si">{</span><span class="n">mean_diff</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">, Standard Deviation: </span><span class="si">{</span><span class="n">time_diff_std</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Mean Difference: 8.20, Standard Deviation: 14.10
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="calculate-the-t-statistic">
+<h3>Calculate the t-Statistic<a class="headerlink" href="#calculate-the-t-statistic" title="Permalink to this headline">¶</a></h3>
+<p>Now that we have calculated the mean and variance for each time point, we can calculate the t-statistic. We can do this using the formula from above.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># calculate the sample size</span>
+<span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">time1_depression</span><span class="p">)</span>
+
+<span class="c1"># calculate the t-statistic</span>
+<span class="n">t_stat</span> <span class="o">=</span> <span class="n">mean_diff</span> <span class="o">/</span> <span class="p">(</span><span class="n">time_diff_std</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">n</span><span class="p">))</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;t-statistic: </span><span class="si">{</span><span class="n">t_stat</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>t-statistic: 19.19
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="id1">
+<h3>Calculating Degrees of Freedom and Critical Value<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<p>Now that we have calculated the t-statistic, we can calculate the degrees of freedom and the critical value. We can do this using the <code class="docutils literal notranslate"><span class="pre">t.ppf()</span></code> function from the <code class="docutils literal notranslate"><span class="pre">scipy.stats.t</span></code> module. The <code class="docutils literal notranslate"><span class="pre">t.ppf()</span></code> function takes two arguments: the significance level and the degrees of freedom. The <code class="docutils literal notranslate"><span class="pre">t.ppf()</span></code> function returns the critical value for the given significance level and degrees of freedom.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># calculate the degrees of freedom</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">n</span> <span class="o">-</span> <span class="mi">1</span>
+
+<span class="c1"># calculate the critical value</span>
+<span class="n">t_critical</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">t</span><span class="o">.</span><span class="n">ppf</span><span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">alpha</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="n">df</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Critical value: </span><span class="si">{</span><span class="n">t_critical</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Critical value: 1.96
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="id2">
+<h3>Computing the standard error and confidence intervals<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># calculate the standard error of the mean difference</span>
+<span class="n">standard_error</span> <span class="o">=</span> <span class="n">time_diff_std</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+
+<span class="c1"># calculate the margin of error</span>
+<span class="n">margin_of_error</span> <span class="o">=</span> <span class="n">t_critical</span> <span class="o">*</span> <span class="n">standard_error</span>
+
+<span class="c1"># calculate the confidence interval</span>
+<span class="n">lower_bound</span> <span class="o">=</span> <span class="n">t_stat</span> <span class="o">-</span> <span class="n">margin_of_error</span>
+<span class="n">upper_bound</span> <span class="o">=</span> <span class="n">t_stat</span> <span class="o">+</span> <span class="n">margin_of_error</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Confidence interval: [</span><span class="si">{</span><span class="n">lower_bound</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">, </span><span class="si">{</span><span class="n">upper_bound</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">]&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Confidence interval: [18.36, 20.03]
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="id3">
+<h3>Comparing the t-Statistic with the Critical Value<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<p>After calculating the t-statistic for the paired samples t-test, we can compare it with the critical value from the t-distribution to determine whether the difference between the paired samples is statistically significant.</p>
+<p>The critical value is determined by the significance level (alpha) and the degrees of freedom (df), which is equal to the sample size minus one.</p>
+<p>If the absolute value of the t-value is greater than the critical value, we can reject the null hypothesis and conclude that the difference between the paired samples is statistically significant at the given significance level. Otherwise, we fail to reject the null hypothesis and conclude that there is not enough evidence to support a significant difference between the paired samples.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># compare the t-value with the critical value</span>
+<span class="k">if</span> <span class="nb">abs</span><span class="p">(</span><span class="n">t_stat</span><span class="p">)</span> <span class="o">&gt;</span> <span class="n">t_critical</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The difference between the means of the two time points is statistically significant at alpha=0.05&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;There is not enough evidence to support a difference between the means of the two time points at alpha=0.05.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The difference between the means of the two time points is statistically significant at alpha=0.05
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="id4">
+<h3>Computing the P-Value<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<p>Finally, we can compute the p-value to determine the statistical significance of the difference between the paired samples. The p-value is the probability of observing a t-statistic as extreme or more extreme than the one calculated, assuming that the null hypothesis is true.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># compute the p-value</span>
+<span class="n">p_value</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">stats</span><span class="o">.</span><span class="n">t</span><span class="o">.</span><span class="n">sf</span><span class="p">(</span><span class="nb">abs</span><span class="p">(</span><span class="n">t_stat</span><span class="p">),</span> <span class="n">df</span><span class="p">)</span>
+
+<span class="c1"># print the p-value</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;p-value: </span><span class="si">{</span><span class="n">p_value</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>p-value: 5.922994536108181e-71
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="id5">
+<h3>Putting it all together<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
+<p>Now that we have calculated the t-statistic, the critical value, and the p-value, we can put it all together to make a decision about whether the difference between the means of the two groups is statistically significant.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create fake time 1 and 2 depression score with different means</span>
+<span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>
+<span class="n">time1_depression</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="mf">40.54</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">our_data</span><span class="p">))</span>
+<span class="n">time2_depression</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="mf">32.25</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">our_data</span><span class="p">))</span>
+
+<span class="c1"># calculate the difference between the two time points</span>
+<span class="n">time_diff</span> <span class="o">=</span> <span class="n">time1_depression</span> <span class="o">-</span> <span class="n">time2_depression</span>
+<span class="n">mean_diff</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">time_diff</span><span class="p">)</span>
+
+<span class="c1"># calculate the standard deviation of the difference</span>
+<span class="n">time_diff_std</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">time_diff</span><span class="p">,</span> <span class="n">ddof</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>   
+
+<span class="c1"># calculate the sample size</span>
+<span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">time1_depression</span><span class="p">)</span>
+
+<span class="c1"># calculate the t-statistic</span>
+<span class="n">t_stat</span> <span class="o">=</span> <span class="n">mean_diff</span> <span class="o">/</span> <span class="p">(</span><span class="n">time_diff_std</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">n</span><span class="p">))</span>
+
+<span class="c1"># calculate the degrees of freedom</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">n</span> <span class="o">-</span> <span class="mi">1</span>
+
+<span class="c1"># calculate the critical value</span>
+<span class="n">t_critical</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">t</span><span class="o">.</span><span class="n">ppf</span><span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">alpha</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="n">df</span><span class="p">)</span>
+
+<span class="c1"># calculate the standard error of the mean difference</span>
+<span class="n">standard_error</span> <span class="o">=</span> <span class="n">time_diff_std</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+
+<span class="c1"># calculate the margin of error</span>
+<span class="n">margin_of_error</span> <span class="o">=</span> <span class="n">t_critical</span> <span class="o">*</span> <span class="n">standard_error</span>
+
+<span class="c1"># calculate the confidence interval</span>
+<span class="n">lower_bound</span> <span class="o">=</span> <span class="n">t_stat</span> <span class="o">-</span> <span class="n">margin_of_error</span>
+<span class="n">upper_bound</span> <span class="o">=</span> <span class="n">t_stat</span> <span class="o">+</span> <span class="n">margin_of_error</span>
+
+<span class="c1"># calculate the critical value</span>
+<span class="n">p_value</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">stats</span><span class="o">.</span><span class="n">t</span><span class="o">.</span><span class="n">sf</span><span class="p">(</span><span class="nb">abs</span><span class="p">(</span><span class="n">t_stat</span><span class="p">),</span> <span class="n">df</span><span class="p">)</span>
+
+<span class="c1"># Print the t-statistic and p-value</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;t-statistic: </span><span class="si">{</span><span class="n">t_stat</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">, 95% CI: [</span><span class="si">{</span><span class="n">lower_bound</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">, </span><span class="si">{</span><span class="n">upper_bound</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">], p-value: </span><span class="si">{</span><span class="n">p_value</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>t-statistic: 19.19, 95% CI: [18.36, 20.03], p-value: 5.922994536108181e-71
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now that we understand all of the code behind the <code class="docutils literal notranslate"><span class="pre">ttest_rel()</span></code> function, there is no need to use all of this code in our own projects. We can benefit (and save time) by just using the <code class="docutils literal notranslate"><span class="pre">ttest_rel()</span></code> function from the <code class="docutils literal notranslate"><span class="pre">scipy.stats</span></code> module (like from earlier)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># ttest_ind function</span>
+<span class="n">t_statistic</span><span class="p">,</span> <span class="n">p_value</span> <span class="o">=</span> <span class="n">ttest_rel</span><span class="p">(</span><span class="n">time1_depression</span><span class="p">,</span> <span class="n">time2_depression</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;t-statistic: </span><span class="si">{</span><span class="n">t_statistic</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">, p-value: </span><span class="si">{</span><span class="n">p_value</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>t-statistic: 19.19, p-value: 5.922994536108181e-71
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="id6">
+<h3>Visualizing our results<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
+<p>Let’s plot a pointplot to visualize the difference between the two time points. We can do this using the <code class="docutils literal notranslate"><span class="pre">pointplot()</span></code> function from the <code class="docutils literal notranslate"><span class="pre">seaborn</span></code> module.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># let&#39;s create a new datafame in long form with the time points as a column</span>
+<span class="n">our_data_long</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;Depression&#39;</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">([</span><span class="n">time1_depression</span><span class="p">,</span> <span class="n">time2_depression</span><span class="p">]),</span> <span class="s1">&#39;Time&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;1&#39;</span><span class="p">]</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span><span class="n">time1_depression</span><span class="p">)</span> <span class="o">+</span> <span class="p">[</span><span class="s1">&#39;2&#39;</span><span class="p">]</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span><span class="n">time2_depression</span><span class="p">)})</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">pointplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;Time&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;Depression&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">our_data_long</span><span class="p">)</span>
+
+<span class="c1"># we can also add a title and labels to the axes</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Mean depression scores at time 1 vs time 2&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Time&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Depression&#39;</span><span class="p">)</span>
+
+<span class="c1"># we can also tidy up some more by removing the top and right spines</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">despine</span><span class="p">()</span>
+
+<span class="c1"># we will use the `show()` function to plot within the notebook</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/module-07_t-tests_63_0.png" src="_images/module-07_t-tests_63_0.png" />
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="next-steps">
+<h2>Next steps<a class="headerlink" href="#next-steps" title="Permalink to this headline">¶</a></h2>
+<p>In this tutorial, we learned how to perform a two-sample t-test in Python from scratch. We also learned how to use the <code class="docutils literal notranslate"><span class="pre">ttest_ind()</span></code> function from the <code class="docutils literal notranslate"><span class="pre">scipy.stats</span></code> module to perform a two-sample t-test.</p>
+<p>We also learned how to perform a paired samples t-test in Python from scratch. We also learned how to use the <code class="docutils literal notranslate"><span class="pre">ttest_rel()</span></code> function from the <code class="docutils literal notranslate"><span class="pre">scipy.stats</span></code> module to perform a paired samples t-test.</p>
+<p>You can read more about null hypothesis testing and t-tests in the following resources:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://www.datacamp.com/tutorial/an-introduction-to-python-t-tests">An introduction to t-tests in Python</a></p></li>
+<li><p><a class="reference external" href="https://www.graphpad.com/guides/the-ultimate-guide-to-t-tests">The Ulimate Guide to t-tests</a></p></li>
+</ul>
+<p>Now, try this for yourself with different variables. Create new independent groups and explore whether there are differences between them.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Insert your code here</span>
+</pre></div>
+</div>
+</div>
+</div>
 </div>
 </div>
 
