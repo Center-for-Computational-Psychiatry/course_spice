@@ -1,19 +1,19 @@
 Traceback (most recent call last):
-  File "/usr/share/miniconda3/envs/spicejb/lib/python3.7/site-packages/jupyter_cache/executors/utils.py", line 56, in single_nb_execution
+  File "/opt/hostedtoolcache/Python/3.7.17/x64/lib/python3.7/site-packages/jupyter_cache/executors/utils.py", line 56, in single_nb_execution
     record_timing=False,
-  File "/usr/share/miniconda3/envs/spicejb/lib/python3.7/site-packages/nbclient/client.py", line 1204, in execute
+  File "/opt/hostedtoolcache/Python/3.7.17/x64/lib/python3.7/site-packages/nbclient/client.py", line 1204, in execute
     return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
-  File "/usr/share/miniconda3/envs/spicejb/lib/python3.7/site-packages/nbclient/util.py", line 84, in wrapped
+  File "/opt/hostedtoolcache/Python/3.7.17/x64/lib/python3.7/site-packages/nbclient/util.py", line 84, in wrapped
     return just_run(coro(*args, **kwargs))
-  File "/usr/share/miniconda3/envs/spicejb/lib/python3.7/site-packages/nbclient/util.py", line 62, in just_run
+  File "/opt/hostedtoolcache/Python/3.7.17/x64/lib/python3.7/site-packages/nbclient/util.py", line 62, in just_run
     return loop.run_until_complete(coro)
-  File "/usr/share/miniconda3/envs/spicejb/lib/python3.7/asyncio/base_events.py", line 587, in run_until_complete
+  File "/opt/hostedtoolcache/Python/3.7.17/x64/lib/python3.7/asyncio/base_events.py", line 587, in run_until_complete
     return future.result()
-  File "/usr/share/miniconda3/envs/spicejb/lib/python3.7/site-packages/nbclient/client.py", line 664, in async_execute
+  File "/opt/hostedtoolcache/Python/3.7.17/x64/lib/python3.7/site-packages/nbclient/client.py", line 664, in async_execute
     cell, index, execution_count=self.code_cells_executed + 1
-  File "/usr/share/miniconda3/envs/spicejb/lib/python3.7/site-packages/nbclient/client.py", line 965, in async_execute_cell
+  File "/opt/hostedtoolcache/Python/3.7.17/x64/lib/python3.7/site-packages/nbclient/client.py", line 965, in async_execute_cell
     await self._check_raise_for_error(cell, cell_index, exec_reply)
-  File "/usr/share/miniconda3/envs/spicejb/lib/python3.7/site-packages/nbclient/client.py", line 862, in _check_raise_for_error
+  File "/opt/hostedtoolcache/Python/3.7.17/x64/lib/python3.7/site-packages/nbclient/client.py", line 862, in _check_raise_for_error
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
@@ -41,12 +41,12 @@ print(power(4, 1.5)) #should give an error.  What happens if you run this line b
 
 [0;31m---------------------------------------------------------------------------[0m
 [0;31mException[0m                                 Traceback (most recent call last)
-[0;32m/tmp/ipykernel_6305/1985846777.py[0m in [0;36m<module>[0;34m[0m
+[0;32m/tmp/ipykernel_2174/1985846777.py[0m in [0;36m<module>[0;34m[0m
 [1;32m     18[0m [0mprint[0m[0;34m([0m[0mpower[0m[0;34m([0m[0;36m5[0m[0;34m,[0m [0;36m3[0m[0;34m)[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
 [1;32m     19[0m [0mprint[0m[0;34m([0m[0mpower[0m[0;34m([0m[0;36m10[0m[0;34m,[0m [0;34m-[0m[0;36m6[0m[0;34m)[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
 [0;32m---> 20[0;31m [0mprint[0m[0;34m([0m[0mpower[0m[0;34m([0m[0;36m4[0m[0;34m,[0m [0;36m1.5[0m[0;34m)[0m[0;34m)[0m [0;31m#should give an error.  What happens if you run this line before the other print statements?[0m[0;34m[0m[0;34m[0m[0m
 [0m
-[0;32m/tmp/ipykernel_6305/1985846777.py[0m in [0;36mpower[0;34m(x, n)[0m
+[0;32m/tmp/ipykernel_2174/1985846777.py[0m in [0;36mpower[0;34m(x, n)[0m
 [1;32m      4[0m     '''
 [1;32m      5[0m     [0;32mif[0m [0;32mnot[0m [0;34m([0m[0mtype[0m[0;34m([0m[0mn[0m[0;34m)[0m [0;34m==[0m [0mint[0m[0;34m)[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
 [0;32m----> 6[0;31m         [0;32mraise[0m[0;34m([0m[0mException[0m[0;34m([0m[0;34m"I don't know how to handle non-integer powers"[0m[0;34m)[0m[0;34m)[0m [0;31m#prints out an error message![0m[0;34m[0m[0;34m[0m[0m
