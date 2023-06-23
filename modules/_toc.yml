@@ -1,4 +1,7 @@
 - file: index
+- part: Neuroscience and Psychiatry
+  chapters:
+    - file: module-00_intro-to-neuro-psych
 - part: Computational Science
   chapters:
     - file: module-01_jupyter-notebooks
@@ -10,3 +13,7 @@
     - file: module-07_t-tests
     - file: module-08_linear-models
     - file: projects-showcase
+- part: Q&A Discussion Board
+  chapters:
+    - url: https://github.com/Center-for-Computational-Psychiatry/course_spice/discussions
+      title: Submit Questions Here
