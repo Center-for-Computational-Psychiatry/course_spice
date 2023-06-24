@@ -48,6 +48,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
     <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <link rel="canonical" href="https://center-for-computational-psychiatry.github.io/course_spice/module-07_t-tests.html" />
@@ -376,17 +378,12 @@ title="Print to PDF"
   <a class="reference internal nav-link" href="#independent-samples-t-tests">
    Independent samples t-tests
   </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#let-s-do-an-even-deeper-dive">
-   Let’s do an even deeper dive
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#introduction-to-independent-samples-t-test">
-   Introduction to Independent Samples t-test
-  </a>
   <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#let-s-do-an-even-deeper-dive">
+     Let’s do an even deeper dive
+    </a>
+   </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#assumptions-for-an-independent-samples-t-test">
      Assumptions for an Independent Samples t-Test
@@ -524,17 +521,12 @@ title="Print to PDF"
   <a class="reference internal nav-link" href="#independent-samples-t-tests">
    Independent samples t-tests
   </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#let-s-do-an-even-deeper-dive">
-   Let’s do an even deeper dive
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#introduction-to-independent-samples-t-test">
-   Introduction to Independent Samples t-test
-  </a>
   <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#let-s-do-an-even-deeper-dive">
+     Let’s do an even deeper dive
+    </a>
+   </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#assumptions-for-an-independent-samples-t-test">
      Assumptions for an Independent Samples t-Test
@@ -709,12 +701,8 @@ title="Print to PDF"
 <p><strong>Easy, right? But what does this all mean?</strong></p>
 <p>The p-value is the probability of observing a difference between the two groups as large as the one we observed if the null hypothesis is true. The null hypothesis is that there is no difference between the two groups. If the p-value is less than 0.001, we can reject the null hypothesis and conclude that there is a significant difference between the two groups with 99.9% confidence. (If the p-value is less than 0.01, we can reject the null hypothesis and conclude that there is a significant difference between the two groups with 99% confidence. If the p-value is less than 0.05, we can reject the null hypothesis and conclude that there is a significant difference between the two groups with 95% confidence.)</p>
 <p>…okay, great! But we can do better right?</p>
-</div>
 <div class="section" id="let-s-do-an-even-deeper-dive">
-<h2>Let’s do an even deeper dive<a class="headerlink" href="#let-s-do-an-even-deeper-dive" title="Permalink to this headline">¶</a></h2>
-</div>
-<div class="section" id="introduction-to-independent-samples-t-test">
-<h2>Introduction to Independent Samples t-test<a class="headerlink" href="#introduction-to-independent-samples-t-test" title="Permalink to this headline">¶</a></h2>
+<h3>Let’s do an even deeper dive<a class="headerlink" href="#let-s-do-an-even-deeper-dive" title="Permalink to this headline">¶</a></h3>
 <p>The independent samples t-test is a statistical test used to determine whether there is a significant difference between the means of two independent groups. It is commonly used in research to compare the means of two groups and determine whether the difference is statistically significant.</p>
 <p>The t-test is based on the t-distribution, which is a probability distribution that is similar to the normal distribution but is better suited for small sample sizes. The t-distribution has a mean of 0 and a standard deviation of 1, and its shape depends on the degrees of freedom.</p>
 <p>The formula for the independent samples t-test is:</p>
@@ -727,6 +715,7 @@ title="Print to PDF"
 <li><p><span class="math notranslate nohighlight">\(n_1\)</span> and <span class="math notranslate nohighlight">\(n_2\)</span> are the sample sizes for the two groups</p></li>
 <li><p><span class="math notranslate nohighlight">\(t\)</span> is the t-statistic</p></li>
 </ul>
+</div>
 <div class="section" id="assumptions-for-an-independent-samples-t-test">
 <h3>Assumptions for an Independent Samples t-Test<a class="headerlink" href="#assumptions-for-an-independent-samples-t-test" title="Permalink to this headline">¶</a></h3>
 <p>In order to run an independent samples t-test, we must check that the following conditions are met:</p>
