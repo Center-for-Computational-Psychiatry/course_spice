@@ -29,7 +29,7 @@ This component provides students with an introduction to computational psychiatr
 | Class 5 - Neuroscience research methods | [https://forms.gle/8RJxgJEkoYnSLecEA](https://forms.gle/8RJxgJEkoYnSLecEA) |
 | Class 6 - Learning, memory, and spatial coding | [https://forms.gle/pt5Kt8EdPKRvNs6NA](https://forms.gle/pt5Kt8EdPKRvNs6NA) |
 | Class 7 - Motivation and reward | [https://forms.gle/3ZHPjiqJpNp7cw4T9](https://forms.gle/3ZHPjiqJpNp7cw4T9) |
-| Class 8 - Mental illness | [https://forms.gle/kZgwSfsWRTQjoihm8](https://forms.gle/kZgwSfsWRTQjoihm8) |
+| Class 8 - Mental disorders | [https://forms.gle/kZgwSfsWRTQjoihm8](https://forms.gle/kZgwSfsWRTQjoihm8) |
 | Class 9 - Computational psychiatry | [https://forms.gle/ET99rg45GrzEeCwi6](https://forms.gle/ET99rg45GrzEeCwi6) |
 
 ### (2) Fundamentals of Python Programming for Psychological and Neural Sciences
