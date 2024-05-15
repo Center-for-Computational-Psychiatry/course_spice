@@ -28,7 +28,7 @@ This component provides students with an introduction to computational psychiatr
 | Class 5 - Neuroscience research methods | [https://forms.gle/8RJxgJEkoYnSLecEA](https://forms.gle/8RJxgJEkoYnSLecEA) |
 | Class 6 - Learning, memory, and spatial coding | [https://forms.gle/pt5Kt8EdPKRvNs6NA](https://forms.gle/pt5Kt8EdPKRvNs6NA) |
 | Class 7 - Motivation and reward | [https://forms.gle/3ZHPjiqJpNp7cw4T9](https://forms.gle/3ZHPjiqJpNp7cw4T9) |
-| Class 8 - Mental illness | [https://forms.gle/kZgwSfsWRTQjoihm8](https://forms.gle/kZgwSfsWRTQjoihm8) |
+| Class 8 - Mental disorders | [https://forms.gle/kZgwSfsWRTQjoihm8](https://forms.gle/kZgwSfsWRTQjoihm8) |
 | Class 9 - Computational psychiatry | [https://forms.gle/ET99rg45GrzEeCwi6](https://forms.gle/ET99rg45GrzEeCwi6) |
 
 ### (2) Fundamentals of Python Programming for Psychological and Neural Sciences
@@ -75,6 +75,7 @@ If you have any questions, suggestions, or feedback regarding the Summer Program
         <tr role="row">
             <td align="center" role="columnheader"><a target="_blank" rel="noopener noreferrer" href="https://shawnrhoads.github.io/"><img src="https://avatars3.githubusercontent.com/u/24925845" width="100px;" alt=""/></a><br /><sub><a target="_blank" rel="noopener noreferrer" href="https://github.com/center-for-computational-psychiatry/course_spice/commits?author=shawnrhoads"><b>Shawn A Rhoads</b></a><br/></sub></td>
             <td align="center" role="columnheader"><a target="_blank" rel="noopener noreferrer" href="https://icahn.mssm.edu/profiles/sarah-banker"><img src="https://avatars3.githubusercontent.com/u/68438823" width="100px;" alt=""/></a><br /><sub><a target="_blank" rel="noopener noreferrer" href="https://github.com/center-for-computational-psychiatry/course_spice/commits?author=smbneuro5"><b>Sarah M Banker</b></a><br/></sub></td>
+            <td align="center" role="columnheader"><a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/alisa-loosen-phd-4b7a4711b"><img src="https://avatars3.githubusercontent.com/u/47027940" width="100px;" alt=""/></a><br /><sub><a target="_blank" rel="noopener noreferrer" href="https://github.com/center-for-computational-psychiatry/course_spice/commits?author=amloosen"><b>Alisa M Loosen</b></a><br/></sub></td>
         </tr>
         </thead>
 </table>
