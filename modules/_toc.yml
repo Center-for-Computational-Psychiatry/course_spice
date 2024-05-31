@@ -1,5 +1,4 @@
 - file: index
-- file: expectations
 - part: Neuroscience and Psychiatry
   chapters:
     - file: module-00_intro-to-neuro-psych
@@ -14,7 +13,8 @@
     - file: module-07_t-tests
     - file: module-08_linear-models
     - file: projects-showcase
-- part: Q&A Discussion Board
+- part: Additional Information
   chapters:
+    - file: expectations
     - url: https://github.com/Center-for-Computational-Psychiatry/course_spice/discussions
-      title: Submit Questions Here
+      title: Q&A Discussion Board
