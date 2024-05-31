@@ -1,4 +1,5 @@
 - file: index
+- file: expectations
 - part: Neuroscience and Psychiatry
   chapters:
     - file: module-00_intro-to-neuro-psych
