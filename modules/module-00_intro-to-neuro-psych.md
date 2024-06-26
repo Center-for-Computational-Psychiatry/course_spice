@@ -5,29 +5,13 @@ This course will cover the relationship between the brain, behavior, and cogniti
 ## Schedule 2024 
 
 | Computational Psychiatry and Neuroscience | Description | Slides |
-|------------------------------------------|-------------|--------|
-| **Class 1** - Foundations of Neuroscience | Introduction to the brain and nervous system, essential for understanding subsequent topics. | Available soon |
-| **Class 2** - Brain Development Across the Lifespan | Examines how the brain changes over time, influencing its functions and potential disorders. | Available soon |
-| **Class 3** - From Classical to Computational Psychiatry | Overview of traditional psychiatry, its strengths and limitations, and the emergence of computational approaches. | Available soon |
-| **Class 4** - Research Methods in Computational Psychiatry and Neuroscience | Comprehensive look at key research methods and best practices in the field. | Available soon |
-| **Class 5** - Movement & Sensory Processing | Understanding brain functions related to motor and sensory systems, and their interaction with the body and environment. | Available soon |
-| **Class 6** - Memory & Learning | Exploration of the neurocognitive mechanisms of memory and learning, fundamental to cognitive functions. | Available soon |
-| **Class 7** - Decision-Making |Exploration of higher cognitive functions, focusing on self-reflection and evaluation processes. | Available soon |
-| **Class 8** - Metacognition | Exploration of higher cognitive functioning, specifically self-reflection and evaluation processes. | Available soon |
-| **Class 9** - Emotions and Social Decision Making | Examination of how cognitive processes, emotions, and social behavior interconnect, highlighting complex brain functions. | Available soon |
-
-## Schedule Computational Psychiatry and Neuroscience Classes
-| Date       | Time         |
-|------------|--------------|
-| Jun 27     | 10-11:30am   |
-| Jun 28     | 10-11am      |
-| July 1     | 10-11am      |
-| July 2     | 9:30-10:30am |
-| July 3     | 9:30-10:30am |
-| July 4     | HOLIDAY      |
-| July 5     | HOLIDAY      |
-| July 8     | 10-11am      |
-| July 9     | 9:30-10:30am |
-| July 10    | 10-11am  (Guest Lecture) |
-| July 11    | 10-11am      |
-| July 12    | 9:30-10:30am |
+|-------------------------------------------|-------------|--------|
+| Class 1 - Foundations of Neuroscience | Introduction to the brain and nervous system, essential for understanding subsequent topics. | Available soon |
+| Class 2 - Brain Development Across the Lifespan | Examines how the brain changes over time, influencing its functions and potential disorders. | Available soon |
+| Class 3 - From Classical to Computational Psychiatry | Overview of traditional psychiatry, its strengths and limitations, and the emergence of computational approaches. | Available soon |
+| Class 4 - Research Methods in Computational Psychiatry and Neuroscience | Comprehensive look at key research methods and best practices in the field. | Available soon |
+| Class 5 - Movement & Sensory Processing | Understanding brain functions related to motor and sensory systems, and their interaction with the body and environment. | Available soon |
+| Class 6 - Memory & Learning | Exploration of the neurocognitive mechanisms of memory and learning, fundamental to cognitive functions. | Available soon |
+| Class 7 - Decision-Making |Exploration of higher cognitive functions, focusing on self-reflection and evaluation processes. | Available soon |
+| Class 8 - Metacognition | Exploration of higher cognitive functioning, specifically self-reflection and evaluation processes. | Available soon |
+| Class 9 - Emotions and Social Decision Making | Examination of how cognitive processes, emotions, and social behavior interconnect, highlighting complex brain functions. | Available soon |
