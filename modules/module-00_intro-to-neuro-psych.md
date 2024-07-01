@@ -2,7 +2,7 @@
 
 This course will cover the relationship between the brain, behavior, and cognition. We will begin with foundational neuroanatomy and physiology, building towards an understanding of complex cognitive processes. We will analyze how disruptions in neural processes can lead to neurological and psychiatric disorders. Research methods used in neuroscience will be covered, with a focus on computational psychiatry and how it complements and diverges from traditional approaches.
 
-You can download the introduction slides [here](https://github.com/amloosen/course_spice/blob/main/modules/resources/slides/SPICE2024_NeuroPsych_Intro.pdf).
+You can download the introduction slides [here](https://github.com/amloosen/course_spice/blob/main/modules/resources/slides/SPICE2024_Intro.pdf).
 
 ## Schedule 2024 
 
