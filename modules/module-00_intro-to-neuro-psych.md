@@ -6,7 +6,7 @@ This course will cover the relationship between the brain, behavior, and cogniti
 
 | Computational Psychiatry and Neuroscience | Description | Slides |
 |-------------------------------------------|-------------|--------|
-| Class 1 - Foundations of Neuroscience | Introduction to the brain and nervous system, essential for understanding subsequent topics. | Available soon |
+| Class 1 - Foundations of Neuroscience | Introduction to the brain and nervous system, essential for understanding subsequent topics. | [Download Slides] (https://github.com/amloosen/course_spice/blob/main/modules/resources/slides/SPICE2024_NeuroPsych_Class1.pdf)|
 | Class 2 - Brain Development Across the Lifespan | Examines how the brain changes over time, influencing its functions and potential disorders. | Available soon |
 | Class 3 - From Classical to Computational Psychiatry | Overview of traditional psychiatry, its strengths and limitations, and the emergence of computational approaches. | Available soon |
 | Class 4 - Research Methods in Computational Psychiatry and Neuroscience | Comprehensive look at key research methods and best practices in the field. | Available soon |
