@@ -14,19 +14,19 @@ SPICE is an educational initiative aimed at introducing high school and college 
 
 ## Education Track
 
-The Education Track consists of two parallel components in a self-guided, two-week crash course format. Students will complete both to gain a preliminary understanding of computational psychiatry and neuroscience for application to their research projects. Please visit our Jupyter Book to navigate through the course materials: https://center-for-computational-psychiatry.github.io/course_spice/
+The Education Track consists of two parallel components in a two-week crash course format. Students will complete both to gain a preliminary understanding of computational psychiatry and neuroscience for application to their research projects. Please visit our Jupyter Book to navigate through the course materials: https://center-for-computational-psychiatry.github.io/course_spice/
 
 ### (1) Fundamentals of Computational Psychiatry and Neuroscience
 
 This component provides students with an introduction to computational psychiatry and neuroscience. Students will participate in lectures, discussions, and hands-on activities. The primary aim of this course is to provide students with a basic understanding of computational psychiatry and neuroscience concepts for application to their research project.
 
-This course will cover the relationship between the brain, behavior, and cognition. We will begin with foundational neuroanatomy and physiology, building towards an understanding of complex cognitive processes. We will analyze how disruptions in neural processes can lead to neurological and psychiatric disorders. Research methods used in neuroscience will be covered, with a focus on computational psychiatry and how it complements and diverges from traditional approaches.
+This course will cover the relationship between the brain, behavior, and cognition. We will begin with foundations in neuroanatomy, psychiatry and research methods, building towards an understanding of complex cognitive processes investigated in the field. We will analyze how disruptions in neural processes can lead to neurological and psychiatric disorders.
 
 | Computational Psychiatry and Neuroscience | Description | Slides |
 |-------------------------------------------|-------------|--------|
-| Class 1 - Foundations of Neuroscience | Introduction to the brain and nervous system, essential for understanding subsequent topics. | Available soon |
-| Class 2 - Brain Development Across the Lifespan | Examines how the brain changes over time, influencing its functions and potential disorders. | Available soon |
-| Class 3 - From Classical to Computational Psychiatry | Overview of traditional psychiatry, its strengths and limitations, and the emergence of computational approaches. | Available soon |
+| Class 1 - Foundations of Neuroscience | Introduction to the brain and nervous system, essential for understanding subsequent topics. | [Download Slides](resources/slides/SPICE2024_NeuroPsych_Class1.pdf)|
+| Class 2 - Brain Development Across the Lifespan | Examines how the brain changes over time, influencing its functions and potential disorders. | [Download Slides](resources/slides/SPICE2024_NeuroPsych_Class2.pdf)|
+| Class 3 - From Classical to Computational Psychiatry | Overview of traditional psychiatry, its strengths and limitations, and the emergence of computational approaches. | [Download Slides](resources/slides/SPICE2024_NeuroPsych_Class3.pdf)|
 | Class 4 - Research Methods in Computational Psychiatry and Neuroscience | Comprehensive look at key research methods and best practices in the field. | Available soon |
 | Class 5 - Movement & Sensory Processing | Understanding brain functions related to motor and sensory systems, and their interaction with the body and environment. | Available soon |
 | Class 6 - Memory & Learning | Exploration of the neurocognitive mechanisms of memory and learning, fundamental to cognitive functions. | Available soon |
