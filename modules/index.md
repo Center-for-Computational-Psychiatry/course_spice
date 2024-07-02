@@ -18,9 +18,7 @@ The Education Track consists of two parallel components in a two-week crash cour
 
 ### (1) Fundamentals of Computational Psychiatry and Neuroscience
 
-This component provides students with an introduction to computational psychiatry and neuroscience. Students will participate in lectures, discussions, and hands-on activities. The primary aim of this course is to provide students with a basic understanding of computational psychiatry and neuroscience concepts for application to their research project.
-
-This course will cover the relationship between the brain, behavior, and cognition. We will begin with foundations in neuroanatomy, psychiatry and research methods, building towards an understanding of complex cognitive processes investigated in the field. We will analyze how disruptions in neural processes can lead to neurological and psychiatric disorders.
+This course will cover the relationship between the brain, behavior, and cognition. We will begin with foundational neuroanatomy and physiology, building towards an understanding of complex cognitive processes. We will analyze how disruptions in neural processes can lead to neurological and psychiatric disorders. Research methods used in neuroscience will be covered, with a focus on computational psychiatry and how it complements and diverges from traditional approaches.
 
 | Computational Psychiatry and Neuroscience | Description | Slides |
 |-------------------------------------------|-------------|--------|
