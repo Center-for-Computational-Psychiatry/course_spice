@@ -13,7 +13,7 @@ SPICE is an educational initiative aimed at introducing high school and college 
 
 ## Education Track
 
-The Education Track consists of two parallel components in a self-guided, two-week crash course format. Students will complete both to gain a preliminary understanding of computational psychiatry and neuroscience for application to their research projects. Please visit our Jupyter Book to navigate through the course materials: https://center-for-computational-psychiatry.github.io/course_spice/
+The Education Track consists of two parallel components in a two-week crash course format. Students will complete both to gain a preliminary understanding of computational psychiatry and neuroscience for application to their research projects. Please visit our Jupyter Book to navigate through the course materials: https://center-for-computational-psychiatry.github.io/course_spice/
 
 ### (1) Fundamentals of Computational Psychiatry and Neuroscience
 
