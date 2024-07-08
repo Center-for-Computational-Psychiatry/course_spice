@@ -28,10 +28,10 @@ This course will cover the relationship between the brain, behavior, and cogniti
 | Class 3 - From Classical to Computational Psychiatry | Overview of traditional psychiatry, its strengths and limitations, and the emergence of computational approaches. | [<a target="_blank" rel="noopener noreferrer" href="https://github.com/Center-for-Computational-Psychiatry/course_spice/blob/main/modules/resources/slides/SPICE2024_NeuroPsych_Class3.pdf">Download Slides</a>]|
 | Class 4 - Research Methods in Computational Psychiatry and Neuroscience | Comprehensive look at key research methods and best practices in the field. | [<a target="_blank" rel="noopener noreferrer" href="https://github.com/Center-for-Computational-Psychiatry/course_spice/blob/main/modules/resources/slides/SPICE2024_NeuroPsych_Class4.pdf">Download Slides</a>]|
 | Class 5 - Movement & Sensory Processing | Understanding brain functions related to motor and sensory systems, and their interaction with the body and environment. | [<a target="_blank" rel="noopener noreferrer" href="https://github.com/Center-for-Computational-Psychiatry/course_spice/blob/main/modules/resources/slides/SPICE2024_NeuroPsych_Class5.pdf">Download Slides</a>]|
-| Class 6 - Memory & Learning | Exploration of the neurocognitive mechanisms of memory and learning, fundamental to cognitive functions. | Available soon |
-| Class 7 - Decision-Making |Exploration of higher cognitive functions, focusing on self-reflection and evaluation processes. | Available soon |
-| Class 8 - Metacognition | Exploration of higher cognitive functioning, specifically self-reflection and evaluation processes. | Available soon |
-| Class 9 - Emotions and Social Decision Making | Examination of how cognitive processes, emotions, and social behavior interconnect, highlighting complex brain functions. | Available soon |
+| Class 6 - Memory & Learning | Exploration of the neurocognitive mechanisms of memory and learning, fundamental to cognitive functions. | [<a target="_blank" rel="noopener noreferrer" href="https://github.com/Center-for-Computational-Psychiatry/course_spice/blob/main/modules/resources/slides/SPICE2024_NeuroPsych_Class6.pdf">Download Slides</a>]|
+| Class 7 - Decision-Making | Exploration of cognitive functions involved in decision-making, from simple choices to complex judgments. | Available soon |
+| Class 8 - Metacognition | Examination of self-awareness processes involved in evaluating and adjusting one's thinking. | Available soon |
+| Class 9 - Ethics Journal Club: Science Communication | Examination of recent publications in the field and their media coverage. | Available soon |
 
 ### (2) Fundamentals of Python Programming for Psychological and Neural Sciences
 
