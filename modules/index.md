@@ -30,7 +30,7 @@ This course will cover the relationship between the brain, behavior, and cogniti
 | Class 6 - Memory & Learning | Exploration of the neurocognitive mechanisms of memory and learning, fundamental to cognitive functions. | [<a target="_blank" rel="noopener noreferrer" href="https://github.com/Center-for-Computational-Psychiatry/course_spice/blob/main/modules/resources/slides/SPICE2024_NeuroPsych_Class6.pdf">Download Slides</a>]|
 | Class 7 - Decision-Making | Exploration of cognitive functions involved in decision-making, from simple choices to complex judgments. | [<a target="_blank" rel="noopener noreferrer" href="https://github.com/Center-for-Computational-Psychiatry/course_spice/blob/main/modules/resources/slides/SPICE2024_NeuroPsych_Class7.pdf">Download Slides</a>]|
 | Class 8 - Metacognition | Examination of self-awareness processes involved in evaluating and adjusting one's thinking. | Available soon |
-| Class 9 - Ethics Journal Club: Science Communication | Examination of recent publications in the field and their media coverage. | Available soon |
+| Class 9 - Journal Club: Ethics, Society and Responsible Science Communication | Exploration of the ethical, societal, and communication implications of neuroscientific and psychiatric research in a collaborative journal club format. | Available soon |
 
 ### (2) Fundamentals of Python Programming for Psychological and Neural Sciences
 
