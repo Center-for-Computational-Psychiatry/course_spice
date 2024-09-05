@@ -82,6 +82,17 @@ If you have any questions, suggestions, or feedback regarding the Summer Program
         </thead>
 </table>
 
+## Sponsors
+
+<table role="table" style="margin: 0px auto;">
+    <thead role="rowgroup">
+        <tr role="row">
+            <td align="center" role="columnheader"><a target="_blank" rel="noopener noreferrer" href="https://dana.org/"><img src="https://pbs.twimg.com/profile_images/1704505994649260032/R_03iEqO_400x400.jpg" width="100px;" alt=""/></a><br /><sub><b>Dana Foundation</b><br/></sub></td>
+            <td align="center" role="columnheader"><a target="_blank" rel="noopener noreferrer" href="https://icahn.mssm.edu/research/friedman"><img src="https://pbs.twimg.com/profile_images/1811745277390340096/rxigW0p1_400x400.jpg" width="100px;" alt=""/></a><br /><sub><b>Friedman Brain Institute</b><br/></sub></td>
+        </tr>
+        </thead>
+</table>
+
 ## License
 <a rel="license" target="_blank" rel="noopener noreferrer" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><br />
 Content in this book (i.e., any .md or .ipynb files in the content/ folder) is licensed under a <a rel="license" target="_blank" rel="noopener noreferrer" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
